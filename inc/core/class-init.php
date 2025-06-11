@@ -6,6 +6,7 @@ use Polysaas\Setup\Setup;
 use Polysaas\Setup\Enqueue;
 use Polysaas\Setup\Template_Parts;
 use Polysaas\Setup\Woocommerce_Setup;
+use Polysaas\Setup\Plugin_Installer;
 
 /**
  * Theme Initialization
@@ -27,6 +28,7 @@ class Init {
             Manager::class,
             Template_Parts::class,
             Woocommerce_Setup::class,
+            Plugin_Installer::class,
         ];
     }
 

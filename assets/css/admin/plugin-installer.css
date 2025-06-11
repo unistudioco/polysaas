@@ -1,0 +1,260 @@
+.plugin-installer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.plugin-card {
+    float: none;
+    width: auto;
+    margin: 0 !important;
+    background: #fff !important;
+    border: 1px solid rgba(0,0,0,.1) !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.plugin-card:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.plugin-card::before {
+    display: none;
+}
+
+.plugin-card.active {
+    border-color: #00a32a;
+    background: #f7fcf0;
+}
+
+.plugin-card.installed {
+    border-color: #007cba;
+    background: #f0f6fc;
+}
+
+.plugin-card.not-installed {
+    border-color: #ddd;
+}
+
+.plugin-card-top {
+    padding: 20px;
+    min-height: auto;
+}
+
+.plugin-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.plugin-name h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.plugin-name .required {
+    background: #f5f5f5;
+    color: #d63638;
+    padding: 2px 8px;
+    border-radius: 24px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.plugin-name .recommended {
+    background: #f5f5f5;
+    color: #007cba;
+    padding: 2px 8px;
+    border-radius: 24px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.plugin-description {
+    color: #646970;
+    line-height: 1.5;
+}
+
+.plugin-card-bottom {
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .plugin-card.active .plugin-card-bottom {
+    background: #e8f5e8;
+}
+
+.plugin-card.installed .plugin-card-bottom {
+    background: #e5f3ff;
+} */
+
+.plugin-status span {
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background: #00a32a;
+    color: white;
+}
+
+.status-installed {
+    background: #007cba;
+    color: white;
+}
+
+.status-not-installed {
+    background: #ddd;
+    color: #646970;
+}
+
+.plugin-actions .button {
+    min-width: 80px;
+}
+
+.plugin-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #007cba;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #646970;
+    font-weight: 600;
+}
+
+.bulk-actions {
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.bulk-actions .button {
+    margin-right: 10px;
+}
+
+.plugin-error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0;
+}
+
+.plugin-error p {
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+/* Loading animation */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.plugin-card.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .plugin-installer-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .plugin-card-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bulk-actions {
+        text-align: center;
+    }
+    
+    .bulk-actions .button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Success animations */
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.plugin-card.success-animation {
+    animation: slideInUp 0.5s ease;
+}
+
+/* Status indicators */
+.plugin-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: transparent;
+}
+
+.plugin-card.active::before {
+    background: #00a32a;
+}
+
+.plugin-card.installed::before {
+    background: #007cba;
+}
+
+.plugin-card.not-installed::before {
+    background: #ddd;
+}
+
+.button.activated-message:before, .button.updated-message:before, .installed p:before, .updated-message p:before {
+    display: none;
+}
