@@ -1,0 +1,211 @@
+// Breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 459px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+// Typography
+$font-family-sans-serif:      'Inter', 'IBM Plex Sans Arabic', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-size-base:              16px;
+
+
+$font-family-base:            var(--#{$prefix}font-primary, var(--#{$prefix}font-sans-serif));
+
+$headings-font-family:        var(--#{$prefix}headings-font-family);
+$headings-font-weight:        var(--#{$prefix}headings-font-weight);
+$headings-line-height:        var(--#{$prefix}headings-line-height);
+
+$display-font-family:         var(--#{$prefix}display-font-family);
+$display-font-weight:         var(--#{$prefix}display-font-weight);
+$display-line-height:         var(--#{$prefix}display-line-height);
+
+$h1-font-size:                map-deep-get($config, 'sizes', 'heading', 'h1', 'size');
+$h2-font-size:                map-deep-get($config, 'sizes', 'heading', 'h2', 'size');
+$h3-font-size:                map-deep-get($config, 'sizes', 'heading', 'h3', 'size');
+$h4-font-size:                map-deep-get($config, 'sizes', 'heading', 'h4', 'size');
+$h5-font-size:                map-deep-get($config, 'sizes', 'heading', 'h5', 'size');
+$h6-font-size:                map-deep-get($config, 'sizes', 'heading', 'h6', 'size');
+
+$font-weight-utralight:       map-deep-get($config, 'font', 'weight', 'ultralight');
+$font-weight-light:           map-deep-get($config, 'font', 'weight', 'light');
+$font-weight-lighter:         map-deep-get($config, 'font', 'weight', 'lighter');
+$font-weight-normal:          map-deep-get($config, 'font', 'weight', 'normal');
+$font-weight-medium:          map-deep-get($config, 'font', 'weight', 'medium');
+$font-weight-semibold:        map-deep-get($config, 'font', 'weight', 'semibold');
+$font-weight-bold:            map-deep-get($config, 'font', 'weight', 'bold');
+$font-weight-bolder:          map-deep-get($config, 'font', 'weight', 'bolder');
+$font-weight-ultrabold:       map-deep-get($config, 'font', 'weight', 'ultrabold');
+
+$font-sizes: (
+  1: map-deep-get($config, 'sizes', 'text', '2xl', 'size'),
+  2: map-deep-get($config, 'sizes', 'text', 'xl', 'size'),
+  3: map-deep-get($config, 'sizes', 'text', 'lg', 'size'),
+  4: map-deep-get($config, 'sizes', 'text', 'md', 'size'),
+  5: map-deep-get($config, 'sizes', 'text', 'sm', 'size'),
+  6: map-deep-get($config, 'sizes', 'text', 'xs', 'size'),
+  7: map-deep-get($config, 'sizes', 'text', '2xs', 'size'),
+  8: map-deep-get($config, 'sizes', 'text', '3xs', 'size'),
+);
+
+$paragraph-margin:            1rem;
+$headings-margin-bottom:      1rem;
+
+// Gutters
+$gutters: (
+  0: 0,
+  'narrow': map-deep-get($config, 'sizes', 'grid', 'narrow'),
+  1: map-deep-get($config, 'sizes', 'grid', '2xs'),
+  2: map-deep-get($config, 'sizes', 'grid', 'xs'),
+  3: map-deep-get($config, 'sizes', 'grid', 'sm'),
+  4: map-deep-get($config, 'sizes', 'grid', 'md'),
+  5: map-deep-get($config, 'sizes', 'grid', 'lg'),
+  6: map-deep-get($config, 'sizes', 'grid', 'xl'),
+  7: map-deep-get($config, 'sizes', 'grid', '2xl'),
+  8: map-deep-get($config, 'sizes', 'grid', '3xl'),
+  9: map-deep-get($config, 'sizes', 'grid', '4xl'),
+  10: map-deep-get($config, 'sizes', 'grid', '5xl'),
+);
+
+// Spacing
+$enable-negative-margins: true;
+
+$spacers: (
+  0: 0,
+  'narrow': map-deep-get($config, 'sizes', 'spacing', 'narrow'),
+  1: map-deep-get($config, 'sizes', 'spacing', '2xs'),
+  2: map-deep-get($config, 'sizes', 'spacing', 'xs'),
+  3: map-deep-get($config, 'sizes', 'spacing', 'sm'),
+  4: map-deep-get($config, 'sizes', 'spacing', 'md'),
+  5: map-deep-get($config, 'sizes', 'spacing', 'lg'),
+  6: map-deep-get($config, 'sizes', 'spacing', 'xl'),
+  7: map-deep-get($config, 'sizes', 'spacing', '2xl'),
+  8: map-deep-get($config, 'sizes', 'spacing', '3xl'),
+  9: map-deep-get($config, 'sizes', 'spacing', '4xl'),
+  10: map-deep-get($config, 'sizes', 'spacing', '5xl'),
+);
+
+// Position
+$position-values: (
+  auto: auto,
+  0: 0,
+  "px": 1px,
+  1: 0.125rem,
+  2: 0.25rem,
+  3: 0.5rem,
+  4: 1rem,
+  5: 1.5rem,
+  6: 2rem,
+  7: 2.5rem,
+  8: 3rem,
+  9: 4rem,
+  10: 5rem,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%
+);
+
+// Icons
+$icon: (
+  narrow: map-deep-get($config, 'sizes', 'icon', '2xs'),
+  1: map-deep-get($config, 'sizes', 'icon', 'xs'),
+  2: map-deep-get($config, 'sizes', 'icon', 'sm'),
+  3: map-deep-get($config, 'sizes', 'icon', 'md'),
+  4: map-deep-get($config, 'sizes', 'icon', 'lg'),
+  5: map-deep-get($config, 'sizes', 'icon', 'xl'),
+  6: map-deep-get($config, 'sizes', 'icon', '2xl'),
+);
+
+// Shadows
+$shadow:                      map-deep-get($config, 'sizes', 'shadow');
+$box-shadow:                  map-deep-get($shadow, '');
+$box-shadow-xs:               map-deep-get($shadow, 'xs');
+$box-shadow-sm:               map-deep-get($shadow, 'sm');
+$box-shadow-lg:               map-deep-get($shadow, 'lg');
+$box-shadow-xl:               map-deep-get($shadow, 'xl');
+$box-shadow-2xl:              map-deep-get($shadow, '2xl');
+
+// Blur
+$blur:                        map-deep-get($config, 'sizes', 'blur');
+
+// Minimum contrast ratio
+$min-contrast-ratio:          map-deep-get($config, 'contrast-ratio');
+
+// Table
+$table-cell-padding-y:        1rem;
+$table-cell-padding-x:        1rem;
+$table-cell-padding-y-xs:     0.25rem;
+$table-cell-padding-x-xs:     0.25rem;
+$table-cell-padding-y-sm:     0.5rem;
+$table-cell-padding-x-sm:     0.5rem;
+$table-cell-padding-y-md:     1rem;
+$table-cell-padding-x-md:     1rem;
+$table-cell-padding-y-lg:     1.25rem;
+$table-cell-padding-x-lg:     1.25rem;
+
+// Form Input
+$input-padding-y:             0;
+$input-padding-x:             1.25rem;
+$input-font-size:             1rem;
+$input-font-family:           var(--#{$prefix}font-primary, var(--#{$prefix}font-sans-serif));
+$input-line-height:           2.5rem;
+
+$input-padding-y-sm:          0;
+$input-padding-x-sm:          1rem;
+$input-font-size-sm:          0.875rem;
+
+$input-padding-y-lg:          0;
+$input-padding-x-lg:          1.5rem;
+$input-font-size-lg:          1.25rem;
+
+$input-border-width:          1px;
+$input-border-radius:         0.5rem;
+$input-border-radius-sm:      0.25rem;
+$input-border-radius-lg:      1rem;
+
+$input-focus-width:           .25rem !default;
+$input-focus-color-opacity:   .25 !default;
+$input-focus-color:           rgba($component-active-bg, $input-focus-color-opacity) !default;
+$input-focus-blur:            0 !default;
+$input-focus-box-shadow:      0 0 $input-focus-blur $input-focus-width $input-focus-color !default;
+
+// Form Select
+$form-select-padding-y:       0;
+$form-select-padding-x:       1rem;
+$form-select-font-size:       1rem;
+$form-select-font-family:     var(--#{$prefix}font-primary, var(--#{$prefix}font-sans-serif));
+$form-select-font-weight:     400;
+$form-select-line-height:     1;
+
+$form-select-padding-y-sm:    0;
+$form-select-padding-x-sm:    1rem;
+$form-select-font-size-sm:    0.875rem;
+
+$form-select-padding-y-lg:    0;
+$form-select-padding-x-lg:    1.25rem;
+$form-select-font-size-lg:    1rem;
+
+$form-select-padding-y-xl:    0;
+$form-select-padding-x-xl:    1.5rem;
+$form-select-font-size-xl:    1.25rem;
+
+// $form-select-border-width:    map-deep-get($config, 'form', 'border', 'width');
+
+$form-range-thumb-bg:         var(--color-primary);
+$form-range-thumb-active-bg:  var(--color-primary-400);
+
+// Buttons
+$btn-padding-y:               0;
+$btn-padding-x:               2rem;
+$btn-font-family:             var(--#{$prefix}font-primary, var(--#{$prefix}font-sans-serif));
+$btn-line-height:             2.5rem;
+$btn-border-width:            1px;
+$btn-border-radius:           0.25rem;
+$btn-border-radius-md:        1rem;
+$btn-border-radius-sm:        0.5rem;
+$btn-border-radius-xs:        0.25rem;

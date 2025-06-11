@@ -1,0 +1,80 @@
+.btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: var(--uc-btn-height);
+    border-radius: var(--uc-btn-border-radius);
+
+    &.btn-text {
+        position: relative;
+        padding: 0 0 8px 0;
+        border: 0;
+        border-radius: 0;
+        margin: 0;
+        line-height: 1;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            width: 0%;
+            background-color: var(--color-primary);
+            transition: 350ms width cubic-bezier(0.38, 0.01, 0.43, 0.16);
+        }
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+@each $name, $array in map-deep-get($config, 'sizes', 'button') {
+    $height: map-deep-get($array, 'height');
+    $py: 0px;
+    $px: map-deep-get($array, 'px');
+    $text: map-deep-get($array, 'text');
+
+    @include make-responsive('.btn-#{$name}') {
+        --uc-btn-height: #{$height};
+        --uc-btn-padding-y: #{$py};
+        --uc-btn-padding-x: #{$px};
+        --uc-btn-font-size: #{$text};
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-alt-#{$color} {
+        @if $color != 'light' {
+            background: white;
+            color: $value;
+            &:hover,
+            &:focus {
+                background: $value;
+                color: white;
+            }
+        } @else {
+            background: var(--uc-gray-100);
+        }
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-ghost-#{$color} {
+        @if $color != 'light' {
+            background: tint-color($value, 90%);
+            color: $value;
+            &:hover,
+            &:focus {
+                background: tint-color($value, 80%);
+            }
+        } @else {
+            background-color: var(--uc-gray-100);
+            &:hover,
+            &:focus {
+                background: var(--uc-gray-100);
+            }
+        }
+    }
+}

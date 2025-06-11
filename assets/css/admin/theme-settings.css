@@ -1,0 +1,235 @@
+/* Theme Settings Styles */
+
+.polysaas-dashboard {
+    --accent-color: #4135ff;
+    --accent-hover: #2e21e6;
+    --success-color: #28a956;
+    --success-hover: #208d46;
+    --danger-color: #f94040;
+    --danger-hover: #dc3232;
+    --bg-color: #fff;
+    --text-color: #1c1835;
+    --meta-color: #6f6c82;
+    --border-color: #6f6c8237;
+    --border-hover: #6f6c826a;
+    --shadow-color: #6f6c8257;
+    --radius: 12px;
+}
+
+.polysaas-dashboard {
+    background: var(--bg-color);
+    color: var(--meta-color);
+    padding: 0;
+    margin: 20px 20px 0 0;
+    border-radius: var(--radius);
+    box-shadow: 0 1px 10px -5px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.polysaas-dashboard h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -0.04rem;
+    color: var(--text-color);
+}
+
+.polysaas-dashboard h1 .icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    color: var(--accent-color);
+}
+
+.polysaas-dashboard h2 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02rem;
+    margin: 0 0 8px;
+    color: var(--text-color);
+}
+
+.polysaas-dashboard .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+}
+
+.polysaas-dashboard .page-description {
+    margin: 0;
+    padding-right: 12.5%;
+}
+
+.polysaas-dashboard .polysaas-settings-form {
+    padding: 32px;
+    flex: 1;
+    background: #f3f3f6;
+    margin: 0 10px 10px;
+    border-radius: 8px;
+}
+
+.polysaas-dashboard .tabs-content {
+    display: flex;
+}
+
+.polysaas-dashboard .tabs-nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: calc(100vh - 200px);
+    background-color: var(--bg-color);
+    border: 0;
+    padding: 24px 0 0 2px;
+    margin: 0;
+    min-width: 20%;
+}
+
+.polysaas-dashboard .tabs-nav > .nav-tab {
+    min-width: 150px;
+    padding: 8px 24px;
+    margin-bottom: 4px;
+    border: 0;
+    border-radius: 6px;
+    color: var(--meta-color);
+    font-size: 15px;
+    background-color: var(--bg-color);
+    text-align: right;
+    box-shadow: unset !important;
+    outline: unset !important;
+    transition: all 0.3s ease;
+}
+
+.polysaas-dashboard .tabs-nav > .nav-tab.nav-tab-active {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+.polysaas-dashboard .tabs-nav > .nav-tab:hover,
+.polysaas-dashboard .tabs-nav > .nav-tab:focus {
+    color: var(--text-color);
+    box-shadow: unset;
+    transition: all 0.3s ease;
+}
+
+/* Panel Menu UI */
+#toplevel_page_polysaas_general ul li:nth-child(3),
+#toplevel_page_polysaas_general ul li:nth-child(4) {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ffffff23 !important;
+}
+
+#toplevel_page_polysaas_general ul li:nth-child(3)::before,
+#toplevel_page_polysaas_general ul li:nth-child(4)::before {
+    content: "Content";
+    color: white;
+    opacity: .4;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+    margin-bottom: 4px;
+    display: block;
+    padding-left: 12px;
+}
+
+#toplevel_page_polysaas_general ul li:nth-child(4)::before {
+    content: "Management";
+}
+
+
+/* Button UI */
+.polysaas-button.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: var(--text-color);
+    border-color: var(--border-color);
+    background: var(--bg-color);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 4px -2px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.polysaas-button.button:hover,
+.polysaas-button.button:focus {
+    color: var(--text-color);
+    border-color: var(--border-hover);
+    box-shadow: unset;
+}
+
+.polysaas-button .dashicons {
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+}
+
+.polysaas-button.btn-sm {
+    min-height: 32px !important;
+    font-size: 12px;
+    padding: 0 8px !important;
+}
+
+.polysaas-button.btn-md {
+    min-height: 40px !important;
+    font-size: 14px;
+    padding: 0 16px !important;
+}
+
+.polysaas-button.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.polysaas-button.btn-primary:hover,
+.polysaas-button.btn-primary:focus {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: white;
+}
+
+.polysaas-button.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+.polysaas-button.btn-success:hover,
+.polysaas-button.btn-success:focus {
+    background-color: var(--success-hover);
+    border-color: var(--success-hover);
+    color: white;
+}
+
+.polysaas-button.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+    color: white;
+}
+
+.polysaas-button.btn-danger:hover,
+.polysaas-button.btn-danger:focus {
+    background-color: var(--danger-hover);
+    border-color: var(--danger-hover);
+    color: white;
+}
+
+/* Save Button */
+#polysaas_save_submit {
+    position: absolute;
+    top: 20px;
+    right: 32px;
+}

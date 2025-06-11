@@ -1,0 +1,46 @@
+{
+  "name": "polysaas",
+  "version": "1.0.0",
+  "description": "Hi. I'm a starter theme for WordPress.",
+  "author": "UniStudio",
+  "license": "GPL-2.0-or-later",
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "build-sass": "sass --no-source-map --style=compressed sass/style.scss assets/css/frontend/theme.css",
+    "watch-sass": "sass --watch --no-source-map sass/style.scss assets/css/frontend/theme.css",
+    "watch-sass-woo": "sass --watch --no-source-map sass/woo.scss assets/css/frontend/theme-woo.css",
+    "watch-sass-purge": "sass --watch sass/style.scss:assets/css/frontend/theme.css",
+    "build-css-purge": "sass sass/style.scss assets/css/frontend/theme.css && postcss assets/css/frontend/theme.css --use @fullhuman/postcss-purgecss -o assets/css/frontend/theme.min.css",
+    "watch": "sass --watch --source-map sass/style.scss style.css",
+    "compile:css": "sass sass/style.scss assets/css/frontend/theme.css && stylelint '*.css' --fix || true",
+    "compile:rtl": "rtlcss assets/css/frontend/theme.css assets/css/frontend/theme-rtl.css",
+    "lint:scss": "wp-scripts lint-style 'assets/scss/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "dir-archiver --src . --dest ../theme.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json gulpfile.js .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+  },
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "bootstrap": "^5.3.3",
+    "postcss": "^8.5.1",
+    "postcss-cli": "^11.0.0",
+    "purgecss-webpack-plugin": "^7.0.2"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^19.2.2",
+    "dir-archiver": "^1.1.1",
+    "rtlcss": "^3.5.0",
+    "sass": "npm:sass-embedded@^1.57.1"
+  }
+}

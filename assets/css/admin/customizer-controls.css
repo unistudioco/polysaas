@@ -1,0 +1,765 @@
+/**
+ * Customizer Controls Styles
+ */
+
+.wp-customizer {
+    --accent-color: #2271B1; /* #2271B1 */
+    --hover-state: #1a5b90; /* #2271B1 */
+    --active-state: var(--accent-color); /* #2271B1 */
+    --focus-state: #00000012; /* #2271B1 */
+    --bg-color: #ffffff;
+    --text-color: #161422;
+    --meta-color: #16142283;
+    --border-color: #00000035;
+    --shadow-color: #0000002b;
+}
+
+/* General */
+.wp-customizer.wp-core-ui .button-primary:disabled {
+    color: var(--meta-color) !important;
+}
+.wp-customizer.wp-core-ui .button-primary {
+    color: white !important;
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+.wp-customizer.wp-core-ui .button-primary:hover {
+    background: var(--hover-state);
+    border-color: var(--hover-state);
+}
+
+.wp-customizer.wp-core-ui .button,
+.wp-customizer.wp-core-ui .button-secondary {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.wp-customizer #publish-settings {
+    border-left: 1px solid #cbcbcb3d;
+}
+
+/* Tabs */
+.wp-customizer .customize-control-kirki-tab {
+    width: calc(100% + 32px);
+    margin-top: -15px;
+    margin-bottom: 8px;
+    left: -16px;
+}
+.wp-customizer .customize-control-kirki-tab .kirki-tab {
+    background: #fff;
+    padding: 0;
+}
+.wp-customizer .customize-control-kirki-tab .kirki-tab .kirki-tab-menu {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.wp-customizer .customize-control-kirki-tab .kirki-tab .kirki-tab-menu-item a {
+    height: 44px;
+    color: var(--meta-color);
+}
+.wp-customizer .customize-control-kirki-tab .kirki-tab .kirki-tab-menu-item.is-active a {
+    color: var(--active-color);
+}
+
+/* Controls Styling */
+.wp-customizer .kirki-react-select__control.kirki-react-select__control--is-focused {
+    border-color: var(--active-state);
+    box-shadow: var(--active-state) 0px 0px 0px 1px;
+}
+
+.wp-customizer .kirki-react-select__option.kirki-react-select__option--is-focused {
+    background-color: var(--focus-state);
+}
+
+.wp-customizer .kirki-react-select__option.kirki-react-select__option--is-selected {
+    background: var(--active-state);
+}
+
+.wp-customizer .wp-full-overlay-sidebar {
+    width: 350px !important;
+}
+.wp-customizer .wp-full-overlay.expanded {
+    margin-left: 350px !important;
+}
+.wp-customizer .wp-full-overlay.collapsed .wp-full-overlay-sidebar {
+    margin-left: -350px !important;
+}
+
+.wp-customizer .customize-control-kirki-generic[id*="responsive"] {
+    margin: 0 !important;
+}
+
+.wp-customizer  h3.kirki-custom-title {
+    margin-bottom: -8px;
+    font-size: 11.5px !important;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.wp-customizer label > h3.customize-section-title {
+    padding: 0.25rem 0 0;
+    margin-top: 1rem;
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    background: none !important;
+    border-bottom: 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.wp-customizer .customize-control-label .customize-control-title,
+.wp-customizer .kirki-control-label .customize-control-title,
+.wp-customizer .customize-control-title {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 11.5px;
+    margin-bottom: 0.25rem;
+}
+
+.wp-customizer span.customize-control-title,
+.wp-customizer .customize-control-description,
+.wp-customizer .customize-control-description > p{
+    font-size: 11.5px;
+}
+
+.wp-customizer .customize-control-description > p{
+    margin-bottom: 0;
+}
+
+.wp-customizer .customize-control-description:not(.description) {
+    opacity: .75;
+}
+
+.wp-customizer .kirki-tooltip-wrapper .tooltip-trigger > * {
+    display: inline-flex;
+    height: 5px !important;
+    width: 5px !important;
+    background-color: var(--accent-color) !important;
+    border-radius: 100%;
+    margin-top: 4px;
+}
+
+.wp-customizer .kirki-tooltip-wrapper .tooltip-trigger > *::before {
+    content: '' !important;
+}
+
+.wp-customizer .kirki-tooltip-wrapper .tooltip-content {
+    background: var(--bg-color);
+    color: var(--text-color);
+    bottom: 24px !important;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: italic;
+    letter-spacing: initial;
+    text-transform: initial;
+    line-height: 1rem;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px -1px var(--shadow-color);
+    transition: all .1slinear;
+}
+
+.wp-customizer .customize-control-notifications-container {
+    margin: 0 !important;
+}
+
+.wp-customizer .customize-control-kirki-input-slider .kirki-control-cols {
+    top: -4px;
+    position: relative;
+}
+
+.wp-customizer code, .wp-customizer kbd {
+    font-size: 10px !important;
+}
+#customize-controls .control-section .accordion-section-title button:focus,
+#customize-controls .control-section .accordion-section-title button:hover {
+    background: unset !important;
+    border-color: unset !important;
+    box-shadow: unset !important;
+    color: var(--active-state);
+}
+
+#customize-controls .control-section .accordion-section-title button:focus,
+#customize-controls .control-section .accordion-section-title button:hover,
+#customize-controls .control-section.open .accordion-section-title,
+#customize-controls .control-section:hover>.accordion-section-title,
+.customize-panel-back:focus, .customize-panel-back:hover, .customize-section-back:focus, .customize-section-back:hover {
+    color: var(--active-state);
+    border-left-color: var(--active-state);
+}
+
+#customize-outer-theme-controls .control-section .accordion-section-title:focus:after, #customize-outer-theme-controls .control-section .accordion-section-title:hover:after, #customize-outer-theme-controls .control-section.open .accordion-section-title:after, #customize-outer-theme-controls .control-section:hover>.accordion-section-title:after, #customize-theme-controls .control-section .accordion-section-title:focus:after, #customize-theme-controls .control-section .accordion-section-title:hover:after, #customize-theme-controls .control-section.open .accordion-section-title:after, #customize-theme-controls .control-section:hover>.accordion-section-title:after {
+    color: var(--active-state);
+}
+
+.wp-full-overlay-footer .devices button.active:hover, .wp-full-overlay-footer .devices button:focus {
+    border-bottom-color: var(--active-state);
+}
+
+.wp-customizer a,
+#customize-controls .customize-info .customize-help-toggle:focus,
+#customize-controls .customize-info .customize-help-toggle:hover,
+#customize-controls .customize-info.open .customize-help-toggle,
+.wp-full-overlay-footer .devices button:focus:before,
+.wp-full-overlay-footer .devices button:hover:before,
+.wp-core-ui .wp-full-overlay .collapse-sidebar:focus,
+.wp-core-ui .wp-full-overlay .collapse-sidebar:hover {
+    color: var(--active-state);
+}
+
+#available-menu-items .item-add:focus:before, #customize-controls .customize-info .customize-help-toggle:focus:before, .customize-screen-options-toggle:focus:before, .menu-delete:focus, .menu-item-bar .item-delete:focus:before, .wp-customizer .menu-item .submitbox .submitdelete:focus, .wp-customizer button:focus .toggle-indicator:before,
+.wp-full-overlay .collapse-sidebar:focus .collapse-sidebar-arrow, .wp-full-overlay .collapse-sidebar:hover .collapse-sidebar-arrow {
+    box-shadow: 0 0 0 2px var(--active-state);
+}
+
+#customize-controls .control-section .accordion-section-title button {
+    font-weight: 500;
+}
+
+.wp-customizer .customize-control {
+    line-height: 1;
+    margin-bottom: 16px;
+}
+.wp-customizer .customize-control.control-inline,
+.wp-customizer .customize-control.control-inline:not(.customize-control-kirki-generic) > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.wp-customizer .control-inline .customize-control-title {
+    padding-right: 15px;
+    margin: 4px 0 0;
+}
+
+.customize-control input[type=email], .customize-control input[type=number], .customize-control input[type=password], .customize-control input[type=range], .customize-control input[type=search], .customize-control input[type=tel], .customize-control input[type=text], .customize-control input[type=url] {
+    border: 1px solid var(--border-color);
+}
+
+input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
+    border-color: var(--active-state);
+    box-shadow: 0 0 0 1px var(--active-state);
+}
+
+/* Responsive */
+.wp-customizer .kirki-responsive .kirki-device-buttons {
+    top: 0;
+}
+.wp-customizer .kirki-responsive .kirki-device-button.is-active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* Custom Heading Control */
+.wp-customizer .customize-control-kirki .customize-control-kirki-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+}
+.wp-customizer .customize-control-kirki .customize-control-kirki-heading.top {
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+}
+.wp-customizer .customize-control-kirki .customize-control-kirki-heading.bottom {
+    margin-top: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+.wp-customizer .customize-control-kirki .customize-control-kirki-heading .heading {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.1px;
+    opacity: .6;
+}
+.wp-customizer .customize-control-kirki .customize-control-kirki-heading .description {
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.4;
+    margin-top: 8px;
+    opacity: .75;
+}
+
+/* Radio ButtonSet Control */
+.wp-customizer .customize-control-kirki-radio-buttonset .buttonset {
+    display: flex;
+    gap: 3px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 3px;
+    box-shadow: 0 1px 3px -1px var(--shadow-color);
+}
+.wp-customizer .customize-control-kirki-radio-buttonset .buttonset .switch-label {
+    border-radius: 2px;
+    cursor: pointer;
+}
+.wp-customizer .customize-control-kirki-radio-buttonset .buttonset .switch-input:checked+.switch-label {
+    background-color: var(--accent-color);
+}
+
+
+/* Radio Image Control */
+.wp-customizer .customize-control-kirki-radio-image input:checked+label:not(.customizer-text) img {
+    border: 0;
+    box-shadow: unset;
+}
+
+.wp-customizer .customize-control-kirki-radio-image > .image {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wp-customizer .customize-control-kirki-radio-image.control-inline > .image {
+    min-width: 180px;
+}
+
+.wp-customizer .customize-control-kirki-radio-image label:not(.customizer-text) {
+    position: relative;
+    display: inline-block;
+    width: calc(32.92% - 4px);
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+}
+
+.wp-customizer .customize-control-kirki-radio-image.control-inline label:not(.customizer-text) {
+    width: calc(50% - 4px);
+}
+
+.wp-customizer .customize-control-kirki-radio-image label:not(.customizer-text):hover {
+    border-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.wp-customizer .customize-control-kirki-radio-image input:checked + label:not(.customizer-text) {
+    border-color: var(--accent-color);
+}
+
+.wp-customizer .customize-control-kirki-radio-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+.wp-customizer .customize-control-kirki-radio-image .image-clickable {
+    position: absolute;
+    inset: 0;
+}
+
+/* Background Control */
+.wp-customizer .customize-control-kirki-background .background-wrapper {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+/* Color Palette Control */
+.wp-customizer .customize-control-kirki-color-palette .colors-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.wp-customizer .customize-control-kirki-color-palette .color-palette-color {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px var(--shadow-color);
+}
+
+/* Switcher Control */
+.wp-customizer .customize-control-kirki-switch .kirki-switch .customize-control-title{
+    margin: 1px 0 0;
+}
+
+.wp-customizer .customize-control-kirki-toggle .kirki-toggle {
+ align-items: center !important;
+}
+
+.wp-customizer .customize-control-kirki-switch .kirki-switch .kirki-toggle-switch-label {
+    padding: 10px 30px 12px 0;
+    text-align: right;
+}
+
+.wp-customizer .kirki-toggle-switch-label::before {
+    border: 0;
+    width: 30px;
+    height: 16px;
+    left: auto !important;
+    right: 0;
+}
+
+.wp-customizer .kirki-toggle-switch-label::after {
+    background-color: #fff;
+    border: 0;
+    width: 12px;
+    height: 12px;
+    left: auto !important;
+    right: 4px;
+    transform: translate(-100%, -50%);
+}
+
+.wp-customizer .kirki-toggle-switch-input:checked+.kirki-toggle-switch-label:before {
+    background-color: var(--accent-color);
+}
+
+.wp-customizer .kirki-toggle-switch-input:checked+.kirki-toggle-switch-label:after {
+    background-color: white;
+    transform: translate(calc(100% - 10px), -50%);
+}
+
+.wp-customizer .customize-control-kirki-switch .kirki-switch .toggle-off,
+.wp-customizer .customize-control-kirki-switch .kirki-switch .toggle-on {
+    bottom: -1px;
+    padding-left: 0;
+    margin-right: -5px;
+    display: none !important;
+}
+
+.wp-customizer .customize-control-kirki-switch.control-inline .kirki-switch {
+    flex-direction: row-reverse;
+    justify-content: start !important;
+}
+
+.wp-customizer .customize-control-kirki-switch.control-inline .kirki-switch .kirki-control-label {
+    padding-left: 12px !important;
+}
+
+/* Typography Control */
+.wp-customizer .customize-control-kirki-typography {
+    margin: 4px 0;
+}
+.wp-customizer .customize-control-kirki[data-kirki-parent-control-type=kirki-typography] .customize-control-title {
+    display: none;
+}
+
+.wp-customizer .customize-control-kirki-react-select:not([data-kirki-parent-control-type="kirki-typography"]) .kirki-react-select-container {
+    min-width: 180px;
+}
+
+.wp-customizer .customize-control-kirki-typography-popup[data-kirki-setting*="h1_typography"] .typography-option-group.font-family,
+.wp-customizer .customize-control-kirki-typography-popup[data-kirki-setting*="h2_typography"] .typography-option-group.font-family,
+.wp-customizer .customize-control-kirki-typography-popup[data-kirki-setting*="h3_typography"] .typography-option-group.font-family,
+.wp-customizer .customize-control-kirki-typography-popup[data-kirki-setting*="h4_typography"] .typography-option-group.font-family,
+.wp-customizer .customize-control-kirki-typography-popup[data-kirki-setting*="h5_typography"] .typography-option-group.font-family,
+.wp-customizer .customize-control-kirki-typography-popup[data-kirki-setting*="h6_typography"] .typography-option-group.font-family {
+    display: none !important;
+}
+
+.wp-customizer .customize-control-kirki-typography-popup[data-kirki-setting*="heading_text_typography"] .typography-option-group.font-size {
+    display: none !important;
+}
+
+.wp-customizer .customize-control-kirki .kirki-control-input {
+    font-size: 13px !important;
+    min-height: 30px !important;
+    padding: 0px 6px !important;
+}
+
+li#customize-control-polysaas_body_typography,
+li#customize-control-polysaas_heading_typography {
+    margin-top: -8px;
+    height: 0;
+}
+
+li#customize-control-polysaas_heading_h1 {
+    margin-top: -8px;
+}
+
+/* Divider Control */
+.wp-customizer .customize-control.customize-control.customize-control-kirki.customize-control-kirki-divider {
+    margin: 8px 0 18px;
+}
+
+/* Select Control */
+.wp-customizer .customize-control-kirki-select select {
+    width: 100%;
+    max-width: none;
+}
+
+
+.wp-customizer .customize-control.customize-control-kirki-headline-toggle .kirki-control-form {
+    width: 50px !important;
+    position: relative;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-headline-toggle .kirki-control-form label.kirki-toggle-switch-label {
+    width: 30px;
+    height: 16px;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-headline-toggle .kirki-control-form label.kirki-toggle-switch-label::after {
+    right: 0 !important;
+    transform: translate(-135%, -50%);
+}
+
+.wp-customizer .customize-control.customize-control-kirki-headline-toggle label.kirki-toggle-switch-label::after {
+    right: 0 !important;
+    transform: translate(-15%, -50%);
+}
+
+.wp-customizer .customize-control.customize-control-kirki-headline-toggle .kirki-toggle-switch-input:checked+.kirki-toggle-switch-label:after {
+    background-color: white;
+    transform: translate(calc(100% - 14px), -50%) !important;
+}
+
+/* Custom Headlines for Sections */
+#accordion-panel-polysaas_theme_options::before,
+#accordion-panel-nav_menus::before {
+    content: "Theme Settings";
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+#accordion-panel-nav_menus::before {
+    content: "WordPress Options";
+}
+
+/* Custom Import/Export */
+.wp-customizer input[type="button"][name="kirki-export-button"] {
+    margin-top: 8px;
+}
+
+.wp-customizer input[type="button"][name="kirki-export-button"],
+.wp-customizer input[type="button"][name="kirki-import-button"],
+.wp-customizer input[type="button"][name="kirki-reset-button"] {
+    width: 100%;
+}
+
+.wp-customizer input[type="file"][name="kirki-import-file"] {
+    width: 100%;
+    font-size: 11.5px;
+    border: 1px dashed var(--border-color);
+    padding: 8px;
+    border-radius: 2px;
+}
+
+/* Custom Icons for Sections */
+.wp-customizer #customize-outer-theme-controls .accordion-section-title .accordion-trigger:before,
+.wp-customizer #customize-theme-controls .accordion-section-title .accordion-trigger:before {
+    content: "\eaa8";
+    font-family: "Unicons" !important;
+    color: var(--meta-color);
+    margin: 0;
+    margin-right: 8px;
+    vertical-align: middle;
+    font-size: 18px;
+    font-weight: 500;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 1px;
+    -webkit-font-smoothing: antialiased;
+}
+.wp-customizer #accordion-panel-polysaas_theme_options .accordion-section-title .accordion-trigger:before {
+    content: "\e970";
+}
+.wp-customizer #accordion-panel-polysaas_header_options .accordion-section-title .accordion-trigger:before {
+    content: "\ea44";
+}
+.wp-customizer #accordion-section-polysaas_header_general .accordion-section-title .accordion-trigger:before {
+    content: "\eaa7";
+}
+.wp-customizer #accordion-section-title_tagline .accordion-section-title .accordion-trigger:before {
+    content: "\ea08";
+}
+.wp-customizer #accordion-panel-polysaas_footer_options .accordion-section-title .accordion-trigger:before {
+    content: "\ea44";
+    transform: rotate(180deg);
+}
+.wp-customizer #accordion-section-polysaas_footer_general .accordion-section-title .accordion-trigger:before {
+    content: "\eaa7";
+}
+.wp-customizer #accordion-section-polysaas_footer_copyrights .accordion-section-title .accordion-trigger:before {
+    content: "\ead1";
+}
+.wp-customizer #accordion-section-polysaas_global_colors_fonts .accordion-section-title .accordion-trigger:before {
+    content: "\e954";
+}
+.wp-customizer #accordion-section-polysaas_site_typography .accordion-section-title .accordion-trigger:before {
+    content: "\ead6";
+}
+.wp-customizer #accordion-section-polysaas_blog_posts .accordion-section-title .accordion-trigger:before {
+    content: "\e91a";
+}
+.wp-customizer #accordion-section-polysaas_blog_archive .accordion-section-title .accordion-trigger:before {
+    content: "\e91b";
+}
+.wp-customizer #accordion-section-polysaas_global_sections .accordion-section-title .accordion-trigger:before {
+    content: "\eb03";
+}
+.wp-customizer #accordion-section-polysaas_archive_layout .accordion-section-title .accordion-trigger:before {
+    content: "\e91e";
+}
+.wp-customizer #accordion-panel-nav_menus .accordion-section-title .accordion-trigger:before {
+    content: "\e9f8";
+}
+.wp-customizer #accordion-panel-widgets .accordion-section-title .accordion-trigger:before {
+    content: "\e9c3";
+}
+.wp-customizer #accordion-section-static_front_page .accordion-section-title .accordion-trigger:before {
+    content: "\e9d0";
+}
+.wp-customizer #accordion-section-custom_css .accordion-section-title .accordion-trigger:before {
+    content: "\ead2";
+}
+.wp-customizer #accordion-section-polysaas_import_export .accordion-section-title .accordion-trigger:before {
+    content: "\e957";
+}
+.wp-customizer #accordion-section-polysaas_miscellaneous .accordion-section-title .accordion-trigger:before {
+    content: "\e92c";
+}
+.wp-customizer #accordion-section-polysaas_woocommerce .accordion-section-title .accordion-trigger:before {
+    content: "\eac2";
+}
+
+
+.wp-customizer .customize-control-kirki-notice {
+    margin: 0 -12px;
+    padding: 8px 12px;
+}
+
+.wp-customizer .customize-control-kirki-notice .notice {
+    margin: 0;
+    padding: 8px 12px;
+    border-left: 4px solid #72aee6;
+    background: #f0f6fc;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.wp-customizer .customize-control-kirki-notice .notice p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.wp-customizer .customize-control-kirki-notice .notice.notice-warning {
+    border-left-color: #dba617;
+    background: #fff8e5;
+}
+
+.wp-customizer .customize-control-kirki-notice .notice.notice-error {
+    border-left-color: #d63638;
+    background: #fdf8f8;
+}
+
+
+.wp-customizer .customize-control-kirki-sortable ul.ui-sortable li {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.wp-customizer .kirki-sortable-item.ui-sortable-handle .dashicons-visibility {
+    font-size: 16px;
+}
+
+
+#customize-control-polysaas_primary_font-variant,
+#customize-control-polysaas_secondary_font-variant {
+    display: none !important;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-dimensions {
+    margin-bottom: 4px;
+}
+
+/* Basic slider styling */
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-form {
+    margin: 0;
+}
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    width: 100%;
+    background: #0000001a;
+    border: 0;
+    border-radius: 4px;
+    margin: 12px 0;
+}
+
+/* Slider handle (thumb) */
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--e-global-color-primary, #0073aa);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border: 1px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--e-global-color-primary, #0073aa);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+}
+
+/* Hover state for slider thumb */
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider::-webkit-slider-thumb:hover {
+    background: var(--e-global-color-secondary, #2271b1);
+}
+
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider::-moz-range-thumb:hover {
+    background: var(--e-global-color-secondary, #2271b1);
+}
+
+/* Active/focus state */
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider:focus {
+    background: #d0d0d0;
+}
+
+/* Track fill effect (optional) */
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider::-webkit-slider-runnable-track {
+    background-color: transparent;
+    height: 6px;
+    border-radius: 4px;
+}
+
+/* Style the container for better layout */
+.customize-control-kirki-slider .customize-control-content {
+    padding-bottom: 10px;
+}
+
+/* Style the value display */
+.wp-customizer .customize-control.customize-control-kirki-slider .kirki-control-slider-value {
+    display: inline-block;
+    padding: 2px 5px;
+    background: #f7f7f7;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-size: 12px;
+    min-width: 30px;
+    text-align: center;
+}

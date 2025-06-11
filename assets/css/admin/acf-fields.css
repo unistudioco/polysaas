@@ -1,0 +1,43 @@
+.acf-postbox .acf-fields.-top > .acf-field {
+    display: flex;
+    gap: 80px;
+}
+
+.acf-postbox .acf-fields.-top > .acf-field .acf-label {
+    flex-basis: 15%;
+}
+
+.acf-postbox .acf-fields.-top > .acf-field .acf-input {
+    flex: 1;
+}
+
+.acf-postbox .acf-fields.-top > .acf-field .acf-input .description {
+    margin-top: 8px;
+}
+
+.acf-postbox .acf-fields .acf-field-global-section-type .acf-button-group label {
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.acf-postbox .acf-fields .acf-field-global-section-type .acf-button-group label .icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.acf-postbox .acf-fields .acf-field-global-section-type .acf-button-group label.selected {
+    box-shadow: 0 0 0 4px #007cba3b;
+}
+
+.acf-postbox .acf-fields .acf-field.acf-field-message.section-type-message {
+    padding-top: 0 !important;
+}
+
+.acf-postbox .acf-fields .acf-field.acf-field-button-group.acf-field-global-section-type {
+    padding-bottom: 0;
+}

@@ -1,0 +1,69 @@
+// Custom Prefix
+$prefix: uc-;
+$enable-rfs: false;
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '../node_modules/bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+@import '../node_modules/bootstrap/scss/variables';
+
+// 3. Import config files
+@import 'theme/common/config';
+
+// 4. Import custom user files
+@import 'theme/custom/user-init';
+@import 'theme/custom/user-config';
+
+// 5. Include bootstrap maps, mixins
+@import '../node_modules/bootstrap/scss/maps';
+@import '../node_modules/bootstrap/scss/mixins';
+@import 'core-bs/bootstrap/mixins';  
+
+// 6. Custom helpers and prefixed root
+@import 'core-bs/helpers/import';
+@import '../node_modules/bootstrap/scss/root';
+@import '../node_modules/bootstrap/scss/utilities';
+
+// 7. Optionally uncomment any other parts as needed
+@import 'core-bs/bootstrap/reboot';
+// @import 'core-bs/bootstrap/type';
+@import '../node_modules/bootstrap/scss/images';
+@import '../node_modules/bootstrap/scss/containers';
+@import 'core-bs/bootstrap/grid';
+@import '../node_modules/bootstrap/scss/helpers';
+@import '../node_modules/bootstrap/scss/buttons';
+// @import '../node_modules/bootstrap/scss/accordion';
+// @import '../node_modules/bootstrap/scss/tables';
+@import '../node_modules/bootstrap/scss/forms';
+@import '../node_modules/bootstrap/scss/transitions';
+// @import '../node_modules/bootstrap/scss/dropdown';
+// @import '../node_modules/bootstrap/scss/button-group';
+@import '../node_modules/bootstrap/scss/nav';
+@import '../node_modules/bootstrap/scss/navbar';
+// @import '../node_modules/bootstrap/scss/card';
+// @import '../node_modules/bootstrap/scss/breadcrumb';
+// @import '../node_modules/bootstrap/scss/pagination';
+// @import '../node_modules/bootstrap/scss/badge';
+// @import '../node_modules/bootstrap/scss/alert';
+// @import '../node_modules/bootstrap/scss/progress';
+// @import '../node_modules/bootstrap/scss/list-group';
+// @import '../node_modules/bootstrap/scss/close';
+// @import '../node_modules/bootstrap/scss/toasts';
+// @import '../node_modules/bootstrap/scss/modal';
+// @import '../node_modules/bootstrap/scss/tooltip';
+// @import '../node_modules/bootstrap/scss/popover';
+// @import '../node_modules/bootstrap/scss/carousel';
+// @import '../node_modules/bootstrap/scss/spinners';
+// @import '../node_modules/bootstrap/scss/offcanvas';
+// @import '../node_modules/bootstrap/scss/placeholders';
+
+// Import our custom extended utilities
+@import 'core-bs/utilities';
+
+// Import our framework/core api
+@import '../node_modules/bootstrap/scss/utilities/api';
+
+// Import custom components
+@import 'core-bs/bootstrap/import';
+@import 'core-bs/components/import';

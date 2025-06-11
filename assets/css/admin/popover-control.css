@@ -1,0 +1,160 @@
+.rey-cstTypo-wrapper {
+    position: relative;
+}
+.rey-cstTypo-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0px 8px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    min-height: 32px;
+    width: 100%;
+}
+
+.rey-cstTypo-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.rey-cstTypo-text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Add this to load Google Fonts */
+.rey-cstTypo-text[style*="font-family"] {
+    font-size: 12px;
+}
+
+.typography-wrapper {
+    position: absolute;
+    left: calc(100% + 10px); /* Position to the right of the button */
+    top: 0;
+    width: 325px;
+    margin-top: 48px;
+    padding: 8px 12px;
+    padding-right: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999999;
+    display: none;
+}
+
+.typography-wrapper.active {
+    display: block;
+}
+
+.typography-wrapper:before {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: -6px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    transform: rotate(315deg);
+}
+
+.typography-wrapper h5 {
+    margin: 0 0 5px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.typography-wrapper > div {
+    width: calc(100% - 10px);
+    margin-bottom: 8px;
+}
+
+.typography-wrapper > div.variant, .typography-wrapper > div.font-size, .typography-wrapper > div.line-height, .typography-wrapper > div.letter-spacing, .typography-wrapper > div.text-transform, .typography-wrapper > div.color {
+    width: calc(50% - 10px);
+    float: left;
+    margin-right: 10px;
+}
+
+.typography-wrapper > div:last-child {
+    margin-bottom: 0;
+}
+
+.typography-wrapper select,
+.typography-wrapper input[type="text"] {
+    width: 100%;
+}
+
+.typography-wrapper .wp-picker-container {
+    width: 100%;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1640px) {
+    .typography-wrapper {
+        right: 0;
+        left: auto;
+    }
+
+    .typography-wrapper:before {
+        left: auto;
+        right: 16px;
+        border: none;
+        border-right: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+    }
+}
+
+/* Ensure proper stacking context */
+.customize-control {
+    position: relative;
+}
+
+.typography-wrapper {
+    position: absolute;
+    z-index: 999999;
+}
+
+/* Accessibility improvements for Select2 */
+.select2-container {
+    z-index: 999999;
+}
+
+.select2-selection--accessible {
+    outline: none !important;
+}
+
+.select2-selection--accessible:focus {
+    border-color: #2271b1 !important;
+    box-shadow: 0 0 0 1px #2271b1 !important;
+}
+
+.select2-dropdown--accessible {
+    z-index: 999999;
+}
+
+.select2-container--default .select2-selection--single {
+    min-height: 30px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 28px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 28px;
+}
+
+/* Fix for focus management */
+.select2-search__field:focus {
+    outline: none !important;
+    border-color: #2271b1 !important;
+    box-shadow: 0 0 0 1px #2271b1 !important;
+}

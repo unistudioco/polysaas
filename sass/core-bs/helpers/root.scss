@@ -1,0 +1,15 @@
+:root,
+[data-bs-theme="light"] {
+    --#{$prefix}headings-font-family: var(--#{$prefix}font-secondary, var(--#{$prefix}font-sans-serif));
+    --#{$prefix}headings-font-weight: 700;
+    --#{$prefix}headings-line-height: 1.1;
+    --#{$prefix}display-font-family: var(--#{$prefix}font-secondary, var(--#{$prefix}font-sans-serif));
+    --#{$prefix}display-font-weight: 700;
+    --#{$prefix}display-line-height: 0.9;
+}
+
+@if $enable-dark-mode {
+    @include color-mode(dark, true) {
+      color-scheme: dark;
+    }
+}

@@ -1,0 +1,26 @@
+.uc-notification-message {
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: var(--uc-gray-100);
+    color: var(--uc-gray-900);
+    border-radius: var(--radius);
+    &.uc-notification-message{
+        &-success {
+            color: var(--color-success);
+        }
+        &-danger {
+            color: var(--color-danger);
+        }
+        &-warning {
+            color: var(--color-warning);
+        }
+    }
+    .uc-notification-close {
+        color: var(--uc-gray-900);
+        svg,
+        svg > * {
+            fill: currentColor !important;
+            stroke: currentColor !important;
+        }
+    }
+}

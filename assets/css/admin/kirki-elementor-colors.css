@@ -1,0 +1,44 @@
+.elementor-global-colors-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.elementor-global-color-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.elementor-global-color-item:hover,
+.elementor-global-color-item.active {
+    background-color: #f0f0f0;
+    border-color: #0073aa;
+}
+
+.color-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.color-title {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.color-value {
+    font-size: 11px;
+    color: #666;
+    opacity: 0.8;
+    margin-left: 5px;
+}

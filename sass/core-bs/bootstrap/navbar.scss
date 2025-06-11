@@ -1,0 +1,157 @@
+.uc-navbar {
+    z-index: 1;
+    .uc-navbar-left,
+    .uc-navbar-right,
+    [class*=uc-navbar-center] {
+        gap: 1.5rem;
+    }
+    &-nav {
+        > li {
+            > a {
+                position: relative;
+                font-size: inherit;
+                font-family: inherit;
+                color: inherit;
+                padding: 0;
+            }
+            &.uc-active > a::before {
+                opacity: 1;
+            }
+            &:hover>a,
+            &>a[aria-expanded=true] {
+                color: inherit;
+                opacity: .75;
+            }
+        }
+    }
+    &-dropdown {
+        background-color: white;
+        color: inherit;
+        min-width: 250px;
+        padding: 0;
+        box-shadow: 0 4px 16px -8px rgb(0 0 0 / 20%);
+        border-radius: var(--radius);
+        &-nav {
+            > li {
+                > a {
+                    font-size: .875rem;
+                    font-weight: var(--font-weight-medium);
+                    color: inherit;
+                }
+                &:hover > a {
+                    color: inherit;
+                }
+            }
+            > li.uc-active > a,
+            .uc-nav-header {
+                color: inherit;
+            }
+            .uc-nav-header {
+                text-transform: capitalize;
+                font-weight: var(--font-weight-bold);
+                font-size: 1rem;
+            }
+            .uc-nav-divider {
+                border-color: inherit;
+                opacity: .15;
+            }
+        }
+        &-stack .uc-navbar-dropdown-grid>*{width:100%!important}
+        &-width-2:not(.uc-navbar-dropdown-stack){width:500px}
+        &-width-3:not(.uc-navbar-dropdown-stack){width:750px}
+        &-width-4:not(.uc-navbar-dropdown-stack){width:1000px}
+        &-width-5:not(.uc-navbar-dropdown-stack){width:1250px}
+    }
+    &-container {
+        transition: .1s ease-in-out;
+        transition-property: background-color;
+        &:not(.uc-navbar-transparent) { 
+            background-color: inherit;
+        }
+    }
+    .uc-navbar-item {
+        font-family: inherit !important;
+    }
+    &-item,
+    &-nav>li>a,
+    &-toggle {
+        font-family: inherit !important;
+        padding: 0;
+        min-height: var(--uc-nav-height, 48px) !important;
+    }
+    &-float {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+.uc-navbar-switcher-nav {
+    li > a {
+        font-size: .875rem;
+        text-decoration: none;
+        &:hover {
+            color: inherit;
+            opacity: 1;
+        }
+    }
+}
+.uc-nav.uc-navbar-sub {
+    position: absolute;
+    top: calc(0px - 1rem);
+    left: 100%;
+    padding: 0;
+    min-width: 250px;
+    background: white;
+    color: inherit;
+    box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 250ms ease 250ms;
+}
+.uc-nav.uc-navbar-dropdown-nav {
+    padding: 1rem 0;
+    >li {
+        >a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            transition: all 250ms ease;
+        }
+        &:hover>a {
+            background-color: #f5f5f5;
+        }
+        &.uc-parent {
+            position: relative;
+            > a:after {
+                content: "\e942";
+                font-family: "Unicons";
+                transition: all 250ms ease;
+            }
+            &:hover {
+                > .uc-navbar-sub {
+                    visibility: visible;
+                    opacity: 1;
+                    transition: all 250ms ease 0s;
+                }
+                > a:after {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
+
+// RTL
+html[dir=rtl] {
+    .uc-navbar-right{
+        margin-left: unset;
+        margin-right: auto;
+    }
+    .uc-navbar-left{
+        margin-right: unset;
+        margin-left: auto;
+    }
+}

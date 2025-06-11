@@ -1,0 +1,237 @@
+/* Control container */
+.wp-customizer .customize-control.customize-control-kirki-color-elementor {
+    margin-bottom: 12px;
+    padding-bottom: 0;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-color-elementor.picker-active {
+    z-index: 1;
+}
+
+/* General control structure */
+.rey-control-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 30px;
+}
+
+.rey-control-wrap .customize-control-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.rey-control-title {
+    margin: 0;
+}
+
+/* Color picker styling */
+.rey-color-control {
+    max-width: 100%;
+}
+
+/* Global colors button */
+.rey-colorGlobal {
+    position: absolute;
+    top: 5px;
+    right: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 1px #00000030;
+}
+
+.rey-colorGlobal:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.rey-colorGlobal .dashicons {
+    font-size: 16px !important;
+    width: 14px !important;
+    height: 14px !important;
+    color: #555;
+}
+
+/* Global colors popup */
+.rey-colorGlobal-pop {
+    position: absolute;
+    display: none;
+    top: 36px;
+    right: 0;
+    width: 325px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+    z-index: 2;
+    user-select: none;
+}
+
+.rey-colorGlobal-popClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #777;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.rey-colorGlobal-popClose svg {
+    width: 12px;
+    height: 12px;
+}
+
+.rey-colorGlobal-pop h3 {
+    margin: 0 0 15px;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.rey-colorGlobal-pop .__list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.rey-colorGlobal-pop .__item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 4px 16px 4px 4px;
+    border-radius: 32px;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    transition: all 0.2s ease;
+}
+
+.rey-colorGlobal-pop .__item:hover {
+    border-color: #bcbcbc;
+}
+
+.rey-colorGlobal-pop .__item.active {
+    background-color: #eaf3fa;
+    border-color: #8b9296;
+}
+
+.rey-colorGlobal-pop .__color {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.rey-colorGlobal-pop .__title {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.rey-colorGlobal-pop .__hex {
+    font-size: 11px;
+    color: #666;
+    opacity: 0.8;
+}
+
+.rey-colorGlobal-pop .__tip {
+    font-size: 11px;
+    color: #666;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.rey-colorGlobal-pop .__tip a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+/* Fix positioning of the color picker */
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .wp-picker-container {
+    position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .wp-picker-container .wp-color-result.button {
+    margin-right: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    width: 40px;
+    height: 30px;
+    min-height: auto;
+    border: none;
+    box-shadow: inset 0 0 0 1px #00000030, inset 0 0 0 5px #fff;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .wp-picker-container.wp-picker-active {
+    position: absolute;
+    background: #fff;
+    padding: 10px;
+    right: 0;
+    top: 0;
+    border: 1px solid rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    min-width: 260px;
+    z-index: 3;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .wp-color-result-text {
+    display: none;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .wp-color-result {
+    margin-bottom: 0;
+}
+
+/* Active state for global button */
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .rey-colorGlobal.active .dashicons,
+.wp-customizer .customize-control.customize-control-kirki-color-elementor [data-using-global-color="true"] .wp-color-result {
+    color: #da85e8;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .wp-picker-container input[type=text].wp-color-picker {
+    font-size: 13px;
+    margin-left: 3px;
+    min-height: 30px;
+    height: 30px !important;
+}
+
+.wp-customizer .customize-control.customize-control-kirki-color-elementor .wp-picker-input-wrap .button.wp-picker-clear {
+    height: 28px !important;
+    min-height: 28px !important;
+    line-height: 1 !important;
+    font-size: 12px !important;
+}
+
+@media (min-width: 782px) {
+    .rey-colorGlobal-pop .__list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

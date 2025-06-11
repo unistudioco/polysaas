@@ -1,0 +1,33 @@
+/* Import: Graphik */
+@font-face {
+    font-family: "Graphik";
+    src: local("Graphik Regular"),
+         url('../fonts/graphik/Graphik-Regular.woff2'),
+         url('../fonts/graphik/Graphik-Regular.woff');
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: "Graphik";
+    src: local("Graphik Medium"),
+         url('../fonts/graphik/Graphik-Medium.woff2'),
+         url('../fonts/graphik/Graphik-Medium.woff');
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+    ascent-override: 100%;
+}
+
+@font-face {
+    font-family: "Graphik";
+    src: local("Graphik Semibold"),
+         url('../fonts/graphik/Graphik-Semibold.woff2'),
+         url('../fonts/graphik/Graphik-Semibold.woff');
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+    font-display: swap;
+    ascent-override: 100%;
+}
