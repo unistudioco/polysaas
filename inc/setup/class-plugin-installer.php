@@ -31,6 +31,7 @@ class Plugin_Installer {
     private function set_plugins() {
         $this->plugins = array(
             'elementor' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/elementor.gif',
                 'name' => 'Elementor',
                 'slug' => 'elementor',
                 'source' => 'repo', // 'repo' for WordPress.org, 'external' for external source
@@ -38,23 +39,8 @@ class Plugin_Installer {
                 'required' => true,
                 'description' => 'Page builder for creating beautiful layouts.'
             ),
-            'woocommerce' => array(
-                'name' => 'WooCommerce',
-                'slug' => 'woocommerce',
-                'source' => 'repo',
-                'file_path' => 'woocommerce/woocommerce.php',
-                'required' => false,
-                'description' => 'Complete eCommerce solution for WordPress.'
-            ),
-            'contact-form-7' => array(
-                'name' => 'Contact Form 7',
-                'slug' => 'contact-form-7',
-                'source' => 'repo',
-                'file_path' => 'contact-form-7/wp-contact-form-7.php',
-                'required' => true,
-                'description' => 'Simple contact form plugin.'
-            ),
             'unistudio-core' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/unistudio-core.svg',
                 'name' => 'UniStudio Core',
                 'slug' => 'unistudio-core',
                 'source' => 'external',
@@ -64,6 +50,7 @@ class Plugin_Installer {
                 'description' => 'Custom Premium functionalities.'
             ),
             'acf' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/acf.svg',
                 'name' => 'Advanced Custom Fields',
                 'slug' => 'acf',
                 'source' => 'external',
@@ -72,7 +59,35 @@ class Plugin_Installer {
                 'required' => true,
                 'description' => 'Custom Fields functionalities.'
             ),
+            'kirki' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/kirki.jpg',
+                'name' => 'Kirki',
+                'slug' => 'kirki',
+                'source' => 'repo',
+                'file_path' => 'kirki/kirki.php',
+                'required' => true,
+                'description' => 'Custom UI Fields for WordPress Customizer.'
+            ),
+            'contact-form-7' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/contact-form-7.svg',
+                'name' => 'Contact Form 7',
+                'slug' => 'contact-form-7',
+                'source' => 'repo',
+                'file_path' => 'contact-form-7/wp-contact-form-7.php',
+                'required' => false,
+                'description' => 'Simple contact form plugin.'
+            ),
+            'woocommerce' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/woocommerce.svg',
+                'name' => 'WooCommerce',
+                'slug' => 'woocommerce',
+                'source' => 'repo',
+                'file_path' => 'woocommerce/woocommerce.php',
+                'required' => false,
+                'description' => 'Complete eCommerce solution for WordPress.'
+            ),
             'elementor-animejs-addon' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/elementor-animejs-addon.gif',
                 'name' => 'Elementor AnimeJS Addon',
                 'slug' => 'elementor-animejs-addon',
                 'source' => 'external',
@@ -81,13 +96,14 @@ class Plugin_Installer {
                 'required' => false,
                 'description' => 'Advanced Animations via AnimeJS Library for Elementor.'
             ),
-            'kirki' => array(
-                'name' => 'Kirki',
-                'slug' => 'kirki',
+            'wpml' => array(
+                'icon' => get_template_directory_uri() . '/inc/plugins/wpml.png',
+                'name' => 'WPML',
+                'slug' => 'woocommerce-multilingual',
                 'source' => 'repo',
-                'file_path' => 'kirki/kirki.php',
-                'required' => true,
-                'description' => 'Custom UI Fields for WordPress Customizer.'
+                'file_path' => 'woocommerce-multilingual/wpml-woocommerce.php',
+                'required' => false,
+                'description' => 'WooCommerce Multilingual & Multicurrency with WPML.'
             )
         );
     }
@@ -147,6 +163,13 @@ class Plugin_Installer {
                     <div class="plugin-card <?php echo $status_class; ?>" data-plugin="<?php echo esc_attr($plugin_key); ?>">
                         <div class="plugin-card-top">
                             <div class="plugin-name">
+                                <div class="plugin-icon-image">
+                                <?php if (isset($plugin['icon'])) : ?>
+                                    <img src="<?php echo esc_attr($plugin['icon']); ?>" alt="<?php echo esc_attr($plugin['name']); ?>" />
+                                <?php else : ?>
+                                    <img src="<?php echo esc_attr(get_template_directory_uri() . '/inc/plugins/placeholder.svg'); ?>" alt="<?php echo esc_attr($plugin['name']); ?>" />
+                                <?php endif; ?>
+                                </div>
                                 <h3><?php echo esc_html($plugin['name']); ?></h3>
                                 <?php if ($plugin['required']) : ?>
                                     <span class="required"><?php _e('Required', 'textdomain'); ?></span>

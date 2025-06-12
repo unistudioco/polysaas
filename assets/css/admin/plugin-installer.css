@@ -6,6 +6,9 @@
 }
 
 .plugin-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     float: none;
     width: auto;
     margin: 0 !important;
@@ -45,6 +48,11 @@
     min-height: auto;
 }
 
+.plugin-icon-image img {
+    width: 64px;
+    margin-right: 8px;
+}
+
 .plugin-name {
     display: flex;
     align-items: center;
@@ -57,20 +65,26 @@
 }
 
 .plugin-name .required {
-    background: #f5f5f5;
-    color: #d63638;
-    padding: 2px 8px;
-    border-radius: 24px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #ffe9e9;
+    color: #ec3235;
+    padding: 3px 8px;
+    border-radius: 4px;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
 }
 
 .plugin-name .recommended {
-    background: #f5f5f5;
-    color: #007cba;
-    padding: 2px 8px;
-    border-radius: 24px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #e6f7ff;
+    color: #1b9dde;
+    padding: 3px 8px;
+    border-radius: 4px;
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
