@@ -150,7 +150,7 @@ class Plugin_Installer {
         ?>
         <div class="wrap">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-            <p><?php _e('Install and activate the recommended plugins for your theme.', 'textdomain'); ?></p>
+            <p style="margin: 0;"><?php _e('Install and activate the recommended plugins for your theme.', 'textdomain'); ?></p>
             
             <div class="plugin-installer-container">
                 <?php foreach ($this->plugins as $plugin_key => $plugin) : ?>

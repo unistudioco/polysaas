@@ -1,0 +1,315 @@
+/* Save as: assets/css/theme-activation-modal.css */
+
+.theme-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.theme-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.theme-modal-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9) translateY(50px);
+    transition: transform 0.3s ease;
+}
+
+.theme-modal-overlay.show .theme-modal-container {
+    transform: scale(1) translateY(0);
+}
+
+.theme-modal-header {
+    padding: 30px 30px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.theme-modal-header h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.theme-modal-header p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.theme-modal-content {
+    padding: 30px;
+}
+
+.required-plugins-section h3 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.plugins-grid {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.plugin-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.plugin-item:hover {
+    background: #f0f0f0;
+    border-color: #ddd;
+}
+
+.plugin-item.plugin-active {
+    background: #f0f9f0;
+    border-color: #4caf50;
+}
+
+.plugin-item.plugin-installed {
+    background: #f0f6ff;
+    border-color: #2196f3;
+}
+
+.plugin-item.plugin-not-installed {
+    background: #fff9f0;
+    border-color: #ff9800;
+}
+
+.plugin-icon {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.plugin-icon .dashicons {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: #666;
+}
+
+.plugin-item.plugin-active .plugin-icon .dashicons {
+    color: #4caf50;
+}
+
+.plugin-item.plugin-installed .plugin-icon .dashicons {
+    color: #2196f3;
+}
+
+.plugin-item.plugin-not-installed .plugin-icon .dashicons {
+    color: #ff9800;
+}
+
+.plugin-info {
+    flex-grow: 1;
+}
+
+.plugin-info h4 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.plugin-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.plugin-status {
+    flex-shrink: 0;
+}
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 15px;
+    text-transform: uppercase;
+}
+
+.status-indicator.checking {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.status-indicator.checking .dashicons {
+    animation: spin 1s linear infinite;
+}
+
+.status-indicator.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-indicator.installed {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-indicator.not-installed {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Installation Progress */
+.installation-progress {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progress-header h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.progress-counter {
+    font-size: 16px;
+    color: #666;
+    font-weight: 600;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50, #2196f3);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.current-plugin-status {
+    font-size: 14px;
+    color: #666;
+}
+
+.installing-text {
+    font-weight: 500;
+}
+
+/* Completion Message */
+.completion-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.success-icon {
+    margin-bottom: 20px;
+}
+
+.success-icon .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: #4caf50;
+    background: #e8f5e9;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.completion-message h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.completion-message p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Modal Footer */
+.theme-modal-footer {
+    padding: 20px 30px 30px;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.modal-actions {
+    margin-bottom: 15px;
+}
+
+.modal-actions .button {
+    margin: 0 5px;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    min-width: 120px;
+}
+
+.modal-actions .button-primary {
+    background: #667eea;
+    border-color: #667eea;
+    box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+.modal-actions .button-primary:hover {
+    background: #5a67d8;
+    border-color: #5a67d8;
+}
+
+.modal-footer-note {
+    margin: 0;
+}
+
+.modal-footer-note p {
+    margin: 0;
+    font-size: 12px;
+    color: #999;
+    font-style: italic;
+}

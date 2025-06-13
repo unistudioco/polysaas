@@ -7,6 +7,9 @@ use Polysaas\Setup\Enqueue;
 use Polysaas\Setup\Template_Parts;
 use Polysaas\Setup\Woocommerce_Setup;
 use Polysaas\Setup\Plugin_Installer;
+// use Polysaas\Setup\Theme_Activation_Modal;
+use Polysaas\Setup\Theme_Setup_Wizard;
+use Polysaas\Setup\Demo_Content_Importer;
 
 /**
  * Theme Initialization
@@ -29,6 +32,9 @@ class Init {
             Template_Parts::class,
             Woocommerce_Setup::class,
             Plugin_Installer::class,
+            // Theme_Activation_Modal::class,
+            Theme_Setup_Wizard::class,
+            Demo_Content_Importer::class,
         ];
     }
 

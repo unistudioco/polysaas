@@ -1,0 +1,1331 @@
+/* Save as: assets/css/admin/theme-setup-wizard.css */
+#theme-setup-wizard {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Wizard Overlay */
+.wizard-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wizard-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Wizard Container */
+.wizard-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.wizard-overlay.show .wizard-container {
+    transform: scale(1);
+}
+
+.wizard-container .button,
+.import-modal-container .button {
+    min-height: 36px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #ffffff;
+    color: #6b3ee3;
+    border-color: #6b3ee3 !important;
+    outline: 0;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px -2px rgb(0 0 0 / 8%);
+}
+
+.wizard-container .button:hover,
+.import-modal-container .button:hover {
+    background: #e4daff;
+    color: #6b3ee3;
+}
+
+.wizard-container .button:focus,
+.import-modal-container .button:focus {
+    box-shadow: none !important;
+    background: #e4daff;
+    color: #6b3ee3;
+}
+
+.wizard-container .button.primary,
+.import-modal-container .button.primary {
+    background: #6b3ee3;
+    color: #ffffff;
+}
+
+.wizard-container .button.primary:hover,
+.import-modal-container .button.primary:hover {
+    background: #4e2bad;
+    color: #ffffff;
+}
+
+.wizard-container .button.primary:focus,
+.import-modal-container .button.primary:focus {
+    box-shadow: none !important;
+    background: #4e2bad;
+    color: #ffffff;
+}
+
+.wizard-container .button .dashicons,
+.import-modal-container .button .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Wizard Header */
+.wizard-header {
+    background: linear-gradient(135deg, #f1e2ff 0%, #e5eaff 100%);
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+    border-radius: 12px;
+    margin: 8px;
+}
+
+.wizard-header > div {
+    flex-basis: 50%;
+}
+
+.wizard-header-details {
+    display: flex;
+    gap: 16px;
+}
+
+.wizard-logo img {
+    max-width: 48px;
+    height: auto;
+}
+
+.wizard-header .wizard-title {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -0.025rem;
+}
+
+.wizard-subtitle {
+    font-size: 14px;
+    opacity: 0.75;
+    margin: 0;
+}
+
+/* Progress Steps */
+.wizard-progress {
+    position: relative;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    max-width: 150px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+    background: #6b3ee3;
+    color: #fff;
+}
+
+.step.completed .step-number {
+    background: #6b3ee3;
+    color: white;
+}
+
+.step-label {
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.step.active .step-label {
+    opacity: 1;
+    font-weight: 600;
+}
+
+/* Progress Bar */
+.wizard-progress .progress-bar {
+    height: 4px;
+    width: 75%;
+    background: white;
+    border-radius: 2px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(calc(-50% - 12px));
+    margin: 0 auto;
+}
+
+.wizard-progress .progress-fill {
+    height: 100%;
+    background: #6b3ee3;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Wizard Content */
+.wizard-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.wizard-step {
+    display: none;
+    padding: 32px;
+    min-height: 400px;
+}
+
+.wizard-step .button {
+    border-radius: 6px;
+}
+
+.wizard-step.active {
+    display: block;
+}
+
+.step-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.step-header h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.step-header p {
+    margin: 0;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Plugin Sections */
+.plugins-section {
+    margin-bottom: 40px;
+}
+
+.plugins-section h3 {
+    display: flex;
+    align-items: center;
+    margin: 0 0 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.plugins-section h3 .dashicons {
+    margin-right: 10px;
+    color: #6b3ee3;
+}
+
+.plugins-section h3 small {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+    margin-left: 32px;
+}
+
+.plugins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Plugin Items */
+.plugin-item {
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    background: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.plugin-item:hover {
+    border-color: #6b3ee3;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.plugin-item.recommended.selected,
+.plugin-item.recommended:has(input:checked) {
+    border-color: #6b3ee3;
+    background: #f8f9ff;
+}
+
+/* Plugin Checkbox */
+.plugin-checkbox {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.plugin-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #6b3ee3;
+}
+
+/* Plugin Header */
+.plugin-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.plugin-icon {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.plugin-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.plugin-info h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.plugin-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Plugin Status */
+.plugin-status {
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+.status-indicator.checking {
+    background: #fff3cd;
+    color: #df7d2c;
+}
+
+.status-indicator.not-installed {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.status-indicator.installed {
+    background: #e4d9ff;
+    color: #6b3ee3;
+}
+
+.status-indicator.active {
+    background: #d4edda;
+    color: #098b0a;
+}
+
+.status-indicator.error {
+    background: #ffe0e3;
+    color: #d82427;
+}
+
+/* Installation Progress */
+.installation-progress,
+.import-progress {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.import-progress .progress-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #6b3ee3;
+    margin-bottom: 16px;
+}
+
+.import-progress .progress-icon .icon {
+    display: inline-block;
+    font-size: 40px;
+    width: 40px;
+    height: 38px;
+    line-height: 38px;
+    animation-direction: reverse;
+}
+
+.progress-header {
+    margin-bottom: 30px;
+}
+
+.progress-header h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.progress-counter {
+    font-size: 16px;
+    color: #666;
+}
+
+.progress-bar-container {
+    margin: 30px 0;
+}
+
+.progress-bar-container .progress-bar {
+    height: 8px;
+    background: #e5e5e5;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-container .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #e74161, #d25bff, #6b3ee4);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.current-plugin-status,
+.import-status {
+    margin-top: 20px;
+}
+
+.installing-text,
+.import-text {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Demo Selection */
+.demos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(262px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.demo-item {
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.demo-item:hover {
+    border-color: #6b3ee3;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    transform: translateY(-2px);
+}
+
+.demo-item.selected {
+    border-color: #6b3ee3;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+.demo-preview {
+    position: relative;
+    height: 168px;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.demo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    border: 1px solid rgb(0 0 0 / 8%);
+    box-shadow: 0 2px 8px -2px rgb(0 0 0 / 8%);
+}
+
+.demo-overlay {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 7px;
+    bottom: 7px;
+    background: rgb(23 21 29 / 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 5px;
+}
+
+.demo-item:hover .demo-overlay {
+    opacity: 1;
+}
+
+.demo-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.demo-actions .button:hover {
+    background: #ded1ff;
+    color: #4722ac;
+}
+
+.demo-info {
+    padding: 8px 16px 16px;
+}
+
+.demo-info h4 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    color: #161616;
+}
+
+.demo-info p {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.demo-info .demo-requirements {
+    font-size: 11px;
+    line-height: 1.4;
+    text-transform: capitalize;
+    margin-top: 16px;
+}
+
+.demo-info .demo-requirements .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+
+/* Import Options Modal */
+.import-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.import-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.import-modal-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.import-modal-overlay.show .import-modal-container {
+    transform: scale(1);
+}
+
+/* Modal Header */
+.import-modal-header {
+    background: linear-gradient(135deg, #f1e2ff 0%, #e5eaff 100%);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 8px;
+    border-radius: 8px;
+}
+
+.demo-preview-mini {
+    width: 92px;
+    height: 60px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 16px;
+    flex-shrink: 0;
+    border: 1px solid rgb(0 0 0 / 8%);
+    box-shadow: 0 2px 8px -2px rgb(0 0 0 / 8%);
+}
+
+.demo-preview-mini img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.demo-info-mini {
+    flex: 1;
+}
+
+.demo-info-mini h3 {
+    margin: 0 0 4px;
+    font-size: 14px;
+}
+
+.demo-info-mini p {
+    margin: 0 0 8px;
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.preview-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 12px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.preview-link:hover {
+    opacity: 1;
+    color: #6b3ee3;
+    text-decoration: none;
+}
+
+.preview-link .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #ffffff;
+    color: #5c5c5c;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: #121212;
+}
+
+.modal-close .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Modal Content */
+.import-modal-content {
+    padding: 24px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.import-modal-content h4 {
+    font-size: 16px;
+    margin: 0 0 4px;
+    color: #333;
+}
+
+.import-modal-content p {
+    margin: 0 0 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Import Options List */
+.import-options-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.import-option-item {
+    flex-basis: calc(50% - 10px);
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.import-option-item:hover {
+    border-color: #6b3ee3;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.import-option-item.selected {
+    border-color: #39ca54;
+    background: #f9fff8;
+}
+
+.option-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 12px;
+}
+
+.option-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ddd;
+    border-radius: 14px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-top: 2px;
+}
+
+.option-checkbox input:checked + .checkmark {
+    background: #39ca54;
+    border-color: #39ca54;
+}
+
+.option-checkbox input:checked + .checkmark:after {
+    content: '';
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: relative;
+    top: -1px;
+}
+
+.option-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recommended-badge {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.option-description {
+    padding: 0 16px 16px 48px;
+}
+
+.option-description p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Modal Footer */
+.import-modal-footer {
+    background: #ece7f8;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 8px;
+}
+
+.import-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.import-actions .button {
+    min-width: 140px;
+    border-radius: 6px;
+}
+
+.import-note p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+/* Import Summary (after selection) */
+.import-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-top: 1px solid rgb(0 0 0 / 10%);
+    padding: 16px;
+    position: absolute;
+    bottom: 136px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0 -4px 10px -5px rgb(0 0 0 / 20%);
+}
+
+.import-summary h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+.import-summary-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.import-item-tag {
+    background: #e9e0ff;
+    color: #6b3ee3;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 16px;
+}
+
+.change-options-btn {
+    background: white;
+    border: 1px solid #6b3ee3;
+    color: #6b3ee3;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    transition: all 0.3s ease;
+}
+
+.change-options-btn:hover {
+    background: #6b3ee3;
+    color: white;
+}
+
+.change-options-btn .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+/* Enhanced Demo Selection */
+.demo-item {
+    position: relative;
+}
+
+.demo-item.selected::after {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
+.demo-item.selected::before {
+    content: '\f15e';
+    position: absolute;
+    font-family: 'dashicons';
+    top: 24px;
+    right: 24px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    z-index: 1;
+}
+
+/* Remove old import options styles (they're replaced by modal) */
+.import-options {
+    display: none !important;
+}
+
+/* Mobile Responsive for Modal */
+@media (max-width: 768px) {
+    .import-modal-container {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .import-modal-header {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .demo-preview-mini {
+        margin: 0 0 12px 0;
+        width: 100px;
+        height: 75px;
+    }
+    
+    .demo-info-mini {
+        text-align: center;
+    }
+    
+    .import-modal-content {
+        padding: 20px;
+    }
+    
+    .import-modal-footer {
+        padding: 16px 20px;
+    }
+    
+    .import-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .import-actions .button {
+        width: 100%;
+    }
+    
+    .option-description {
+        padding-left: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .import-modal-header {
+        padding: 16px;
+    }
+    
+    .import-modal-content {
+        padding: 16px;
+    }
+    
+    .import-modal-footer {
+        padding: 12px 16px;
+    }
+    
+    .import-summary-items {
+        justify-content: center;
+    }
+}
+
+/* Completion Step */
+.completion-message {
+    text-align: center;
+    margin: 24px 0 48px;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.success-icon .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.completion-message h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.completion-message p {
+    margin: 0;
+    color: #666;
+    font-size: 16px;
+}
+
+/* Next Steps */
+.next-steps h3 {
+    margin: 0 0 24px;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.next-step {
+    text-align: center;
+    padding: 24px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.next-step:hover {
+    border-color: #6b3ee3;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6b3ee3, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+}
+
+.step-icon .dashicons {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.step-info h4 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.step-info p {
+    margin: 0 0 16px;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Wizard Footer */
+.wizard-footer {
+    background: #ece7f8;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 8px;
+}
+
+.wizard-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.wizard-nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.wizard-help {
+    text-align: center;
+}
+
+.wizard-help p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.wizard-help a {
+    color: #6b3ee3;
+    text-decoration: none;
+}
+
+.wizard-help a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wizard-container {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .wizard-header {
+        padding: 30px 30px 20px;
+    }
+    
+    .wizard-header h1 {
+        font-size: 24px;
+    }
+    
+    .wizard-step {
+        padding: 30px 30px;
+        min-height: 300px;
+    }
+    
+    .wizard-footer {
+        padding: 20px 30px;
+    }
+    
+    .progress-steps {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .progress-steps::before {
+        display: none;
+    }
+    
+    .plugins-grid,
+    .demos-grid,
+    .import-options-grid,
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wizard-navigation {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .wizard-nav-buttons {
+        order: -1;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .plugin-item {
+        padding: 16px;
+    }
+    
+    .plugin-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .plugin-icon {
+        margin: 0 auto 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wizard-header {
+        padding: 20px 20px 15px;
+    }
+    
+    .wizard-step {
+        padding: 20px;
+    }
+    
+    .wizard-footer {
+        padding: 16px 20px;
+    }
+    
+    .wizard-nav-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .wizard-nav-buttons .button {
+        width: 100%;
+    }
+}
+
+/* Animation for rotating dashicons */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.status-indicator.checking .dashicons-update-alt,
+.status-in-progress {
+    animation: spin 1s linear infinite;
+}
+
+/* Demo Selection Enhancements */
+.demo-selection .heading {
+    font-size: 18px;
+    margin: 0 0 4px;
+}
+.demo-selection .desc {
+    font-size: 14px;
+    margin: 0 0 24px;
+    color: #666;
+}
+
+.demo-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-transform: uppercase;
+}
+
+.demo-item:hover .demo-badge {
+    opacity: 1;
+}
+
+.demo-item.selected .demo-badge {
+    background: #4CAF50;
+    opacity: 1;
+}
+
+.demo-item.selected .demo-badge::after {
+    content: ' ✓';
+}
+
+/* Demo Requirements */
+.demo-requirements {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    padding: 6px 8px;
+    background: #fff3cd;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #856404;
+}
+
+.demo-requirements .dashicons {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+/* No Demos State */
+.no-demos-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.no-demos-icon {
+    width: 80px;
+    height: 80px;
+}
