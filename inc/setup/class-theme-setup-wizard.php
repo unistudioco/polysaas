@@ -136,8 +136,7 @@ class Theme_Setup_Wizard {
                 'preview_image' => get_template_directory_uri() . '/inc/demo-data/creative-agency/preview.jpg',
                 'demo_url' => 'https://demo.example.com/creative-agency',
                 'content_file' => get_template_directory() . '/inc/demo-data/creative-agency/content.xml',
-                'customizer_file' => get_template_directory() . '/inc/demo-data/creative-agency/customizer.json',
-                'widgets_file' => get_template_directory() . '/inc/demo-data/creative-agency/widgets.json',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/creative-agency/customizer.dat',
                 'options' => array(
                     'pages' => array(
                         'label' => 'Pages',
@@ -158,11 +157,6 @@ class Theme_Setup_Wizard {
                         'label' => 'Theme Settings',
                         'description' => 'Import theme customizer settings',
                         'default' => true
-                    ),
-                    'widgets' => array(
-                        'label' => 'Widgets',
-                        'description' => 'Import widget settings',
-                        'default' => true
                     )
                 )
             ),
@@ -172,8 +166,7 @@ class Theme_Setup_Wizard {
                 'preview_image' => get_template_directory_uri() . '/inc/demo-data/business-corporate/preview.jpg',
                 'demo_url' => 'https://demo.example.com/business-corporate',
                 'content_file' => get_template_directory() . '/inc/demo-data/business-corporate/content.xml',
-                'customizer_file' => get_template_directory() . '/inc/demo-data/business-corporate/customizer.json',
-                'widgets_file' => get_template_directory() . '/inc/demo-data/business-corporate/widgets.json',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/business-corporate/customizer.dat',
                 'options' => array(
                     'pages' => array(
                         'label' => 'Pages',
@@ -199,11 +192,6 @@ class Theme_Setup_Wizard {
                         'label' => 'Theme Settings',
                         'description' => 'Import theme customizer settings',
                         'default' => true
-                    ),
-                    'widgets' => array(
-                        'label' => 'Widgets',
-                        'description' => 'Import widget settings',
-                        'default' => false
                     )
                 )
             ),
@@ -213,8 +201,7 @@ class Theme_Setup_Wizard {
                 'preview_image' => get_template_directory_uri() . '/inc/demo-data/ecommerce-shop/preview.jpg',
                 'demo_url' => 'https://demo.example.com/ecommerce-shop',
                 'content_file' => get_template_directory() . '/inc/demo-data/ecommerce-shop/content.xml',
-                'customizer_file' => get_template_directory() . '/inc/demo-data/ecommerce-shop/customizer.json',
-                'widgets_file' => get_template_directory() . '/inc/demo-data/ecommerce-shop/widgets.json',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/ecommerce-shop/customizer.dat',
                 'required_plugins' => array('woocommerce'),
                 'options' => array(
                     'pages' => array(
@@ -255,8 +242,7 @@ class Theme_Setup_Wizard {
                 'preview_image' => get_template_directory_uri() . '/inc/demo-data/minimal-portfolio/preview.jpg',
                 'demo_url' => 'https://demo.example.com/minimal-portfolio',
                 'content_file' => get_template_directory() . '/inc/demo-data/minimal-portfolio/content.xml',
-                'customizer_file' => get_template_directory() . '/inc/demo-data/minimal-portfolio/customizer.json',
-                'widgets_file' => get_template_directory() . '/inc/demo-data/minimal-portfolio/widgets.json',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/minimal-portfolio/customizer.dat',
                 'options' => array(
                     'pages' => array(
                         'label' => 'Pages',
@@ -286,8 +272,7 @@ class Theme_Setup_Wizard {
                 'preview_image' => get_template_directory_uri() . '/inc/demo-data/saas-software/preview.jpg',
                 'demo_url' => 'https://demo.example.com/saas-software',
                 'content_file' => get_template_directory() . '/inc/demo-data/saas-software/content.xml',
-                'customizer_file' => get_template_directory() . '/inc/demo-data/saas-software/customizer.json',
-                'widgets_file' => get_template_directory() . '/inc/demo-data/saas-software/widgets.json',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/saas-software/customizer.dat',
                 'required_plugins' => array('Contact Form 7'),
                 'options' => array(
                     'pages' => array(
@@ -318,8 +303,7 @@ class Theme_Setup_Wizard {
                 'preview_image' => get_template_directory_uri() . '/inc/demo-data/marketing-agency/preview.jpg',
                 'demo_url' => 'https://demo.example.com/marketing-agency',
                 'content_file' => get_template_directory() . '/inc/demo-data/marketing-agency/content.xml',
-                'customizer_file' => get_template_directory() . '/inc/demo-data/marketing-agency/customizer.json',
-                'widgets_file' => get_template_directory() . '/inc/demo-data/marketing-agency/widgets.json',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/marketing-agency/customizer.dat',
                 'options' => array(
                     'pages' => array(
                         'label' => 'Pages',
@@ -340,11 +324,6 @@ class Theme_Setup_Wizard {
                         'label' => 'Theme Settings',
                         'description' => 'Import theme customizer settings',
                         'default' => true
-                    ),
-                    'widgets' => array(
-                        'label' => 'Widgets',
-                        'description' => 'Import widget settings',
-                        'default' => false
                     )
                 )
             ),
@@ -570,50 +549,195 @@ class Theme_Setup_Wizard {
      * AJAX: Import demo content
      */
     public function import_demo_content_ajax() {
-        check_ajax_referer('theme_setup_wizard_nonce', 'nonce');
-        
-        if (!current_user_can('import')) {
-            wp_send_json_error(__('Insufficient permissions.', 'textdomain'));
+        // Enable error reporting for debugging
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            error_reporting(E_ALL);
+            ini_set('display_errors', 1);
         }
         
-        $demo_key = sanitize_text_field($_POST['demo']);
-        $import_options = isset($_POST['import_options']) ? $_POST['import_options'] : array();
-        
-        if (!isset($this->demos[$demo_key])) {
-            wp_send_json_error(__('Invalid demo.', 'textdomain'));
+        try {
+            check_ajax_referer('theme_setup_wizard_nonce', 'nonce');
+            
+            if (!current_user_can('import')) {
+                wp_send_json_error(__('Insufficient permissions.', 'textdomain'));
+                return;
+            }
+            
+            $demo_key = sanitize_text_field($_POST['demo']);
+            $import_options = isset($_POST['import_options']) ? $_POST['import_options'] : array();
+            
+            if (!isset($this->demos[$demo_key])) {
+                wp_send_json_error(__('Invalid demo.', 'textdomain'));
+                return;
+            }
+            
+            $demo = $this->demos[$demo_key];
+            
+            // Verify demo files exist before attempting import
+            if (!file_exists($demo['content_file'])) {
+                wp_send_json_error('Content file not found: ' . $demo['content_file']);
+                return;
+            }
+            
+            if (isset($demo['customizer_file']) && in_array('customizer', $import_options) && !file_exists($demo['customizer_file'])) {
+                wp_send_json_error('Customizer file not found: ' . $demo['customizer_file']);
+                return;
+            }
+            
+            // Log the import attempt
+            error_log('Polysaas Setup Wizard: Starting import for demo: ' . $demo_key);
+            error_log('Import options: ' . print_r($import_options, true));
+            
+            // For now, let's use the manual import directly since we know it works
+            if (in_array('pages', $import_options) || in_array('posts', $import_options) || in_array('media', $import_options)) {
+                error_log('Polysaas Setup Wizard: Using direct manual import for content');
+                
+                // Include the importer installer for manual import
+                $installer_file = get_template_directory() . '/inc/setup/class-importer-installer.php';
+                if (!file_exists($installer_file)) {
+                    wp_send_json_error('Importer installer file not found');
+                    return;
+                }
+                require_once $installer_file;
+                
+                // Use manual import directly
+                $content_result = \Polysaas\Setup\Importer_Installer::manual_xml_import($demo['content_file'], $import_options);
+                
+                if (is_wp_error($content_result)) {
+                    error_log('Polysaas Setup Wizard: Manual import failed: ' . $content_result->get_error_message());
+                    wp_send_json_error('Content import failed: ' . $content_result->get_error_message());
+                    return;
+                }
+                
+                error_log('Polysaas Setup Wizard: Manual import successful: ' . print_r($content_result, true));
+            }
+            
+            // Import customizer settings if selected
+            if (in_array('customizer', $import_options) && isset($demo['customizer_file'])) {
+                error_log('Polysaas Setup Wizard: Importing customizer settings');
+                
+                // Include the demo content importer for customizer
+                $importer_file = get_template_directory() . '/inc/setup/class-demo-content-importer.php';
+                if (!file_exists($importer_file)) {
+                    wp_send_json_error('Demo content importer file not found');
+                    return;
+                }
+                require_once $importer_file;
+                
+                $importer = new Demo_Content_Importer();
+                $customizer_result = $importer->import_customizer_settings($demo['customizer_file']);
+                
+                if (is_wp_error($customizer_result)) {
+                    error_log('Polysaas Setup Wizard: Customizer import failed: ' . $customizer_result->get_error_message());
+                    wp_send_json_error('Customizer import failed: ' . $customizer_result->get_error_message());
+                    return;
+                }
+                
+                error_log('Polysaas Setup Wizard: Customizer import successful: ' . print_r($customizer_result, true));
+            }
+            
+            // Set up pages
+            if (isset($content_result) && $content_result['pages'] > 0) {
+                // Set front page if imported
+                $front_page = get_page_by_title('Home');
+                if ($front_page) {
+                    update_option('show_on_front', 'page');
+                    update_option('page_on_front', $front_page->ID);
+                    error_log('Polysaas Setup Wizard: Set Home page as front page');
+                }
+                
+                // Set blog page if imported
+                $blog_page = get_page_by_title('Blog');
+                if ($blog_page) {
+                    update_option('page_for_posts', $blog_page->ID);
+                    error_log('Polysaas Setup Wizard: Set Blog page for posts');
+                }
+            }
+            
+            // Flush rewrite rules
+            flush_rewrite_rules();
+            
+            // Clear any caches
+            if (function_exists('wp_cache_flush')) {
+                wp_cache_flush();
+            }
+            
+            // Build success response
+            $success_message = 'Demo content imported successfully!';
+            $results = array();
+            
+            if (isset($content_result)) {
+                $results['content'] = $content_result;
+                $success_message .= ' Imported ' . $content_result['pages'] . ' pages and ' . $content_result['posts'] . ' posts.';
+            }
+            
+            if (isset($customizer_result)) {
+                $results['customizer'] = $customizer_result;
+                $success_message .= ' Applied theme customizations.';
+            }
+            
+            error_log('Polysaas Setup Wizard: Import completed successfully');
+            
+            wp_send_json_success(array(
+                'message' => $success_message,
+                'results' => $results
+            ));
+            
+        } catch (\Exception $e) {
+            error_log('Polysaas Setup Wizard: Exception in import_demo_content_ajax: ' . $e->getMessage());
+            error_log('Stack trace: ' . $e->getTraceAsString());
+            wp_send_json_error('Import failed: ' . $e->getMessage());
+        } catch (\Throwable $e) {
+            error_log('Polysaas Setup Wizard: Fatal error in import_demo_content_ajax: ' . $e->getMessage());
+            error_log('Stack trace: ' . $e->getTraceAsString());
+            wp_send_json_error('Fatal error during import: ' . $e->getMessage());
         }
-        
-        $demo = $this->demos[$demo_key];
-        
-        // Here you would implement the actual import logic
-        // This is a simplified version - you'll need to integrate with WordPress Importer
-        $import_results = $this->perform_demo_import($demo, $import_options);
-        
-        if (is_wp_error($import_results)) {
-            wp_send_json_error($import_results->get_error_message());
-        }
-        
-        wp_send_json_success(array(
-            'message' => __('Demo content imported successfully!', 'textdomain'),
-            'results' => $import_results
-        ));
     }
     
     /**
      * Perform the actual demo import
      */
     private function perform_demo_import($demo, $import_options) {
-        // Initialize demo importer
-        if (!class_exists('Polysaas\Setup\Demo_Content_Importer')) {
-            require_once get_template_directory() . '/inc/setup/class-demo-content-importer.php';
+        try {
+            // Check if Demo_Content_Importer class exists
+            if (!class_exists('Polysaas\Setup\Demo_Content_Importer')) {
+                $importer_file = get_template_directory() . '/inc/setup/class-demo-content-importer.php';
+                if (!file_exists($importer_file)) {
+                    throw new \Exception('Demo Content Importer file not found: ' . $importer_file);
+                }
+                require_once $importer_file;
+            }
+            
+            // Check if Importer_Installer class exists
+            if (!class_exists('Polysaas\Setup\Importer_Installer')) {
+                $installer_file = get_template_directory() . '/inc/setup/class-importer-installer.php';
+                if (!file_exists($installer_file)) {
+                    throw new \Exception('Importer Installer file not found: ' . $installer_file);
+                }
+                require_once $installer_file;
+            }
+            
+            // Create importer instance
+            $importer = new Demo_Content_Importer();
+            
+            // Log the import attempt
+            error_log('Polysaas Setup Wizard: Created Demo_Content_Importer instance');
+            error_log('Demo data: ' . print_r($demo, true));
+            
+            // Perform the complete import
+            $import_result = $importer->complete_demo_import($demo, $import_options);
+            
+            error_log('Polysaas Setup Wizard: Import result: ' . print_r($import_result, true));
+            
+            return $import_result;
+            
+        } catch (\Exception $e) {
+            error_log('Polysaas Setup Wizard: Exception in perform_demo_import: ' . $e->getMessage());
+            return new \WP_Error('import_exception', $e->getMessage());
+        } catch (\Throwable $e) {
+            error_log('Polysaas Setup Wizard: Fatal error in perform_demo_import: ' . $e->getMessage());
+            return new \WP_Error('import_fatal_error', $e->getMessage());
         }
-        
-        $importer = new Demo_Content_Importer();
-        
-        // Perform the complete import
-        $import_result = $importer->complete_demo_import($demo, $import_options);
-        
-        return $import_result;
     }
     
     /**

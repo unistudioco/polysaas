@@ -9,7 +9,10 @@ use Polysaas\Setup\Woocommerce_Setup;
 use Polysaas\Setup\Plugin_Installer;
 // use Polysaas\Setup\Theme_Activation_Modal;
 use Polysaas\Setup\Theme_Setup_Wizard;
-use Polysaas\Setup\Demo_Content_Importer;
+// use Polysaas\Setup\Demo_Content_Importer;
+// use Polysaas\Setup\Importer_Installer;
+use Polysaas\Setup\Debug_Utility;
+use Polysaas\Setup\Minimal_Demo_Importer;
 
 /**
  * Theme Initialization
@@ -34,7 +37,10 @@ class Init {
             Plugin_Installer::class,
             // Theme_Activation_Modal::class,
             Theme_Setup_Wizard::class,
-            Demo_Content_Importer::class,
+            // Demo_Content_Importer::class,
+            // Importer_Installer::class,
+            Debug_Utility::class,
+            Minimal_Demo_Importer::class,
         ];
     }
 

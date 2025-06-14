@@ -46,12 +46,6 @@ jQuery(document).ready(function($) {
         // Demo selection
         $(document).on('click', '.demo-item', handleDemoSelection);
         
-        // Test modal button (remove after testing)
-        $(document).on('click', '#test-modal-btn', function() {
-            console.log('Test button clicked - showing fallback modal');
-            showFallbackImportModal('test-demo');
-        });
-        
         // Close modal events
         $(document).on('click', '.modal-close, .cancel-import', closeImportModal);
         $(document).on('click', '#import-options-modal', function(e) {
@@ -885,7 +879,6 @@ jQuery(document).ready(function($) {
             'products': 'Products',
             'media': 'Media Files',
             'customizer': 'Theme Settings',
-            'widgets': 'Widgets',
             'woocommerce': 'WooCommerce Settings'
         };
         
@@ -949,7 +942,14 @@ jQuery(document).ready(function($) {
     
     function importDemoContent() {
         $('.import-text').text(themeSetupWizard.strings.importing);
-        $('.import-progress .progress-fill').animate({width: '100%'}, 3000);
+        
+        // Start progress bar animation
+        var progressBar = $('.import-progress .progress-fill');
+        var progressStartTime = Date.now();
+        var minImportTime = 2500; // Minimum 2.5 seconds for better UX
+        
+        // Animate progress bar to 90% first, then complete after AJAX
+        progressBar.animate({width: '90%'}, 2000);
         
         $.ajax({
             url: themeSetupWizard.ajax_url,
@@ -962,19 +962,37 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 if (response.success) {
-                    $('.import-text').text(themeSetupWizard.strings.complete);
+                    // Calculate remaining time to ensure smooth UX
+                    var elapsedTime = Date.now() - progressStartTime;
+                    var remainingTime = Math.max(0, minImportTime - elapsedTime);
+                    
+                    // Complete progress bar animation
+                    progressBar.animate({width: '100%'}, 500);
+                    
+                    // Wait for progress bar to complete before showing success
                     setTimeout(function() {
-                        goToStep(3);
-                    }, 1500);
+                        $('.import-text').text(themeSetupWizard.strings.complete);
+                        
+                        // Show completion for a moment, then proceed
+                        setTimeout(function() {
+                            goToStep(3);
+                        }, 1500);
+                    }, remainingTime + 500); // 500ms for the final progress animation
+                    
                 } else {
                     $('.import-text').text('Import failed: ' + response.data);
+                    progressBar.stop().css('width', '0%'); // Reset progress on error
                 }
             },
             error: function() {
                 $('.import-text').text('Import failed due to server error.');
+                progressBar.stop().css('width', '0%'); // Reset progress on error
             },
             complete: function() {
-                $('.wizard-navigation button').prop('disabled', false);
+                // Re-enable buttons after the full UX sequence
+                setTimeout(function() {
+                    $('.wizard-navigation button').prop('disabled', false);
+                }, minImportTime + 1000);
             }
         });
     }

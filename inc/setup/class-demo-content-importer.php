@@ -20,9 +20,15 @@ class Demo_Content_Importer {
             require_once ABSPATH . 'wp-admin/includes/class-wp-importer.php';
         }
         
-        if (!class_exists('WXR_Importer')) {
-            // You'll need to include the WordPress Importer plugin files
-            // Or use a custom XML importer
+        if (!function_exists('wp_import_handle_upload')) {
+            require_once ABSPATH . 'wp-admin/includes/import.php';
+        }
+        
+        if (!class_exists('WP_Import')) {
+            $importer_path = ABSPATH . 'wp-admin/includes/class-wp-import.php';
+            if (file_exists($importer_path)) {
+                require_once $importer_path;
+            }
         }
     }
     
@@ -52,8 +58,15 @@ class Demo_Content_Importer {
      * Import XML content using WordPress Importer
      */
     private function import_xml_content($file, $options) {
-        // This is a simplified version - you'll need to implement
-        // the actual XML import logic using WordPress Importer
+        // Include the importer installer
+        $installer_file = get_template_directory() . '/inc/setup/class-importer-installer.php';
+        if (!file_exists($installer_file)) {
+            return new \WP_Error('installer_missing', 'Importer installer file not found');
+        }
+        require_once $installer_file;
+        
+        error_log('Demo Import: Starting XML import for file: ' . $file);
+        error_log('Demo Import: Import options: ' . print_r($options, true));
         
         $imported_data = array(
             'posts' => 0,
@@ -62,67 +75,79 @@ class Demo_Content_Importer {
             'comments' => 0
         );
         
-        // Example: Parse XML and import content
-        $xml_data = simplexml_load_file($file);
+        // Store counts before import
+        global $wpdb;
+        $posts_before = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'post' AND post_status = 'publish'");
+        $pages_before = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status = 'publish'");
+        $attachments_before = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'attachment'");
         
-        if (!$xml_data) {
-            return new \WP_Error('xml_parse_error', 'Failed to parse XML file.');
+        // Try WordPress Importer first (but don't fail if it doesn't work)
+        $wp_importer_available = false;
+        try {
+            $importer_ready = Importer_Installer::ensure_wordpress_importer();
+            error_log('Demo Import: WordPress Importer ready: ' . ($importer_ready ? 'Yes' : 'No'));
+            
+            if ($importer_ready && class_exists('WP_Import')) {
+                error_log('Demo Import: Attempting WordPress Importer');
+                
+                // Create WP_Import instance
+                $wp_import = new \WP_Import();
+                
+                // Set up import options
+                $wp_import->fetch_attachments = in_array('media', $options);
+                
+                // Capture output to prevent it from being displayed
+                ob_start();
+                
+                // Import the file
+                $wp_import->import($file);
+                
+                // Clear the output buffer
+                ob_end_clean();
+                
+                // Count newly imported items
+                $posts_after = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'post' AND post_status = 'publish'");
+                $pages_after = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'page' AND post_status = 'publish'");
+                $attachments_after = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->posts} WHERE post_type = 'attachment'");
+                
+                $imported_data['posts'] = max(0, $posts_after - $posts_before);
+                $imported_data['pages'] = max(0, $pages_after - $pages_before);
+                $imported_data['attachments'] = max(0, $attachments_after - $attachments_before);
+                
+                error_log('Demo Import: WordPress Importer completed successfully');
+                error_log('Demo Import: Imported data: ' . print_r($imported_data, true));
+                
+                $wp_importer_available = true;
+            }
+        } catch (\Exception $e) {
+            if (ob_get_length()) {
+                ob_end_clean();
+            }
+            error_log('Demo Import: WordPress Importer failed: ' . $e->getMessage());
+            $wp_importer_available = false;
         }
         
-        // Import posts if selected
-        if (in_array('posts', $options)) {
-            $imported_data['posts'] = $this->import_posts($xml_data);
-        }
-        
-        // Import pages if selected
-        if (in_array('pages', $options)) {
-            $imported_data['pages'] = $this->import_pages($xml_data);
-        }
-        
-        // Import attachments/media if selected
-        if (in_array('media', $options)) {
-            $imported_data['attachments'] = $this->import_media($xml_data);
+        // If WordPress Importer didn't work or isn't available, use manual import
+        if (!$wp_importer_available) {
+            error_log('Demo Import: Using manual XML import as fallback');
+            
+            $manual_result = Importer_Installer::manual_xml_import($file, $options);
+            
+            if (is_wp_error($manual_result)) {
+                error_log('Demo Import: Manual import also failed: ' . $manual_result->get_error_message());
+                return $manual_result;
+            }
+            
+            $imported_data = $manual_result;
+            error_log('Demo Import: Manual import completed successfully');
+            error_log('Demo Import: Imported data: ' . print_r($imported_data, true));
         }
         
         return $imported_data;
     }
     
     /**
-     * Import posts from XML data
-     */
-    private function import_posts($xml_data) {
-        $imported_count = 0;
-        
-        // Example implementation - you'll need to adapt this
-        // based on your XML structure
-        
-        return $imported_count;
-    }
-    
-    /**
-     * Import pages from XML data
-     */
-    private function import_pages($xml_data) {
-        $imported_count = 0;
-        
-        // Example implementation
-        
-        return $imported_count;
-    }
-    
-    /**
-     * Import media files from XML data
-     */
-    private function import_media($xml_data) {
-        $imported_count = 0;
-        
-        // Example implementation - handle media import
-        
-        return $imported_count;
-    }
-    
-    /**
-     * Import customizer settings
+     * Import customizer settings from .dat file (PHP serialized format)
      */
     public function import_customizer_settings($customizer_file) {
         if (!file_exists($customizer_file)) {
@@ -130,24 +155,33 @@ class Demo_Content_Importer {
         }
         
         $customizer_data = file_get_contents($customizer_file);
-        $settings = json_decode($customizer_data, true);
         
-        if (!$settings) {
-            return new \WP_Error('json_decode_error', 'Failed to decode customizer settings.');
+        // Handle .dat files (PHP serialized format)
+        if (pathinfo($customizer_file, PATHINFO_EXTENSION) === 'dat') {
+            $settings = unserialize($customizer_data);
+        } else {
+            // Handle JSON format as fallback
+            $settings = json_decode($customizer_data, true);
+        }
+        
+        if (!$settings || !is_array($settings)) {
+            return new \WP_Error('decode_error', 'Failed to decode customizer settings.');
         }
         
         $imported_settings = 0;
         
-        foreach ($settings as $setting_key => $setting_value) {
-            // Import theme mods
-            if (strpos($setting_key, 'theme_mod_') === 0) {
-                $mod_name = str_replace('theme_mod_', '', $setting_key);
-                set_theme_mod($mod_name, $setting_value);
+        // Import theme mods if they exist
+        if (isset($settings['mods']) && is_array($settings['mods'])) {
+            foreach ($settings['mods'] as $mod_name => $mod_value) {
+                set_theme_mod($mod_name, $mod_value);
                 $imported_settings++;
             }
-            // Import other customizer settings
-            else {
-                update_option($setting_key, $setting_value);
+        }
+        
+        // Import options if they exist
+        if (isset($settings['options']) && is_array($settings['options'])) {
+            foreach ($settings['options'] as $option_name => $option_value) {
+                update_option($option_name, $option_value);
                 $imported_settings++;
             }
         }
@@ -156,43 +190,6 @@ class Demo_Content_Importer {
             'success' => true,
             'imported_settings' => $imported_settings,
             'message' => "Imported {$imported_settings} customizer settings"
-        );
-    }
-    
-    /**
-     * Import widget settings
-     */
-    public function import_widgets($widgets_file) {
-        if (!file_exists($widgets_file)) {
-            return new \WP_Error('file_not_found', 'Widgets file not found.');
-        }
-        
-        $widgets_data = file_get_contents($widgets_file);
-        $widgets = json_decode($widgets_data, true);
-        
-        if (!$widgets) {
-            return new \WP_Error('json_decode_error', 'Failed to decode widgets data.');
-        }
-        
-        $imported_widgets = 0;
-        
-        // Import sidebars widgets
-        if (isset($widgets['sidebars_widgets'])) {
-            update_option('sidebars_widgets', $widgets['sidebars_widgets']);
-        }
-        
-        // Import widget instances
-        foreach ($widgets as $widget_type => $widget_data) {
-            if ($widget_type !== 'sidebars_widgets') {
-                update_option('widget_' . $widget_type, $widget_data);
-                $imported_widgets++;
-            }
-        }
-        
-        return array(
-            'success' => true,
-            'imported_widgets' => $imported_widgets,
-            'message' => "Imported {$imported_widgets} widget types"
         );
     }
     
@@ -353,16 +350,6 @@ class Demo_Content_Importer {
                 }
             }
             
-            // Import widgets if selected
-            if (in_array('widgets', $selected_options) && isset($demo_data['widgets_file'])) {
-                $widgets_result = $this->import_widgets($demo_data['widgets_file']);
-                if (is_wp_error($widgets_result)) {
-                    $errors[] = $widgets_result->get_error_message();
-                } else {
-                    $results['widgets'] = $widgets_result;
-                }
-            }
-            
             // Import WooCommerce settings if selected
             if (in_array('woocommerce', $selected_options) && isset($demo_data['woocommerce_settings'])) {
                 $wc_result = $this->import_woocommerce_settings($demo_data['woocommerce_settings']);
@@ -373,24 +360,26 @@ class Demo_Content_Importer {
                 }
             }
             
-            // Set up pages
+            // Set up pages - these functions return arrays, not WP_Error objects
             $pages_result = $this->setup_wordpress_pages();
-            if (is_wp_error($pages_result)) {
-                $errors[] = $pages_result->get_error_message();
-            } else {
+            if (isset($pages_result['success']) && $pages_result['success']) {
                 $results['pages_setup'] = $pages_result;
-            }
-            
-            // Final cleanup
-            $cleanup_result = $this->cleanup_after_import();
-            if (is_wp_error($cleanup_result)) {
-                $errors[] = $cleanup_result->get_error_message();
             } else {
-                $results['cleanup'] = $cleanup_result;
+                $errors[] = isset($pages_result['message']) ? $pages_result['message'] : 'Pages setup failed';
             }
             
-        } catch (Exception $e) {
-            $errors[] = $e->getMessage();
+            // Final cleanup - these functions return arrays, not WP_Error objects
+            $cleanup_result = $this->cleanup_after_import();
+            if (isset($cleanup_result['success']) && $cleanup_result['success']) {
+                $results['cleanup'] = $cleanup_result;
+            } else {
+                $errors[] = isset($cleanup_result['message']) ? $cleanup_result['message'] : 'Cleanup failed';
+            }
+            
+        } catch (\Exception $e) {
+            $errors[] = 'Exception: ' . $e->getMessage();
+        } catch (\Throwable $e) {
+            $errors[] = 'Fatal Error: ' . $e->getMessage();
         }
         
         // Return results
