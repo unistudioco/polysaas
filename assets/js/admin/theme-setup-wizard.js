@@ -1024,5 +1024,5 @@ jQuery(document).ready(function($) {
             wizard.remove();
         }, 300);
     }
-    
+
 });

@@ -63,6 +63,16 @@ class Theme_Setup_Wizard {
                     'description' => 'Custom Premium functionalities.',
                     'required' => true
                 ),
+                'acf' => array(
+                    'icon' => get_template_directory_uri() . '/inc/plugins/acf.svg',
+                    'name' => 'Advanced Custom Fields',
+                    'slug' => 'acf',
+                    'source' => 'external',
+                    'file_path' => 'advanced-custom-fields/acf.php',
+                    'external_url' => get_template_directory_uri() . '/inc/plugins/acf.zip',
+                    'description' => 'Custom Fields functionalities.',
+                    'required' => true
+                ),
                 'kirki' => array(
                     'icon' => get_template_directory_uri() . '/inc/plugins/kirki.jpg',
                     'name' => 'Kirki',
@@ -74,16 +84,6 @@ class Theme_Setup_Wizard {
                 )
             ),
             'recommended' => array(
-                'acf' => array(
-                    'icon' => get_template_directory_uri() . '/inc/plugins/acf.svg',
-                    'name' => 'Advanced Custom Fields',
-                    'slug' => 'acf',
-                    'source' => 'external',
-                    'file_path' => 'advanced-custom-fields/acf.php',
-                    'external_url' => get_template_directory_uri() . '/inc/plugins/acf.zip',
-                    'description' => 'Custom Fields functionalities.',
-                    'required' => false
-                ),
                 'contact-form-7' => array(
                     'icon' => get_template_directory_uri() . '/inc/plugins/contact-form-7.svg',
                     'name' => 'Contact Form 7',
@@ -279,7 +279,75 @@ class Theme_Setup_Wizard {
                         'default' => true
                     )
                 )
-            )
+            ),
+            'saas-software' => array(
+                'name' => 'SaaS Software',
+                'description' => 'SaaS, Softwares, Startups',
+                'preview_image' => get_template_directory_uri() . '/inc/demo-data/saas-software/preview.jpg',
+                'demo_url' => 'https://demo.example.com/saas-software',
+                'content_file' => get_template_directory() . '/inc/demo-data/saas-software/content.xml',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/saas-software/customizer.json',
+                'widgets_file' => get_template_directory() . '/inc/demo-data/saas-software/widgets.json',
+                'required_plugins' => array('Contact Form 7'),
+                'options' => array(
+                    'pages' => array(
+                        'label' => 'Pages',
+                        'description' => 'Import all demo pages',
+                        'default' => true
+                    ),
+                    'posts' => array(
+                        'label' => 'Blog Posts',
+                        'description' => 'Import demo blog posts',
+                        'default' => false
+                    ),
+                    'media' => array(
+                        'label' => 'Media Files',
+                        'description' => 'Import demo images and media',
+                        'default' => true
+                    ),
+                    'customizer' => array(
+                        'label' => 'Theme Settings',
+                        'description' => 'Import theme customizer settings',
+                        'default' => true
+                    )
+                )
+            ),
+            'marketing-agency' => array(
+                'name' => 'Marketing Agency',
+                'description' => 'Marketing agencies, Businesses',
+                'preview_image' => get_template_directory_uri() . '/inc/demo-data/marketing-agency/preview.jpg',
+                'demo_url' => 'https://demo.example.com/marketing-agency',
+                'content_file' => get_template_directory() . '/inc/demo-data/marketing-agency/content.xml',
+                'customizer_file' => get_template_directory() . '/inc/demo-data/marketing-agency/customizer.json',
+                'widgets_file' => get_template_directory() . '/inc/demo-data/marketing-agency/widgets.json',
+                'options' => array(
+                    'pages' => array(
+                        'label' => 'Pages',
+                        'description' => 'Import all demo pages',
+                        'default' => true
+                    ),
+                    'posts' => array(
+                        'label' => 'Blog Posts',
+                        'description' => 'Import demo blog posts',
+                        'default' => false
+                    ),
+                    'media' => array(
+                        'label' => 'Media Files',
+                        'description' => 'Import demo images and media',
+                        'default' => true
+                    ),
+                    'customizer' => array(
+                        'label' => 'Theme Settings',
+                        'description' => 'Import theme customizer settings',
+                        'default' => true
+                    ),
+                    'widgets' => array(
+                        'label' => 'Widgets',
+                        'description' => 'Import widget settings',
+                        'default' => false
+                    )
+                )
+            ),
         );
     }
     
@@ -337,7 +405,7 @@ class Theme_Setup_Wizard {
             return;
         }
         
-        include get_template_directory() . '/inc/admin/setup-wizard-template.php';
+        include get_template_directory() . '/inc/setup-wizard-template.php';
     }
     
     /**
