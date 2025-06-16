@@ -120,9 +120,9 @@ class Theme_Setup_Wizard {
                     'name' => 'UniStudio Core',
                     'slug' => 'unistudio-core',
                     'source' => 'external',
-                    'file_path' => 'unistudio-core/unicore.php',
+                    'file_path' => 'unistudio-core/unistudio-core.php',
                     'external_url' => get_template_directory_uri() . '/inc/plugins/unistudio-core.zip',
-                    'description' => 'Custom Premium functionalities.',
+                    'description' => 'Core functionalities and features, Elementor Widgets, Blocks, etc.',
                     'required' => true
                 ),
                 'acf' => array(
@@ -132,7 +132,7 @@ class Theme_Setup_Wizard {
                     'source' => 'external',
                     'file_path' => 'advanced-custom-fields/acf.php',
                     'external_url' => get_template_directory_uri() . '/inc/plugins/acf.zip',
-                    'description' => 'Custom Fields functionalities.',
+                    'description' => 'Custom Fields functionalities for Post Type Metaboxes.',
                     'required' => true
                 ),
                 'kirki' => array(
@@ -162,7 +162,7 @@ class Theme_Setup_Wizard {
                     'slug' => 'contact-form-7',
                     'source' => 'repo',
                     'file_path' => 'contact-form-7/wp-contact-form-7.php',
-                    'description' => 'Simple contact form plugin.',
+                    'description' => 'Create advanced contact and newsletter forms.',
                     'required' => false
                 ),
                 'woocommerce' => array(
@@ -171,7 +171,7 @@ class Theme_Setup_Wizard {
                     'slug' => 'woocommerce',
                     'source' => 'repo',
                     'file_path' => 'woocommerce/woocommerce.php',
-                    'description' => 'Complete eCommerce solution for WordPress.',
+                    'description' => 'Complete eCommerce solution for your business.',
                     'required' => false
                 ),
                 // 'wpml' => array(

@@ -44,7 +44,7 @@ class Plugin_Installer {
                 'name' => 'UniStudio Core',
                 'slug' => 'unistudio-core',
                 'source' => 'external',
-                'file_path' => 'unistudio-core/unicore.php',
+                'file_path' => 'unistudio-core/unistudio-core.php',
                 'external_url' => get_template_directory_uri() . '/inc/plugins/unistudio-core.zip',
                 'required' => true,
                 'description' => 'Custom Premium functionalities.'

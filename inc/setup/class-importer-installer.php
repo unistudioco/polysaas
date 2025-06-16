@@ -336,8 +336,8 @@ class Importer_Installer {
             error_log('Manual XML Import: Result - ' . print_r($result, true));
             
             return $result;
-            
-        } catch (\Exception $e) {
+                    
+                } catch (\Exception $e) {
             error_log('Manual XML Import: Exception - ' . $e->getMessage());
             error_log('Manual XML Import: Stack trace - ' . $e->getTraceAsString());
             return new \WP_Error('import_error', $e->getMessage());

@@ -319,7 +319,7 @@
     gap: 24px;
     border: 2px solid #e5e5e5;
     border-radius: 8px;
-    padding: 16px;
+    padding: 20px 16px;
     background: #fff;
     transition: all 0.3s ease;
     position: relative;
@@ -359,6 +359,7 @@
 .plugin-header {
     display: flex;
     align-items: flex-start;
+    flex-basis: 66%;
 }
 
 .plugin-icon {
@@ -398,7 +399,7 @@
 }
 
 .status-indicator {
-    padding: 6px 12px;
+    padding: 6px 12px 6px 6px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 600;
