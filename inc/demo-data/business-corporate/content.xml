@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/6.8.1" created="2025-06-14 02:00" -->
+	<!-- generator="WordPress/6.8.1" created="2025-06-15 20:29" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -28,8 +28,8 @@
 <channel>
 	<title>POLYSAAS</title>
 	<link>https://unicore-wp.local</link>
-	<description>A SaaS WordPress Theme</description>
-	<pubDate>Sat, 14 Jun 2025 02:00:24 +0000</pubDate>
+	<description></description>
+	<pubDate>Sun, 15 Jun 2025 20:29:34 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://unicore-wp.local</wp:base_site_url>
@@ -38,13 +38,13 @@
 		<wp:author><wp:author_id>1</wp:author_id><wp:author_login><![CDATA[admin]]></wp:author_login><wp:author_email><![CDATA[dev-email@wpengine.local]]></wp:author_email><wp:author_display_name><![CDATA[admin]]></wp:author_display_name><wp:author_first_name><![CDATA[]]></wp:author_first_name><wp:author_last_name><![CDATA[]]></wp:author_last_name></wp:author>
 
 		<wp:category>
-		<wp:term_id>25</wp:term_id>
+		<wp:term_id>10</wp:term_id>
 		<wp:category_nicename><![CDATA[ai]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
 		<wp:cat_name><![CDATA[AI]]></wp:cat_name>
 	</wp:category>
 		<wp:category>
-		<wp:term_id>26</wp:term_id>
+		<wp:term_id>11</wp:term_id>
 		<wp:category_nicename><![CDATA[code]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
 		<wp:cat_name><![CDATA[Code]]></wp:cat_name>
@@ -63,34 +63,6 @@
 		<wp:term_name><![CDATA[Dynamic Card]]></wp:term_name>
 	</wp:term>
 		<wp:term>
-		<wp:term_id>15</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[exclude-from-catalog]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[exclude-from-catalog]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>14</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[exclude-from-search]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[exclude-from-search]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>13</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_type]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[external]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[external]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>16</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[featured]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[featured]]></wp:term_name>
-	</wp:term>
-		<wp:term>
 		<wp:term_id>4</wp:term_id>
 		<wp:term_taxonomy><![CDATA[uc_section_type]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[footer]]></wp:term_slug>
@@ -103,13 +75,6 @@
 		<wp:term_slug><![CDATA[generic]]></wp:term_slug>
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Generic Section]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>11</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_type]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[grouped]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[grouped]]></wp:term_name>
 	</wp:term>
 		<wp:term>
 		<wp:term_id>3</wp:term_id>
@@ -133,13 +98,6 @@
 		<wp:term_name><![CDATA[Off Canvas]]></wp:term_name>
 	</wp:term>
 		<wp:term>
-		<wp:term_id>17</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[outofstock]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[outofstock]]></wp:term_name>
-	</wp:term>
-		<wp:term>
 		<wp:term_id>9</wp:term_id>
 		<wp:term_taxonomy><![CDATA[uc_section_type]]></wp:term_taxonomy>
 		<wp:term_slug><![CDATA[pagecover]]></wp:term_slug>
@@ -153,81 +111,70 @@
 		<wp:term_parent><![CDATA[]]></wp:term_parent>
 		<wp:term_name><![CDATA[Popup]]></wp:term_name>
 	</wp:term>
-		<wp:term>
-		<wp:term_id>18</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[rated-1]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[rated-1]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>19</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[rated-2]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[rated-2]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>20</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[rated-3]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[rated-3]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>21</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[rated-4]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[rated-4]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>22</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_visibility]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[rated-5]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[rated-5]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>10</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_type]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[simple]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[simple]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>23</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_cat]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[uncategorized]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[Uncategorized]]></wp:term_name>
-	</wp:term>
-		<wp:term>
-		<wp:term_id>12</wp:term_id>
-		<wp:term_taxonomy><![CDATA[product_type]]></wp:term_taxonomy>
-		<wp:term_slug><![CDATA[variable]]></wp:term_slug>
-		<wp:term_parent><![CDATA[]]></wp:term_parent>
-		<wp:term_name><![CDATA[variable]]></wp:term_name>
-	</wp:term>
-			<wp:term><wp:term_id>24</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[primary-menu]]></wp:term_slug><wp:term_name><![CDATA[Primary Menu]]></wp:term_name>
-</wp:term>
-
+		
 	<generator>https://wordpress.org/?v=6.8.1</generator>
 
-<image>
-	<url>http://unicore-wp.local/wp-content/uploads/2025/06/cropped-chat-pixel-32x32.png</url>
-	<title>POLYSAAS</title>
-	<link>https://unicore-wp.local</link>
-	<width>32</width>
-	<height>32</height>
-</image> 
-
 		<item>
+		<title><![CDATA[Let's just rename this]]></title>
+		<link>https://unicore-wp.local/2025/06/15/lets-just-rename-this/</link>
+		<pubDate>Sun, 15 Jun 2025 20:22:59 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://unicore-wp.local/?p=1</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>1</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-15 20:22:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-15 20:22:59]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-15 20:29:07]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-15 20:29:07]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[lets-just-rename-this]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
+		<wp:meta_value><![CDATA[hello-world]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:comment>
+			<wp:comment_id>1</wp:comment_id>
+			<wp:comment_author><![CDATA[A WordPress Commenter]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[wapuu@wordpress.example]]></wp:comment_author_email>
+			<wp:comment_author_url>https://wordpress.org/</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2025-06-15 20:22:59]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2025-06-15 20:22:59]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Hi, this is a comment.
+To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
+Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[1]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[comment]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					</item>
+					<item>
 		<title><![CDATA[Sample Page]]></title>
 		<link>https://unicore-wp.local/sample-page/</link>
-		<pubDate>Wed, 11 Jun 2025 19:46:10 +0000</pubDate>
+		<pubDate>Sun, 15 Jun 2025 20:22:59 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/?page_id=2</guid>
+		<guid isPermaLink="false">https://unicore-wp.local/?page_id=2</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
@@ -246,14 +193,14 @@
 <!-- /wp:quote -->
 
 <!-- wp:paragraph -->
-<p>As a new WordPress user, you should go to <a href="http://unicore-wp.local/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<p>As a new WordPress user, you should go to <a href="https://unicore-wp.local/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
 <!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>2</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-11 19:46:10]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-11 19:46:10]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-11 19:46:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-11 19:46:10]]></wp:post_modified_gmt>
+		<wp:post_date><![CDATA[2025-06-15 20:22:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-15 20:22:59]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-15 20:22:59]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-15 20:22:59]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[sample-page]]></wp:post_name>
@@ -271,15 +218,15 @@
 					<item>
 		<title><![CDATA[Privacy Policy]]></title>
 		<link>https://unicore-wp.local/?page_id=3</link>
-		<pubDate>Wed, 11 Jun 2025 19:46:10 +0000</pubDate>
+		<pubDate>Sun, 15 Jun 2025 20:22:59 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/?page_id=3</guid>
+		<guid isPermaLink="false">https://unicore-wp.local/?page_id=3</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:heading -->
 <h2 class="wp-block-heading">Who we are</h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p><strong class="privacy-policy-tutorial">Suggested text: </strong>Our website address is: http://unicore-wp.local.</p>
+<p><strong class="privacy-policy-tutorial">Suggested text: </strong>Our website address is: https://unicore-wp.local.</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Comments</h2>
@@ -350,10 +297,10 @@
 ]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
 		<wp:post_id>3</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-11 19:46:10]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-11 19:46:10]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-11 19:46:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-11 19:46:10]]></wp:post_modified_gmt>
+		<wp:post_date><![CDATA[2025-06-15 20:22:59]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-15 20:22:59]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-15 20:22:59]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-15 20:22:59]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[privacy-policy]]></wp:post_name>
@@ -371,17 +318,17 @@
 					<item>
 		<title><![CDATA[Default Kit]]></title>
 		<link>https://unicore-wp.local/?elementor_library=default-kit</link>
-		<pubDate>Wed, 11 Jun 2025 19:54:18 +0000</pubDate>
+		<pubDate>Sun, 15 Jun 2025 20:23:01 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=8</guid>
+		<guid isPermaLink="false">https://unicore-wp.local/?p=5</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>8</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-11 19:54:18]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-11 19:54:18]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-11 19:54:18]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-11 19:54:18]]></wp:post_modified_gmt>
+		<wp:post_id>5</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-15 20:23:01]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-15 20:23:01]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-15 20:23:01]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-15 20:23:01]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[default-kit]]></wp:post_name>
@@ -401,36 +348,216 @@
 		</wp:postmeta>
 							</item>
 					<item>
-		<title><![CDATA[woocommerce-placeholder]]></title>
-		<link>https://unicore-wp.local/woocommerce-placeholder/</link>
-		<pubDate>Wed, 11 Jun 2025 19:54:19 +0000</pubDate>
+		<title><![CDATA[Hello world!]]></title>
+		<link>https://unicore-wp.local/2023/12/27/hello-world-2/</link>
+		<pubDate>Wed, 27 Dec 2023 23:19:18 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/wp-content/uploads/2025/06/woocommerce-placeholder.png</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/?p=1</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>8</wp:post_id>
+		<wp:post_date><![CDATA[2023-12-27 23:19:18]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2023-12-27 23:19:18]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2023-12-27 23:19:18]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-12-27 23:19:18]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[hello-world-2]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[23]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[page_header_layout]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_page_header_layout]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_page_header_layout]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[page_header_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_page_header_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_page_header_template]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[breadcrumbs]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_breadcrumbs]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_breadcrumbs]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_page_template]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[body_custom_class]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_body_custom_class]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_body_class]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[header_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_header_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_header_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[footer_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_footer_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_footer_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:comment>
+			<wp:comment_id>2</wp:comment_id>
+			<wp:comment_author><![CDATA[A WordPress Commenter]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[wapuu@wordpress.example]]></wp:comment_author_email>
+			<wp:comment_author_url>https://wordpress.org/</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2023-12-27 23:19:18]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2023-12-27 23:19:18]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Hi, this is a comment.
+To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
+Commenter avatars come from <a href="https://en.gravatar.com/" rel="nofollow ugc">Gravatar</a>.]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[1]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[comment]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					</item>
+					<item>
+		<title><![CDATA[Sample Page]]></title>
+		<link>https://unicore-wp.local/sample-page-2/</link>
+		<pubDate>Wed, 27 Dec 2023 23:19:18 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/?page_id=2</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>...or something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As a new WordPress user, you should go to <a href="https://themes.unistudio.co/lexend/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>9</wp:post_id>
+		<wp:post_date><![CDATA[2023-12-27 23:19:18]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2023-12-27 23:19:18]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2023-12-27 23:19:18]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-12-27 23:19:18]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[sample-page-2]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Privacy Policy]]></title>
+		<link>https://unicore-wp.local/?page_id=10</link>
+		<pubDate>Wed, 27 Dec 2023 23:19:18 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/?page_id=3</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:heading --><h2>Who we are</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>Our website address is: https://themes.unistudio.co/lexend.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Comments</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>When visitors leave comments on the site we collect the data shown in the comments form, and also the visitor&#8217;s IP address and browser user agent string to help spam detection.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>An anonymized string created from your email address (also called a hash) may be provided to the Gravatar service to see if you are using it. The Gravatar service privacy policy is available here: https://automattic.com/privacy/. After approval of your comment, your profile picture is visible to the public in the context of your comment.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Media</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you upload images to the website, you should avoid uploading images with embedded location data (EXIF GPS) included. Visitors to the website can download and extract any location data from images on the website.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Cookies</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you leave a comment on our site you may opt-in to saving your name, email address and website in cookies. These are for your convenience so that you do not have to fill in your details again when you leave another comment. These cookies will last for one year.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you visit our login page, we will set a temporary cookie to determine if your browser accepts cookies. This cookie contains no personal data and is discarded when you close your browser.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>When you log in, we will also set up several cookies to save your login information and your screen display choices. Login cookies last for two days, and screen options cookies last for a year. If you select &quot;Remember Me&quot;, your login will persist for two weeks. If you log out of your account, the login cookies will be removed.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>If you edit or publish an article, an additional cookie will be saved in your browser. This cookie includes no personal data and simply indicates the post ID of the article you just edited. It expires after 1 day.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Embedded content from other websites</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>Articles on this site may include embedded content (e.g. videos, images, articles, etc.). Embedded content from other websites behaves in the exact same way as if the visitor has visited the other website.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>These websites may collect data about you, use cookies, embed additional third-party tracking, and monitor your interaction with that embedded content, including tracking your interaction with the embedded content if you have an account and are logged in to that website.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Who we share your data with</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you request a password reset, your IP address will be included in the reset email.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>How long we retain your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you leave a comment, the comment and its metadata are retained indefinitely. This is so we can recognize and approve any follow-up comments automatically instead of holding them in a moderation queue.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>For users that register on our website (if any), we also store the personal information they provide in their user profile. All users can see, edit, or delete their personal information at any time (except they cannot change their username). Website administrators can also see and edit that information.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>What rights you have over your data</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Where your data is sent</h2><!-- /wp:heading --><!-- wp:paragraph --><p><strong class="privacy-policy-tutorial">Suggested text: </strong>Visitor comments may be checked through an automated spam detection service.</p><!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>10</wp:post_id>
+		<wp:post_date><![CDATA[2023-12-27 23:19:18]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2023-12-27 23:19:18]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2023-12-27 23:19:18]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-12-27 23:19:18]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[privacy-policy]]></wp:post_name>
+		<wp:status><![CDATA[draft]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Default Kit]]></title>
+		<link>https://unicore-wp.local/?elementor_library=default-kit-2</link>
+		<pubDate>Sat, 14 Jun 2025 07:49:53 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/?p=6</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>9</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-11 19:54:19]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-11 19:54:19]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-11 19:54:19]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-11 19:54:19]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:post_id>12</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-14 07:49:53]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-14 07:49:53]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-14 07:49:53]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-14 07:49:53]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[woocommerce-placeholder]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_name><![CDATA[default-kit-2]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_type><![CDATA[elementor_library]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[http://unicore-wp.local/wp-content/uploads/woocommerce-placeholder.png]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[woocommerce-placeholder.png]]></wp:meta_value>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_elementor_edit_mode]]></wp:meta_key>
+		<wp:meta_value><![CDATA[builder]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1200;s:6:"height";i:1200;s:4:"file";s:27:"woocommerce-placeholder.png";s:8:"filesize";i:48149;s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:6:{s:4:"file";s:35:"woocommerce-placeholder-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:3929;s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:5:{s:4:"file";s:35:"woocommerce-placeholder-100x100.png";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:741;}s:18:"woocommerce_single";a:5:{s:4:"file";s:35:"woocommerce-placeholder-600x600.png";s:5:"width";i:600;s:6:"height";i:600;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:12193;}s:6:"medium";a:5:{s:4:"file";s:35:"woocommerce-placeholder-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:3929;}s:5:"large";a:5:{s:4:"file";s:37:"woocommerce-placeholder-1024x1024.png";s:5:"width";i:1024;s:6:"height";i:1024;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:31230;}s:9:"thumbnail";a:5:{s:4:"file";s:35:"woocommerce-placeholder-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:1308;}s:12:"medium_large";a:5:{s:4:"file";s:35:"woocommerce-placeholder-768x768.png";s:5:"width";i:768;s:6:"height";i:768;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:18387;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_elementor_template_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[kit]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -438,11 +565,11 @@
 		<link>https://unicore-wp.local/shop/</link>
 		<pubDate>Wed, 11 Jun 2025 19:54:27 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/shop/</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/shop/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>10</wp:post_id>
+		<wp:post_id>13</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-11 19:54:27]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-06-11 19:54:27]]></wp:post_date_gmt>
 		<wp:post_modified><![CDATA[2025-06-11 19:54:27]]></wp:post_modified>
@@ -462,7 +589,7 @@
 		<link>https://unicore-wp.local/cart/</link>
 		<pubDate>Wed, 11 Jun 2025 19:54:28 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/cart/</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/cart/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:woocommerce/cart -->
 <div class="wp-block-woocommerce-cart alignwide is-loading"><!-- wp:woocommerce/filled-cart-block -->
@@ -544,7 +671,7 @@
 <!-- /wp:woocommerce/empty-cart-block --></div>
 <!-- /wp:woocommerce/cart -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>11</wp:post_id>
+		<wp:post_id>14</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-11 19:54:28]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-06-11 19:54:28]]></wp:post_date_gmt>
 		<wp:post_modified><![CDATA[2025-06-11 19:54:28]]></wp:post_modified>
@@ -564,7 +691,7 @@
 		<link>https://unicore-wp.local/checkout/</link>
 		<pubDate>Wed, 11 Jun 2025 19:54:28 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/checkout/</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/checkout/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:woocommerce/checkout -->
 <div class="wp-block-woocommerce-checkout alignwide wc-block-checkout is-loading"><!-- wp:woocommerce/checkout-fields-block -->
@@ -650,7 +777,7 @@
 <!-- /wp:woocommerce/checkout-totals-block --></div>
 <!-- /wp:woocommerce/checkout -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>12</wp:post_id>
+		<wp:post_id>15</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-11 19:54:28]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-06-11 19:54:28]]></wp:post_date_gmt>
 		<wp:post_modified><![CDATA[2025-06-11 19:54:28]]></wp:post_modified>
@@ -670,11 +797,11 @@
 		<link>https://unicore-wp.local/my-account/</link>
 		<pubDate>Wed, 11 Jun 2025 19:54:28 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/my-account/</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/my-account/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:shortcode -->[woocommerce_my_account]<!-- /wp:shortcode -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>13</wp:post_id>
+		<wp:post_id>16</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-11 19:54:28]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-06-11 19:54:28]]></wp:post_date_gmt>
 		<wp:post_modified><![CDATA[2025-06-11 19:54:28]]></wp:post_modified>
@@ -691,10 +818,10 @@
 														</item>
 					<item>
 		<title><![CDATA[Refund and Returns Policy]]></title>
-		<link>https://unicore-wp.local/?page_id=14</link>
+		<link>https://unicore-wp.local/?page_id=17</link>
 		<pubDate></pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?page_id=14</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/?page_id=12</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p><b>This is a sample page.</b></p>
@@ -837,7 +964,7 @@
 <p>Contact us at {email} for questions related to refunds and returns.</p>
 <!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>14</wp:post_id>
+		<wp:post_id>17</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-11 19:54:28]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[0000-00-00 00:00:00]]></wp:post_date_gmt>
 		<wp:post_modified><![CDATA[2025-06-11 19:54:28]]></wp:post_modified>
@@ -855,766 +982,9 @@
 					<item>
 		<title><![CDATA[Home]]></title>
 		<link>https://unicore-wp.local/home/</link>
-		<pubDate>Sat, 14 Jun 2025 01:40:23 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=34</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>34</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:42:15]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:40:23]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:42:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[home]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>1</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[17]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_uc_mega_menu_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[]]></title>
-		<link>https://unicore-wp.local/35/</link>
-		<pubDate>Sat, 14 Jun 2025 01:40:23 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=35</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>35</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:42:15]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:40:23]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:42:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[35]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>4</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[38]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[13]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_uc_mega_menu_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[]]></title>
-		<link>https://unicore-wp.local/36/</link>
-		<pubDate>Sat, 14 Jun 2025 01:40:23 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=36</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>36</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:42:15]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:40:23]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:42:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[36]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>5</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[38]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[12]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_uc_mega_menu_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[]]></title>
-		<link>https://unicore-wp.local/37/</link>
-		<pubDate>Sat, 14 Jun 2025 01:40:24 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=37</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>37</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:42:15]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:40:24]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:42:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[37]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>6</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[38]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[11]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_uc_mega_menu_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[]]></title>
-		<link>https://unicore-wp.local/38/</link>
-		<pubDate>Sat, 14 Jun 2025 01:40:23 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=38</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>38</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:42:15]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:40:23]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:42:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[38]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>3</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[10]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_uc_mega_menu_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[]]></title>
-		<link>https://unicore-wp.local/39/</link>
-		<pubDate>Sat, 14 Jun 2025 01:40:24 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=39</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>39</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:42:15]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:40:24]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:42:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[39]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>7</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_uc_mega_menu_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[]]></title>
-		<link>https://unicore-wp.local/42/</link>
-		<pubDate>Sat, 14 Jun 2025 01:42:15 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=42</guid>
-		<description></description>
-		<content:encoded><![CDATA[ ]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>42</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:42:15]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:42:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:42:15]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[42]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>2</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="primary-menu"><![CDATA[Primary Menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[40]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_uc_mega_menu_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[entro-dashboard]]></title>
-		<link>https://unicore-wp.local/another-try-for-the-import-demo-content/entro-dashboard/</link>
-		<pubDate>Sat, 14 Jun 2025 01:45:00 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/wp-content/uploads/2025/06/entro-dashboard.jpg</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>46</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:45:00]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:45:00]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:45:00]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:45:00]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[entro-dashboard]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>44</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[http://unicore-wp.local/wp-content/uploads/2025/06/entro-dashboard.jpg]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2025/06/entro-dashboard.jpg]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1440;s:6:"height";i:1024;s:4:"file";s:27:"2025/06/entro-dashboard.jpg";s:8:"filesize";i:711282;s:5:"sizes";a:7:{s:6:"medium";a:5:{s:4:"file";s:27:"entro-dashboard-300x213.jpg";s:5:"width";i:300;s:6:"height";i:213;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14676;}s:5:"large";a:5:{s:4:"file";s:28:"entro-dashboard-1024x728.jpg";s:5:"width";i:1024;s:6:"height";i:728;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:106022;}s:9:"thumbnail";a:5:{s:4:"file";s:27:"entro-dashboard-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6334;}s:12:"medium_large";a:5:{s:4:"file";s:27:"entro-dashboard-768x546.jpg";s:5:"width";i:768;s:6:"height";i:546;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:67599;}s:21:"woocommerce_thumbnail";a:6:{s:4:"file";s:27:"entro-dashboard-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:18457;s:9:"uncropped";b:0;}s:18:"woocommerce_single";a:5:{s:4:"file";s:27:"entro-dashboard-600x427.jpg";s:5:"width";i:600;s:6:"height";i:427;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:45106;}s:29:"woocommerce_gallery_thumbnail";a:5:{s:4:"file";s:27:"entro-dashboard-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:3552;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[original-03905e7adbbc59fdd1f0b280fdc6ca94]]></title>
-		<link>https://unicore-wp.local/another-try-for-the-import-demo-content/original-03905e7adbbc59fdd1f0b280fdc6ca94/</link>
-		<pubDate>Sat, 14 Jun 2025 01:47:45 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/wp-content/uploads/2025/06/original-03905e7adbbc59fdd1f0b280fdc6ca94.png</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>47</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:47:45]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:47:45]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:47:45]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:47:45]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[original-03905e7adbbc59fdd1f0b280fdc6ca94]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>44</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[http://unicore-wp.local/wp-content/uploads/2025/06/original-03905e7adbbc59fdd1f0b280fdc6ca94.png]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2025/06/original-03905e7adbbc59fdd1f0b280fdc6ca94.png]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:2048;s:6:"height";i:1536;s:4:"file";s:53:"2025/06/original-03905e7adbbc59fdd1f0b280fdc6ca94.png";s:8:"filesize";i:382420;s:5:"sizes";a:8:{s:6:"medium";a:5:{s:4:"file";s:53:"original-03905e7adbbc59fdd1f0b280fdc6ca94-300x225.png";s:5:"width";i:300;s:6:"height";i:225;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:11882;}s:5:"large";a:5:{s:4:"file";s:54:"original-03905e7adbbc59fdd1f0b280fdc6ca94-1024x768.png";s:5:"width";i:1024;s:6:"height";i:768;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:83449;}s:9:"thumbnail";a:5:{s:4:"file";s:53:"original-03905e7adbbc59fdd1f0b280fdc6ca94-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:6136;}s:12:"medium_large";a:5:{s:4:"file";s:53:"original-03905e7adbbc59fdd1f0b280fdc6ca94-768x576.png";s:5:"width";i:768;s:6:"height";i:576;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:42505;}s:9:"1536x1536";a:5:{s:4:"file";s:55:"original-03905e7adbbc59fdd1f0b280fdc6ca94-1536x1152.png";s:5:"width";i:1536;s:6:"height";i:1152;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:171810;}s:21:"woocommerce_thumbnail";a:6:{s:4:"file";s:53:"original-03905e7adbbc59fdd1f0b280fdc6ca94-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:15729;s:9:"uncropped";b:0;}s:18:"woocommerce_single";a:5:{s:4:"file";s:53:"original-03905e7adbbc59fdd1f0b280fdc6ca94-600x450.png";s:5:"width";i:600;s:6:"height";i:450;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:31277;}s:29:"woocommerce_gallery_thumbnail";a:5:{s:4:"file";s:53:"original-03905e7adbbc59fdd1f0b280fdc6ca94-100x100.png";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:4202;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[chat-pixel]]></title>
-		<link>https://unicore-wp.local/chat-pixel/</link>
-		<pubDate>Sat, 14 Jun 2025 01:50:59 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/wp-content/uploads/2025/06/chat-pixel.png</guid>
-		<description></description>
-		<content:encoded><![CDATA[]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>49</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:50:59]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:50:59]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:50:59]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:50:59]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[chat-pixel]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[http://unicore-wp.local/wp-content/uploads/2025/06/chat-pixel.png]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2025/06/chat-pixel.png]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:512;s:6:"height";i:512;s:4:"file";s:22:"2025/06/chat-pixel.png";s:8:"filesize";i:2596;s:5:"sizes";a:4:{s:6:"medium";a:5:{s:4:"file";s:22:"chat-pixel-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:1449;}s:9:"thumbnail";a:5:{s:4:"file";s:22:"chat-pixel-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:823;}s:21:"woocommerce_thumbnail";a:6:{s:4:"file";s:22:"chat-pixel-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:1449;s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:5:{s:4:"file";s:22:"chat-pixel-100x100.png";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:741;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[cropped-chat-pixel.png]]></title>
-		<link>https://unicore-wp.local/chat-pixel/cropped-chat-pixel-png/</link>
-		<pubDate>Sat, 14 Jun 2025 01:51:33 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/wp-content/uploads/2025/06/cropped-chat-pixel.png</guid>
-		<description></description>
-		<content:encoded><![CDATA[http://unicore-wp.local/wp-content/uploads/2025/06/cropped-chat-pixel.png]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>50</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-14 01:51:33]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-14 01:51:33]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:51:33]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:51:33]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[cropped-chat-pixel-png]]></wp:post_name>
-		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>49</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[attachment]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-						<wp:attachment_url><![CDATA[http://unicore-wp.local/wp-content/uploads/2025/06/cropped-chat-pixel.png]]></wp:attachment_url>
-											<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
-		<wp:meta_value><![CDATA[2025/06/cropped-chat-pixel.png]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_context]]></wp:meta_key>
-		<wp:meta_value><![CDATA[site-icon]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:512;s:6:"height";i:512;s:4:"file";s:30:"2025/06/cropped-chat-pixel.png";s:8:"filesize";i:1362;s:5:"sizes";a:8:{s:6:"medium";a:5:{s:4:"file";s:30:"cropped-chat-pixel-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:1529;}s:9:"thumbnail";a:5:{s:4:"file";s:30:"cropped-chat-pixel-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:1081;}s:21:"woocommerce_thumbnail";a:6:{s:4:"file";s:30:"cropped-chat-pixel-300x300.png";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:1529;s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:5:{s:4:"file";s:30:"cropped-chat-pixel-100x100.png";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:743;}s:13:"site_icon-270";a:5:{s:4:"file";s:30:"cropped-chat-pixel-270x270.png";s:5:"width";i:270;s:6:"height";i:270;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:2144;}s:13:"site_icon-192";a:5:{s:4:"file";s:30:"cropped-chat-pixel-192x192.png";s:5:"width";i:192;s:6:"height";i:192;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:1067;}s:13:"site_icon-180";a:5:{s:4:"file";s:30:"cropped-chat-pixel-180x180.png";s:5:"width";i:180;s:6:"height";i:180;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:892;}s:12:"site_icon-32";a:5:{s:4:"file";s:28:"cropped-chat-pixel-32x32.png";s:5:"width";i:32;s:6:"height";i:32;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:486;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Hello world!]]></title>
-		<link>https://unicore-wp.local/hello-world/</link>
-		<pubDate>Wed, 11 Jun 2025 19:46:10 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">http://unicore-wp.local/?p=1</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:paragraph -->
-<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
-<!-- /wp:paragraph -->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>1</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-11 19:46:10]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-11 19:46:10]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-11 19:46:10]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-11 19:46:10]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[open]]></wp:comment_status>
-		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[hello-world]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[post]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="uncategorized"><![CDATA[Uncategorized]]></category>
-						<wp:comment>
-			<wp:comment_id>1</wp:comment_id>
-			<wp:comment_author><![CDATA[A WordPress Commenter]]></wp:comment_author>
-			<wp:comment_author_email><![CDATA[wapuu@wordpress.example]]></wp:comment_author_email>
-			<wp:comment_author_url>https://wordpress.org/</wp:comment_author_url>
-			<wp:comment_author_IP><![CDATA[]]></wp:comment_author_IP>
-			<wp:comment_date><![CDATA[2025-06-11 19:46:10]]></wp:comment_date>
-			<wp:comment_date_gmt><![CDATA[2025-06-11 19:46:10]]></wp:comment_date_gmt>
-			<wp:comment_content><![CDATA[Hi, this is a comment.
-To get started with moderating, editing, and deleting comments, please visit the Comments screen in the dashboard.
-Commenter avatars come from <a href="https://gravatar.com/">Gravatar</a>.]]></wp:comment_content>
-			<wp:comment_approved><![CDATA[1]]></wp:comment_approved>
-			<wp:comment_type><![CDATA[comment]]></wp:comment_type>
-			<wp:comment_parent>0</wp:comment_parent>
-			<wp:comment_user_id>0</wp:comment_user_id>
-							</wp:comment>
-					</item>
-					<item>
-		<title><![CDATA[Navigation]]></title>
-		<link>https://unicore-wp.local/navigation/</link>
-		<pubDate>Wed, 11 Jun 2025 19:50:41 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/navigation/</guid>
-		<description></description>
-		<content:encoded><![CDATA[<!-- wp:page-list /-->]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>5</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-11 19:50:41]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-11 19:50:41]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-11 19:50:41]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-11 19:50:41]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[navigation]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
-		<title><![CDATA[Contact form 1]]></title>
-		<link>https://unicore-wp.local/?post_type=wpcf7_contact_form&#038;p=16</link>
-		<pubDate>Thu, 12 Jun 2025 22:19:50 +0000</pubDate>
-		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?post_type=wpcf7_contact_form&#038;p=16</guid>
-		<description></description>
-		<content:encoded><![CDATA[<label> Your name
-    [text* your-name autocomplete:name] </label>
-
-<label> Your email
-    [email* your-email autocomplete:email] </label>
-
-<label> Subject
-    [text* your-subject] </label>
-
-<label> Your message (optional)
-    [textarea your-message] </label>
-
-[submit "Submit"]
-[_site_title] "[your-subject]"
-[_site_title] <wordpress@unicore-wp.local>
-From: [your-name] [your-email]
-Subject: [your-subject]
-
-Message Body:
-[your-message]
-
--- 
-This is a notification that a contact form was submitted on your website ([_site_title] [_site_url]).
-[_site_admin_email]
-Reply-To: [your-email]
-
-0
-0
-
-[_site_title] "[your-subject]"
-[_site_title] <wordpress@unicore-wp.local>
-Message Body:
-[your-message]
-
--- 
-This email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.
-[your-email]
-Reply-To: [_site_admin_email]
-
-0
-0
-Thank you for your message. It has been sent.
-There was an error trying to send your message. Please try again later.
-One or more fields have an error. Please check and try again.
-There was an error trying to send your message. Please try again later.
-You must accept the terms and conditions before sending your message.
-Please fill out this field.
-This field has a too long input.
-This field has a too short input.
-There was an unknown error uploading the file.
-You are not allowed to upload files of this type.
-The uploaded file is too large.
-There was an error uploading the file.]]></content:encoded>
-		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>16</wp:post_id>
-		<wp:post_date><![CDATA[2025-06-12 22:19:50]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2025-06-12 22:19:50]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-12 22:19:50]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-12 22:19:50]]></wp:post_modified_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[contact-form-1]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[wpcf7_contact_form]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_form]]></wp:meta_key>
-		<wp:meta_value><![CDATA[<label> Your name
-    [text* your-name autocomplete:name] </label>
-
-<label> Your email
-    [email* your-email autocomplete:email] </label>
-
-<label> Subject
-    [text* your-subject] </label>
-
-<label> Your message (optional)
-    [textarea your-message] </label>
-
-[submit "Submit"]]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:8:{s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@unicore-wp.local>";s:4:"body";s:191:"From: [your-name] [your-email]
-Subject: [your-subject]
-
-Message Body:
-[your-message]
-
--- 
-This is a notification that a contact form was submitted on your website ([_site_title] [_site_url]).";s:9:"recipient";s:19:"[_site_admin_email]";s:18:"additional_headers";s:22:"Reply-To: [your-email]";s:11:"attachments";s:0:"";s:8:"use_html";i:0;s:13:"exclude_blank";i:0;}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:9:{s:6:"active";b:0;s:7:"subject";s:30:"[_site_title] "[your-subject]"";s:6:"sender";s:42:"[_site_title] <wordpress@unicore-wp.local>";s:4:"body";s:220:"Message Body:
-[your-message]
-
--- 
-This email is a receipt for your contact form submission on our website ([_site_title] [_site_url]) in which your email address was used. If that was not you, please ignore this message.";s:9:"recipient";s:12:"[your-email]";s:18:"additional_headers";s:29:"Reply-To: [_site_admin_email]";s:11:"attachments";s:0:"";s:8:"use_html";i:0;s:13:"exclude_blank";i:0;}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_messages]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:12:{s:12:"mail_sent_ok";s:45:"Thank you for your message. It has been sent.";s:12:"mail_sent_ng";s:71:"There was an error trying to send your message. Please try again later.";s:16:"validation_error";s:61:"One or more fields have an error. Please check and try again.";s:4:"spam";s:71:"There was an error trying to send your message. Please try again later.";s:12:"accept_terms";s:69:"You must accept the terms and conditions before sending your message.";s:16:"invalid_required";s:27:"Please fill out this field.";s:16:"invalid_too_long";s:32:"This field has a too long input.";s:17:"invalid_too_short";s:33:"This field has a too short input.";s:13:"upload_failed";s:46:"There was an unknown error uploading the file.";s:24:"upload_file_type_invalid";s:49:"You are not allowed to upload files of this type.";s:21:"upload_file_too_large";s:31:"The uploaded file is too large.";s:23:"upload_failed_php_error";s:38:"There was an error uploading the file.";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_additional_settings]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_locale]]></wp:meta_key>
-		<wp:meta_value><![CDATA[en_US]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_hash]]></wp:meta_key>
-		<wp:meta_value><![CDATA[e75e3b911a59d12713ed316af1b2607c9d3604a3]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title><![CDATA[Home]]></title>
-		<link>https://unicore-wp.local/</link>
 		<pubDate>Sat, 14 Jun 2025 01:30:38 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?page_id=17</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/home/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<h6>HOMEPAGE</h6>				
 					<h2>SAAS, SOFTWARE &amp; STARTUP
@@ -1634,11 +1004,11 @@ WORDPRESS THEME</h2>
                                             Learn more
                                     </a>]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>17</wp:post_id>
+		<wp:post_id>20</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-14 01:30:38]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-06-14 01:30:38]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:59:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:59:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-06-14 01:30:38]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-14 01:30:38]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[home]]></wp:post_name>
@@ -1649,10 +1019,6 @@ WORDPRESS THEME</h2>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
 		<wp:meta_key><![CDATA[page_header_layout]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
 		</wp:postmeta>
@@ -1726,15 +1092,7 @@ WORDPRESS THEME</h2>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_elementor_data]]></wp:meta_key>
-		<wp:meta_value><![CDATA[[{"id":"378db93","elType":"container","settings":{"flex_direction":"column","background_background":"gradient","background_color":"#FFFFFF","background_color_b":"#FFE1D8","padding":{"unit":"px","top":"128","right":"0","bottom":"128","left":"0","isLinked":false},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"c64826e","elType":"widget","settings":{"heading_text":"HOMEPAGE","heading_type":"h6","heading_typography_font_size":{"unit":"px","size":48,"sizes":[]},"heading_color":"#197F7C","highlight_text":"WORDPRESS THEME","highlight_color":"#7724DD","_margin":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_element_width":"initial","_element_custom_width":{"unit":"%","size":70,"sizes":[]},"_flex_align_self":"center","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_heading"},{"id":"68c26be","elType":"widget","settings":{"heading_text":"SAAS, SOFTWARE &amp; STARTUP\nWORDPRESS THEME","heading_typography_typography":"custom","heading_typography_font_size":{"unit":"px","size":48,"sizes":[]},"highlight_text":"WORDPRESS THEME","highlight_color":"#197F7C","_margin":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_element_width":"initial","_element_custom_width":{"unit":"%","size":70,"sizes":[]},"_flex_align_self":"center","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_heading"},{"id":"045e89a","elType":"widget","settings":{"align":"center","typography_typography":"custom","typography_font_weight":"400","typography_letter_spacing":{"unit":"px","size":0,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"24","left":"0","isLinked":false},"_padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_element_width":"initial","_element_custom_width":{"unit":"%","size":45,"sizes":[]},"_flex_align_self":"center","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)","__globals__":{"text_color":"globals\/colors?id=secondary"}},"elements":[],"widgetType":"text-editor"},{"id":"0fe82e3","elType":"widget","settings":{"text":"GET STARTED FOR FREE","show_icon":"yes","icon":{"value":"unicon unicon-arrow-right","library":"unicons"},"icon_position":"after","typography_typography":"custom","typography_font_weight":"600","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_button"}],"isInner":false},{"id":"03a5c75","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":0,"column":"0","row":"0"},"padding":{"unit":"px","top":"80","right":"0","bottom":"80","left":"0","isLinked":false},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"3f8a29a","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"1eaaeb8","elType":"widget","settings":{"selected_icon":{"value":"unicon unicon-location-filled","library":"unicons"},"title":"Geo Location","description":"Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.","link_text":"Learn more","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":24,"sizes":[]},"container_transition_custom_timing":"cubic-bezier(0.4, 0, 0.2, 1)","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_icon_box"}],"isInner":true},{"id":"eea5b7a","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"aa6dc74","elType":"widget","settings":{"title":"Fast and Reliable","description":"Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.","link_text":"Learn more","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":24,"sizes":[]},"container_transition_custom_timing":"cubic-bezier(0.4, 0, 0.2, 1)","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_icon_box"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_elementor_page_assets]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:2:{s:7:"scripts";a:4:{i:0;s:6:"jquery";i:1;s:18:"elementor-frontend";i:2;s:10:"uc-heading";i:3;s:23:"elementor-icons-manager";}s:6:"styles";a:1:{i:0;s:11:"uc-icon-box";}}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_elementor_element_cache]]></wp:meta_key>
-		<wp:meta_value><![CDATA[{"timeout":1749952769,"value":{"content":"<div class=\"elementor-element elementor-element-378db93 e-flex e-con-boxed animejs-disable e-con e-parent\" data-id=\"378db93\" data-element_type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;gradient&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t[elementor-element k=\"2ad27f61e320936f97da72739cbd7480\" data=\"eyJpZCI6ImM2NDgyNmUiLCJlbFR5cGUiOiJ3aWRnZXQiLCJzZXR0aW5ncyI6eyJoZWFkaW5nX3RleHQiOiJIT01FUEFHRSIsImhlYWRpbmdfdHlwZSI6Img2IiwiaGVhZGluZ190eXBvZ3JhcGh5X2ZvbnRfc2l6ZSI6eyJ1bml0IjoicHgiLCJzaXplIjo0OCwic2l6ZXMiOltdfSwiaGVhZGluZ19jb2xvciI6IiMxOTdGN0MiLCJoaWdobGlnaHRfdGV4dCI6IldPUkRQUkVTUyBUSEVNRSIsImhpZ2hsaWdodF9jb2xvciI6IiM3NzI0REQiLCJfbWFyZ2luIjp7InVuaXQiOiJweCIsInRvcCI6IjAiLCJyaWdodCI6IjAiLCJib3R0b20iOiIwIiwibGVmdCI6IjAiLCJpc0xpbmtlZCI6dHJ1ZX0sIl9wYWRkaW5nIjp7InVuaXQiOiJweCIsInRvcCI6IjAiLCJyaWdodCI6IjAiLCJib3R0b20iOiIwIiwibGVmdCI6IjAiLCJpc0xpbmtlZCI6dHJ1ZX0sIl9lbGVtZW50X3dpZHRoIjoiaW5pdGlhbCIsIl9lbGVtZW50X2N1c3RvbV93aWR0aCI6eyJ1bml0IjoiJSIsInNpemUiOjcwLCJzaXplcyI6W119LCJfZmxleF9hbGlnbl9zZWxmIjoiY2VudGVyIiwiYW5pbWVqc19hbmltYXRpb25fZWFzaW5nX2N1c3RvbSI6ImN1YmljQmV6aWVyKDEsIDAsIDAsIDEpIn0sImVsZW1lbnRzIjpbXSwid2lkZ2V0VHlwZSI6InVjX2hlYWRpbmcifQ==\"][elementor-element k=\"2ad27f61e320936f97da72739cbd7480\" data=\"eyJpZCI6IjY4YzI2YmUiLCJlbFR5cGUiOiJ3aWRnZXQiLCJzZXR0aW5ncyI6eyJoZWFkaW5nX3RleHQiOiJTQUFTLCBTT0ZUV0FSRSAmYW1wOyBTVEFSVFVQXG5XT1JEUFJFU1MgVEhFTUUiLCJoZWFkaW5nX3R5cG9ncmFwaHlfdHlwb2dyYXBoeSI6ImN1c3RvbSIsImhlYWRpbmdfdHlwb2dyYXBoeV9mb250X3NpemUiOnsidW5pdCI6InB4Iiwic2l6ZSI6NDgsInNpemVzIjpbXX0sImhpZ2hsaWdodF90ZXh0IjoiV09SRFBSRVNTIFRIRU1FIiwiaGlnaGxpZ2h0X2NvbG9yIjoiIzE5N0Y3QyIsIl9tYXJnaW4iOnsidW5pdCI6InB4IiwidG9wIjoiMCIsInJpZ2h0IjoiMCIsImJvdHRvbSI6IjAiLCJsZWZ0IjoiMCIsImlzTGlua2VkIjp0cnVlfSwiX3BhZGRpbmciOnsidW5pdCI6InB4IiwidG9wIjoiMCIsInJpZ2h0IjoiMCIsImJvdHRvbSI6IjAiLCJsZWZ0IjoiMCIsImlzTGlua2VkIjp0cnVlfSwiX2VsZW1lbnRfd2lkdGgiOiJpbml0aWFsIiwiX2VsZW1lbnRfY3VzdG9tX3dpZHRoIjp7InVuaXQiOiIlIiwic2l6ZSI6NzAsInNpemVzIjpbXX0sIl9mbGV4X2FsaWduX3NlbGYiOiJjZW50ZXIiLCJhbmltZWpzX2FuaW1hdGlvbl9lYXNpbmdfY3VzdG9tIjoiY3ViaWNCZXppZXIoMSwgMCwgMCwgMSkifSwiZWxlbWVudHMiOltdLCJ3aWRnZXRUeXBlIjoidWNfaGVhZGluZyJ9\"][elementor-element k=\"2ad27f61e320936f97da72739cbd7480\" data=\"eyJpZCI6IjA0NWU4OWEiLCJlbFR5cGUiOiJ3aWRnZXQiLCJzZXR0aW5ncyI6eyJhbGlnbiI6ImNlbnRlciIsInR5cG9ncmFwaHlfdHlwb2dyYXBoeSI6ImN1c3RvbSIsInR5cG9ncmFwaHlfZm9udF93ZWlnaHQiOiI0MDAiLCJ0eXBvZ3JhcGh5X2xldHRlcl9zcGFjaW5nIjp7InVuaXQiOiJweCIsInNpemUiOjAsInNpemVzIjpbXX0sIl9tYXJnaW4iOnsidW5pdCI6InB4IiwidG9wIjoiMCIsInJpZ2h0IjoiMCIsImJvdHRvbSI6IjI0IiwibGVmdCI6IjAiLCJpc0xpbmtlZCI6ZmFsc2V9LCJfcGFkZGluZyI6eyJ1bml0IjoicHgiLCJ0b3AiOiIwIiwicmlnaHQiOiIwIiwiYm90dG9tIjoiMCIsImxlZnQiOiIwIiwiaXNMaW5rZWQiOnRydWV9LCJfZWxlbWVudF93aWR0aCI6ImluaXRpYWwiLCJfZWxlbWVudF9jdXN0b21fd2lkdGgiOnsidW5pdCI6IiUiLCJzaXplIjo0NSwic2l6ZXMiOltdfSwiX2ZsZXhfYWxpZ25fc2VsZiI6ImNlbnRlciIsImFuaW1lanNfYW5pbWF0aW9uX2Vhc2luZ19jdXN0b20iOiJjdWJpY0JlemllcigxLCAwLCAwLCAxKSIsIl9fZ2xvYmFsc19fIjp7InRleHRfY29sb3IiOiJnbG9iYWxzXC9jb2xvcnM\/aWQ9c2Vjb25kYXJ5In19LCJlbGVtZW50cyI6W10sIndpZGdldFR5cGUiOiJ0ZXh0LWVkaXRvciJ9\"][elementor-element k=\"2ad27f61e320936f97da72739cbd7480\" data=\"eyJpZCI6IjBmZTgyZTMiLCJlbFR5cGUiOiJ3aWRnZXQiLCJzZXR0aW5ncyI6eyJ0ZXh0IjoiR0VUIFNUQVJURUQgRk9SIEZSRUUiLCJzaG93X2ljb24iOiJ5ZXMiLCJpY29uIjp7InZhbHVlIjoidW5pY29uIHVuaWNvbi1hcnJvdy1yaWdodCIsImxpYnJhcnkiOiJ1bmljb25zIn0sImljb25fcG9zaXRpb24iOiJhZnRlciIsInR5cG9ncmFwaHlfdHlwb2dyYXBoeSI6ImN1c3RvbSIsInR5cG9ncmFwaHlfZm9udF93ZWlnaHQiOiI2MDAiLCJhbmltZWpzX2FuaW1hdGlvbl9lYXNpbmdfY3VzdG9tIjoiY3ViaWNCZXppZXIoMSwgMCwgMCwgMSkifSwiZWxlbWVudHMiOltdLCJ3aWRnZXRUeXBlIjoidWNfYnV0dG9uIn0=\"]\t\t\t<\/div>\n\t\t\t\t<\/div>\n\t\t<div class=\"elementor-element elementor-element-03a5c75 e-flex e-con-boxed animejs-disable e-con e-parent\" data-id=\"03a5c75\" data-element_type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t<div class=\"elementor-element elementor-element-3f8a29a e-con-full e-flex animejs-disable e-con e-child\" data-id=\"3f8a29a\" data-element_type=\"container\">\n\t\t[elementor-element k=\"2ad27f61e320936f97da72739cbd7480\" data=\"eyJpZCI6IjFlYWFlYjgiLCJlbFR5cGUiOiJ3aWRnZXQiLCJzZXR0aW5ncyI6eyJzZWxlY3RlZF9pY29uIjp7InZhbHVlIjoidW5pY29uIHVuaWNvbi1sb2NhdGlvbi1maWxsZWQiLCJsaWJyYXJ5IjoidW5pY29ucyJ9LCJ0aXRsZSI6IkdlbyBMb2NhdGlvbiIsImRlc2NyaXB0aW9uIjoiV2hldGhlciB5b3UgaGF2ZSBhIHRlYW0gb2YgMiBvciAyMDAsIG91ciBzaGFyZWQgdGVhbSBpbmJveGVzIGtlZXAgZXZlcnlvbmUgb24gdGhlIHNhbWUgcGFnZSBhbmQgaW4gdGhlIGxvb3AuIiwibGlua190ZXh0IjoiTGVhcm4gbW9yZSIsInRpdGxlX3R5cG9ncmFwaHlfdHlwb2dyYXBoeSI6ImN1c3RvbSIsInRpdGxlX3R5cG9ncmFwaHlfZm9udF9zaXplIjp7InVuaXQiOiJweCIsInNpemUiOjI0LCJzaXplcyI6W119LCJjb250YWluZXJfdHJhbnNpdGlvbl9jdXN0b21fdGltaW5nIjoiY3ViaWMtYmV6aWVyKDAuNCwgMCwgMC4yLCAxKSIsImFuaW1lanNfYW5pbWF0aW9uX2Vhc2luZ19jdXN0b20iOiJjdWJpY0JlemllcigxLCAwLCAwLCAxKSJ9LCJlbGVtZW50cyI6W10sIndpZGdldFR5cGUiOiJ1Y19pY29uX2JveCJ9\"]\t\t<\/div>\n\t\t<div class=\"elementor-element elementor-element-eea5b7a e-con-full e-flex animejs-disable e-con e-child\" data-id=\"eea5b7a\" data-element_type=\"container\">\n\t\t[elementor-element k=\"2ad27f61e320936f97da72739cbd7480\" data=\"eyJpZCI6ImFhNmRjNzQiLCJlbFR5cGUiOiJ3aWRnZXQiLCJzZXR0aW5ncyI6eyJ0aXRsZSI6IkZhc3QgYW5kIFJlbGlhYmxlIiwiZGVzY3JpcHRpb24iOiJXaGV0aGVyIHlvdSBoYXZlIGEgdGVhbSBvZiAyIG9yIDIwMCwgb3VyIHNoYXJlZCB0ZWFtIGluYm94ZXMga2VlcCBldmVyeW9uZSBvbiB0aGUgc2FtZSBwYWdlIGFuZCBpbiB0aGUgbG9vcC4iLCJsaW5rX3RleHQiOiJMZWFybiBtb3JlIiwidGl0bGVfdHlwb2dyYXBoeV90eXBvZ3JhcGh5IjoiY3VzdG9tIiwidGl0bGVfdHlwb2dyYXBoeV9mb250X3NpemUiOnsidW5pdCI6InB4Iiwic2l6ZSI6MjQsInNpemVzIjpbXX0sImNvbnRhaW5lcl90cmFuc2l0aW9uX2N1c3RvbV90aW1pbmciOiJjdWJpYy1iZXppZXIoMC40LCAwLCAwLjIsIDEpIiwiYW5pbWVqc19hbmltYXRpb25fZWFzaW5nX2N1c3RvbSI6ImN1YmljQmV6aWVyKDEsIDAsIDAsIDEpIn0sImVsZW1lbnRzIjpbXSwid2lkZ2V0VHlwZSI6InVjX2ljb25fYm94In0=\"]\t\t<\/div>\n\t\t\t\t\t<\/div>\n\t\t\t\t<\/div>\n\t\t","scripts":[],"styles":[]}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[[{"id":"378db93","elType":"container","settings":{"flex_direction":"column","background_background":"gradient","background_color":"#FFFFFF","background_color_b":"#FFE1D8","padding":{"unit":"px","top":"128","right":"0","bottom":"128","left":"0","isLinked":false},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"c64826e","elType":"widget","settings":{"heading_text":"HOMEPAGE","heading_type":"h6","heading_typography_font_size":{"unit":"px","size":48,"sizes":[]},"heading_color":"#197F7C","highlight_text":"WORDPRESS THEME","highlight_color":"#7724DD","_margin":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_element_width":"initial","_element_custom_width":{"unit":"%","size":70,"sizes":[]},"_flex_align_self":"center","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_heading"},{"id":"68c26be","elType":"widget","settings":{"heading_text":"SAAS, SOFTWARE &amp; STARTUPnWORDPRESS THEME","heading_typography_typography":"custom","heading_typography_font_size":{"unit":"px","size":48,"sizes":[]},"highlight_text":"WORDPRESS THEME","highlight_color":"#197F7C","_margin":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_element_width":"initial","_element_custom_width":{"unit":"%","size":70,"sizes":[]},"_flex_align_self":"center","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_heading"},{"id":"045e89a","elType":"widget","settings":{"align":"center","typography_typography":"custom","typography_font_weight":"400","typography_letter_spacing":{"unit":"px","size":0,"sizes":[]},"_margin":{"unit":"px","top":"0","right":"0","bottom":"24","left":"0","isLinked":false},"_padding":{"unit":"px","top":"0","right":"0","bottom":"0","left":"0","isLinked":true},"_element_width":"initial","_element_custom_width":{"unit":"%","size":45,"sizes":[]},"_flex_align_self":"center","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)","__globals__":{"text_color":"globals/colors?id=secondary"}},"elements":[],"widgetType":"text-editor"},{"id":"0fe82e3","elType":"widget","settings":{"text":"GET STARTED FOR FREE","show_icon":"yes","icon":{"value":"unicon unicon-arrow-right","library":"unicons"},"icon_position":"after","typography_typography":"custom","typography_font_weight":"600","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_button"}],"isInner":false},{"id":"03a5c75","elType":"container","settings":{"flex_direction":"row","flex_gap":{"unit":"px","size":0,"column":"0","row":"0"},"padding":{"unit":"px","top":"80","right":"0","bottom":"80","left":"0","isLinked":false},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"3f8a29a","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"1eaaeb8","elType":"widget","settings":{"selected_icon":{"value":"unicon unicon-location-filled","library":"unicons"},"title":"Geo Location","description":"Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.","link_text":"Learn more","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":24,"sizes":[]},"container_transition_custom_timing":"cubic-bezier(0.4, 0, 0.2, 1)","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_icon_box"}],"isInner":true},{"id":"eea5b7a","elType":"container","settings":{"flex_direction":"column","content_width":"full","width":{"unit":"%","size":"50"},"animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[{"id":"aa6dc74","elType":"widget","settings":{"title":"Fast and Reliable","description":"Whether you have a team of 2 or 200, our shared team inboxes keep everyone on the same page and in the loop.","link_text":"Learn more","title_typography_typography":"custom","title_typography_font_size":{"unit":"px","size":24,"sizes":[]},"container_transition_custom_timing":"cubic-bezier(0.4, 0, 0.2, 1)","animejs_animation_easing_custom":"cubicBezier(1, 0, 0, 1)"},"elements":[],"widgetType":"uc_icon_box"}],"isInner":true}],"isInner":false}]]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1742,15 +1100,15 @@ WORDPRESS THEME</h2>
 		<link>https://unicore-wp.local/blog/</link>
 		<pubDate>Sat, 14 Jun 2025 01:41:15 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?page_id=40</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/blog/</guid>
 		<description></description>
 		<content:encoded><![CDATA[]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>40</wp:post_id>
+		<wp:post_id>21</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-14 01:41:15]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-06-14 01:41:15]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:41:17]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:41:17]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-06-14 01:41:15]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-14 01:41:15]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[blog]]></wp:post_name>
@@ -1761,10 +1119,6 @@ WORDPRESS THEME</h2>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
-		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
-		<wp:meta_value><![CDATA[1]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
 		<wp:meta_key><![CDATA[page_header_layout]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
 		</wp:postmeta>
@@ -1823,20 +1177,20 @@ WORDPRESS THEME</h2>
 							</item>
 					<item>
 		<title><![CDATA[Another try for the import demo content]]></title>
-		<link>https://unicore-wp.local/another-try-for-the-import-demo-content/</link>
+		<link>https://unicore-wp.local/2025/06/14/another-try-for-the-import-demo-content/</link>
 		<pubDate>Sat, 14 Jun 2025 01:44:27 +0000</pubDate>
 		<dc:creator><![CDATA[admin]]></dc:creator>
-		<guid isPermaLink="false">https://unicore-wp.local/?p=44</guid>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/2025/06/14/another-try-for-the-import-demo-content/</guid>
 		<description></description>
 		<content:encoded><![CDATA[<!-- wp:paragraph -->
 <p>Let's find out if AI can help us getting this to work!</p>
 <!-- /wp:paragraph -->]]></content:encoded>
 		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
-		<wp:post_id>44</wp:post_id>
+		<wp:post_id>22</wp:post_id>
 		<wp:post_date><![CDATA[2025-06-14 01:44:27]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2025-06-14 01:44:27]]></wp:post_date_gmt>
-		<wp:post_modified><![CDATA[2025-06-14 01:48:15]]></wp:post_modified>
-		<wp:post_modified_gmt><![CDATA[2025-06-14 01:48:15]]></wp:post_modified_gmt>
+		<wp:post_modified><![CDATA[2025-06-14 01:44:27]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-14 01:44:27]]></wp:post_modified_gmt>
 		<wp:comment_status><![CDATA[open]]></wp:comment_status>
 		<wp:ping_status><![CDATA[open]]></wp:ping_status>
 		<wp:post_name><![CDATA[another-try-for-the-import-demo-content]]></wp:post_name>
@@ -1849,6 +1203,167 @@ WORDPRESS THEME</h2>
 										<category domain="category" nicename="ai"><![CDATA[AI]]></category>
 		<category domain="category" nicename="code"><![CDATA[Code]]></category>
 						<wp:postmeta>
+		<wp:meta_key><![CDATA[page_header_layout]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_page_header_layout]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_page_header_layout]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[page_header_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_page_header_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_page_header_template]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[breadcrumbs]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_breadcrumbs]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_breadcrumbs]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_page_template]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[body_custom_class]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_body_custom_class]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_body_class]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[header_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_header_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_header_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[footer_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[inherit]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_footer_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[field_footer_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[25]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
+		<wp:meta_value><![CDATA[1]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[presentation-hero]]></title>
+		<link>https://unicore-wp.local/2023/12/27/hello-world-2/presentation-hero/</link>
+		<pubDate>Sat, 14 Jun 2025 07:54:13 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://unicore-wp.local/wp-content/uploads/2023/12/presentation-hero.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>23</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-14 07:54:13]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-14 07:54:13]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-14 07:54:13]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-14 07:54:13]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[presentation-hero]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>8</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://unicore-wp.local/wp-content/uploads/2023/12/presentation-hero.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2023/12/presentation-hero.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1440;s:6:"height";i:768;s:4:"file";s:29:"2023/12/presentation-hero.jpg";s:8:"filesize";i:235142;s:5:"sizes";a:4:{s:6:"medium";a:5:{s:4:"file";s:29:"presentation-hero-300x160.jpg";s:5:"width";i:300;s:6:"height";i:160;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:3747;}s:5:"large";a:5:{s:4:"file";s:30:"presentation-hero-1024x546.jpg";s:5:"width";i:1024;s:6:"height";i:546;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:21698;}s:9:"thumbnail";a:5:{s:4:"file";s:29:"presentation-hero-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:2032;}s:12:"medium_large";a:5:{s:4:"file";s:29:"presentation-hero-768x410.jpg";s:5:"width";i:768;s:6:"height";i:410;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:14312;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Home - 2]]></title>
+		<link>https://unicore-wp.local/2025/06/14/another-try-for-the-import-demo-content/home-2/</link>
+		<pubDate>Sat, 14 Jun 2025 07:54:19 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://unicore-wp.local/wp-content/uploads/2025/06/Home-2-scaled-1.png</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>25</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-14 07:54:19]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-14 07:54:19]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-14 07:54:19]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-14 07:54:19]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[home-2]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>22</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://unicore-wp.local/wp-content/uploads/2025/06/Home-2-scaled-1.png]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2025/06/Home-2-scaled-1.png]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:2560;s:6:"height";i:1820;s:4:"file";s:27:"2025/06/Home-2-scaled-1.png";s:8:"filesize";i:2487922;s:5:"sizes";a:6:{s:6:"medium";a:5:{s:4:"file";s:27:"Home-2-scaled-1-300x213.png";s:5:"width";i:300;s:6:"height";i:213;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:28404;}s:5:"large";a:5:{s:4:"file";s:28:"Home-2-scaled-1-1024x728.png";s:5:"width";i:1024;s:6:"height";i:728;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:236606;}s:9:"thumbnail";a:5:{s:4:"file";s:27:"Home-2-scaled-1-150x150.png";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:11820;}s:12:"medium_large";a:5:{s:4:"file";s:27:"Home-2-scaled-1-768x546.png";s:5:"width";i:768;s:6:"height";i:546;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:141186;}s:9:"1536x1536";a:5:{s:4:"file";s:29:"Home-2-scaled-1-1536x1092.png";s:5:"width";i:1536;s:6:"height";i:1092;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:488437;}s:9:"2048x2048";a:5:{s:4:"file";s:29:"Home-2-scaled-1-2048x1456.png";s:5:"width";i:2048;s:6:"height";i:1456;s:9:"mime-type";s:9:"image/png";s:8:"filesize";i:824648;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[This is a local attachment]]></title>
+		<link>https://unicore-wp.local/2025/06/15/this-is-a-local-attachment/</link>
+		<pubDate>Sun, 15 Jun 2025 20:28:22 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://unicore-wp.local/?p=26</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:paragraph -->
+<p>Come on please work! I tired of that!</p>
+<!-- /wp:paragraph -->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>26</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-15 20:28:22]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-15 20:28:22]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-15 20:28:48]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-15 20:28:48]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[this-is-a-local-attachment]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[post]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="category" nicename="code"><![CDATA[Code]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[27]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
@@ -1909,10 +1424,91 @@ WORDPRESS THEME</h2>
 		<wp:meta_value><![CDATA[field_footer_type]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
-		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[47]]></wp:meta_value>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
+					<item>
+		<title><![CDATA[preview]]></title>
+		<link>https://unicore-wp.local/2025/06/15/this-is-a-local-attachment/preview/</link>
+		<pubDate>Sun, 15 Jun 2025 20:28:14 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://unicore-wp.local/wp-content/uploads/2025/06/preview.jpg</guid>
+		<description></description>
+		<content:encoded><![CDATA[]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>27</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-15 20:28:14]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-15 20:28:14]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-15 20:28:14]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-15 20:28:14]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[open]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[preview]]></wp:post_name>
+		<wp:status><![CDATA[inherit]]></wp:status>
+		<wp:post_parent>26</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[attachment]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+						<wp:attachment_url><![CDATA[https://unicore-wp.local/wp-content/uploads/2025/06/preview.jpg]]></wp:attachment_url>
+											<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attached_file]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2025/06/preview.jpg]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:6:{s:5:"width";i:1232;s:6:"height";i:800;s:4:"file";s:19:"2025/06/preview.jpg";s:8:"filesize";i:421023;s:5:"sizes";a:4:{s:6:"medium";a:5:{s:4:"file";s:19:"preview-300x195.jpg";s:5:"width";i:300;s:6:"height";i:195;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:12967;}s:5:"large";a:5:{s:4:"file";s:20:"preview-1024x665.jpg";s:5:"width";i:1024;s:6:"height";i:665;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:86199;}s:9:"thumbnail";a:5:{s:4:"file";s:19:"preview-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:6459;}s:12:"medium_large";a:5:{s:4:"file";s:19:"preview-768x499.jpg";s:5:"width";i:768;s:6:"height";i:499;s:9:"mime-type";s:10:"image/jpeg";s:8:"filesize";i:54712;}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title><![CDATA[Navigation]]></title>
+		<link>https://unicore-wp.local/2025/06/15/navigation/</link>
+		<pubDate>Sun, 15 Jun 2025 20:23:00 +0000</pubDate>
+		<dc:creator><![CDATA[]]></dc:creator>
+		<guid isPermaLink="false">https://unicore-wp.local/2025/06/15/navigation/</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:page-list /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>4</wp:post_id>
+		<wp:post_date><![CDATA[2025-06-15 20:23:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2025-06-15 20:23:00]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2025-06-15 20:23:00]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2025-06-15 20:23:00]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[navigation]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title><![CDATA[Navigation]]></title>
+		<link>https://unicore-wp.local/2023/12/27/navigation-2/</link>
+		<pubDate>Wed, 27 Dec 2023 23:19:19 +0000</pubDate>
+		<dc:creator><![CDATA[admin]]></dc:creator>
+		<guid isPermaLink="false">https://themes.unistudio.co/lexend/2023/12/27/navigation/</guid>
+		<description></description>
+		<content:encoded><![CDATA[<!-- wp:page-list /-->]]></content:encoded>
+		<excerpt:encoded><![CDATA[]]></excerpt:encoded>
+		<wp:post_id>11</wp:post_id>
+		<wp:post_date><![CDATA[2023-12-27 23:19:19]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2023-12-27 23:19:19]]></wp:post_date_gmt>
+		<wp:post_modified><![CDATA[2023-12-27 23:19:19]]></wp:post_modified>
+		<wp:post_modified_gmt><![CDATA[2023-12-27 23:19:19]]></wp:post_modified_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[navigation-2]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[wp_navigation]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
 				</channel>
 </rss>
 	

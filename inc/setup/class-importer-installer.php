@@ -154,8 +154,163 @@ class Importer_Installer {
     }
     
     /**
-     * Alternative manual XML importer (fallback if WordPress Importer fails)
+     * Helper function to properly handle media file imports
+     * This is hooked into wp_import_fetch_remote_file filter
+     * 
+     * @param string $url URL of item to fetch
+     * @param array $post Attachment post details
+     * @return array|WP_Error Local file location details on success, WP_Error otherwise
      */
+    public static function handle_media_import($url, $post) {
+        if (empty($url)) {
+            error_log('Media Import: Empty URL provided');
+            return new \WP_Error('empty_url', 'Empty URL provided for media import');
+        }
+
+        error_log('Media Import: Starting import for URL: ' . $url);
+        error_log('Media Import: Post data: ' . print_r($post, true));
+
+        // Configure request args for binary files
+        $args = array(
+            'timeout' => 300,
+            'stream' => true,
+            'filename' => wp_tempnam(),
+            'headers' => array(
+                'Accept-Encoding' => 'identity',
+                'Accept' => '*/*'
+            ),
+            'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'sslverify' => false // For local development
+        );
+
+        error_log('Media Import: Temp file created at: ' . $args['filename']);
+
+        // Download file directly to temp file
+        $response = wp_safe_remote_get($url, $args);
+        
+        if (is_wp_error($response)) {
+            error_log('Media Import: Download failed - ' . $response->get_error_message());
+            @unlink($args['filename']);
+            return $response;
+        }
+
+        $response_code = wp_remote_retrieve_response_code($response);
+        $response_message = wp_remote_retrieve_response_message($response);
+        $response_headers = wp_remote_retrieve_headers($response);
+        
+        error_log('Media Import: Response code: ' . $response_code);
+        error_log('Media Import: Response message: ' . $response_message);
+        error_log('Media Import: Response headers: ' . print_r($response_headers, true));
+
+        if ($response_code !== 200) {
+            error_log('Media Import: Invalid response code - ' . $response_code);
+            @unlink($args['filename']);
+            return new \WP_Error('http_404', trim($response_message));
+        }
+
+        // Get upload directory with post date
+        $uploads = wp_upload_dir(isset($post['upload_date']) ? $post['upload_date'] : null);
+        if ($uploads['error']) {
+            error_log('Media Import: Upload directory error - ' . $uploads['error']);
+            @unlink($args['filename']);
+            return new \WP_Error('upload_dir_error', $uploads['error']);
+        }
+
+        error_log('Media Import: Upload directory: ' . print_r($uploads, true));
+
+        // Extract filename from URL and sanitize it
+        $url_filename = basename(parse_url($url, PHP_URL_PATH));
+        error_log('Media Import: Original filename: ' . $url_filename);
+        
+        // Get file extension from content-type if missing
+        $tmp_type = wp_check_filetype($url_filename);
+        if (!$tmp_type['ext'] && isset($response_headers['content-type'])) {
+            $tmp_ext = self::get_file_extension_by_mime_type($response_headers['content-type']);
+            if ($tmp_ext) {
+                $url_filename = $url_filename . '.' . $tmp_ext;
+                error_log('Media Import: Added extension from content-type: ' . $url_filename);
+            }
+        }
+
+        // Generate unique filename
+        $filename = wp_unique_filename($uploads['path'], $url_filename);
+        $new_file = $uploads['path'] . "/$filename";
+        error_log('Media Import: Final filename: ' . $filename);
+        error_log('Media Import: Full path: ' . $new_file);
+
+        // Move temp file to uploads directory using WordPress filesystem
+        global $wp_filesystem;
+        if (!$wp_filesystem) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+            WP_Filesystem();
+        }
+
+        // Check temp file
+        $temp_file_size = filesize($args['filename']);
+        $temp_file_readable = is_readable($args['filename']);
+        error_log('Media Import: Temp file size: ' . $temp_file_size);
+        error_log('Media Import: Temp file readable: ' . ($temp_file_readable ? 'yes' : 'no'));
+
+        // Copy file using WordPress filesystem
+        $move_result = $wp_filesystem->copy($args['filename'], $new_file, true);
+        @unlink($args['filename']); // Clean up temp file
+
+        if (!$move_result) {
+            error_log('Media Import: Failed to move file to - ' . $new_file);
+            return new \WP_Error('import_file_error', 'Could not move file to uploads directory');
+        }
+
+        // Set proper permissions
+        $stat = stat(dirname($new_file));
+        $perms = $stat['mode'] & 0000666;
+        chmod($new_file, $perms);
+
+        // Check final file
+        $final_file_size = filesize($new_file);
+        $final_file_readable = is_readable($new_file);
+        error_log('Media Import: Final file size: ' . $final_file_size);
+        error_log('Media Import: Final file readable: ' . ($final_file_readable ? 'yes' : 'no'));
+
+        // Verify file is a valid image if it claims to be one
+        $file_type = wp_check_filetype($new_file);
+        error_log('Media Import: File type check: ' . print_r($file_type, true));
+
+        if (strpos($file_type['type'], 'image/') === 0) {
+            $image_size = @getimagesize($new_file);
+            error_log('Media Import: Image size check: ' . ($image_size ? print_r($image_size, true) : 'failed'));
+            
+            if (!$image_size) {
+                @unlink($new_file);
+                error_log('Media Import: Invalid image file - ' . $new_file);
+                return new \WP_Error('invalid_image', 'File is not a valid image');
+            }
+        }
+
+        error_log('Media Import: Successfully imported file - ' . $new_file);
+        return array(
+            'file' => $new_file,
+            'url' => $uploads['url'] . "/$filename"
+        );
+    }
+
+    /**
+     * Get file extension for a mime type
+     * Copied from WordPress importer for consistency
+     */
+    private static function get_file_extension_by_mime_type($mime_type) {
+        static $extensions = array(
+            'image/jpeg' => 'jpg',
+            'image/png'  => 'png',
+            'image/gif'  => 'gif',
+            'image/webp' => 'webp',
+            'image/bmp'  => 'bmp',
+            'image/tiff' => 'tif',
+        );
+
+        $mime_type = strtolower($mime_type);
+        return isset($extensions[$mime_type]) ? $extensions[$mime_type] : null;
+    }
+
     public static function manual_xml_import($file_path, $options = array()) {
         error_log('Manual XML Import: Starting manual import of ' . $file_path);
         
@@ -164,160 +319,28 @@ class Importer_Installer {
             return new \WP_Error('file_not_found', 'Import file not found.');
         }
         
-        // Load XML content
-        $xml_content = file_get_contents($file_path);
-        if (!$xml_content) {
-            error_log('Manual XML Import: Could not read file content');
-            return new \WP_Error('file_read_error', 'Could not read import file.');
-        }
+        // Initialize Demo Content Importer
+        require_once get_template_directory() . '/inc/setup/class-demo-content-importer.php';
+        $importer = new Demo_Content_Importer();
         
-        // Use libxml to handle encoding issues
-        libxml_use_internal_errors(true);
-        $xml = simplexml_load_string($xml_content, 'SimpleXMLElement', LIBXML_NOCDATA);
-        
-        if (!$xml) {
-            $xml_errors = libxml_get_errors();
-            $error_messages = array();
-            foreach ($xml_errors as $error) {
-                $error_messages[] = trim($error->message);
-            }
-            error_log('Manual XML Import: XML parse errors - ' . implode(', ', $error_messages));
-            return new \WP_Error('xml_parse_error', 'Failed to parse XML file: ' . implode(', ', $error_messages));
-        }
-        
-        error_log('Manual XML Import: XML parsed successfully');
-        
-        $imported_data = array(
-            'posts' => 0,
-            'pages' => 0,
-            'attachments' => 0,
-            'comments' => 0
-        );
-        
-        // Import posts and pages
-        if (isset($xml->channel->item)) {
-            $total_items = count($xml->channel->item);
-            error_log('Manual XML Import: Found ' . $total_items . ' items to import');
+        try {
+            // Import content using Demo Content Importer
+            $result = $importer->import_content($file_path, $options);
             
-            foreach ($xml->channel->item as $item) {
-                try {
-                    $wp_ns = $item->children('wp', true);
-                    $post_type = (string) $wp_ns->post_type;
-                    $post_status = (string) $wp_ns->status;
-                    
-                    // Skip if not in selected options
-                    if ($post_type === 'post' && !in_array('posts', $options)) continue;
-                    if ($post_type === 'page' && !in_array('pages', $options)) continue;
-                    if ($post_type === 'attachment' && !in_array('media', $options)) continue;
-                    
-                    // Get content from CDATA section
-                    $content_ns = $item->children('content', true);
-                    $excerpt_ns = $item->children('excerpt', true);
-                    
-                    // Prepare post data
-                    $post_data = array(
-                        'post_title' => (string) $item->title,
-                        'post_content' => (string) $content_ns->encoded,
-                        'post_excerpt' => (string) $excerpt_ns->encoded,
-                        'post_type' => $post_type,
-                        'post_status' => $post_status === 'publish' ? 'publish' : 'draft',
-                        'post_date' => (string) $wp_ns->post_date,
-                        'post_name' => (string) $wp_ns->post_name,
-                        'menu_order' => (int) $wp_ns->menu_order,
-                        'comment_status' => (string) $wp_ns->comment_status,
-                        'ping_status' => (string) $wp_ns->ping_status,
-                    );
-                    
-                    // Check if post already exists by title and type
-                    $existing_post = get_page_by_title($post_data['post_title'], OBJECT, $post_type);
-                    if ($existing_post) {
-                        error_log('Manual XML Import: Skipping existing post - ' . $post_data['post_title']);
-                        continue; // Skip if already exists
-                    }
-                    
-                    // Insert post
-                    $post_id = wp_insert_post($post_data, true);
-                    
-                    if (is_wp_error($post_id)) {
-                        error_log('Manual XML Import: Failed to insert post - ' . $post_id->get_error_message());
-                        continue;
-                    }
-                    
-                    if ($post_id) {
-                        // Import post meta
-                        if (isset($wp_ns->postmeta)) {
-                            foreach ($wp_ns->postmeta as $meta) {
-                                $meta_wp_ns = $meta->children('wp', true);
-                                $meta_key = (string) $meta_wp_ns->meta_key;
-                                $meta_value = (string) $meta_wp_ns->meta_value;
-                                
-                                // Skip internal meta that shouldn't be imported
-                                if (strpos($meta_key, '_edit_') === 0) continue;
-                                if (strpos($meta_key, '_wp_old_') === 0) continue;
-                                
-                                // Handle serialized data
-                                $unserialized_value = @unserialize($meta_value);
-                                if ($unserialized_value !== false) {
-                                    $meta_value = $unserialized_value;
-                                }
-                                
-                                update_post_meta($post_id, $meta_key, $meta_value);
-                            }
-                        }
-                        
-                        // Import categories and tags
-                        if (isset($item->category)) {
-                            $categories = array();
-                            $tags = array();
-                            
-                            foreach ($item->category as $category) {
-                                $domain = (string) $category->attributes()->domain;
-                                $nicename = (string) $category->attributes()->nicename;
-                                $cat_name = (string) $category;
-                                
-                                if ($domain === 'category') {
-                                    $cat = get_category_by_slug($nicename);
-                                    if (!$cat) {
-                                        $cat_id = wp_create_category($cat_name);
-                                        if ($cat_id && !is_wp_error($cat_id)) {
-                                            $categories[] = $cat_id;
-                                        }
-                                    } else {
-                                        $categories[] = $cat->term_id;
-                                    }
-                                } elseif ($domain === 'post_tag') {
-                                    $tags[] = $cat_name;
-                                }
-                            }
-                            
-                            if (!empty($categories)) {
-                                wp_set_post_categories($post_id, $categories);
-                            }
-                            if (!empty($tags)) {
-                                wp_set_post_tags($post_id, $tags);
-                            }
-                        }
-                        
-                        // Count imported items
-                        if ($post_type === 'post') {
-                            $imported_data['posts']++;
-                        } elseif ($post_type === 'page') {
-                            $imported_data['pages']++;
-                        } elseif ($post_type === 'attachment') {
-                            $imported_data['attachments']++;
-                        }
-                        
-                        error_log('Manual XML Import: Successfully imported - ' . $post_data['post_title'] . ' (ID: ' . $post_id . ')');
-                    }
-                    
-                } catch (\Exception $e) {
-                    error_log('Manual XML Import: Error importing item - ' . $e->getMessage());
-                    continue;
-                }
+            if (is_wp_error($result)) {
+                error_log('Manual XML Import: Import failed - ' . $result->get_error_message());
+                return $result;
             }
+            
+            error_log('Manual XML Import: Import completed successfully');
+            error_log('Manual XML Import: Result - ' . print_r($result, true));
+            
+            return $result;
+            
+        } catch (\Exception $e) {
+            error_log('Manual XML Import: Exception - ' . $e->getMessage());
+            error_log('Manual XML Import: Stack trace - ' . $e->getTraceAsString());
+            return new \WP_Error('import_error', $e->getMessage());
         }
-        
-        error_log('Manual XML Import: Completed - ' . print_r($imported_data, true));
-        return $imported_data;
     }
 }

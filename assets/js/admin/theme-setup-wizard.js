@@ -185,7 +185,7 @@ jQuery(document).ready(function($) {
         if (step === 1) {
             var pluginCount = getPluginsToInstallCount();
             if (pluginCount > 0) {
-                nextButton.html('Install ' + pluginCount + ' Plugin' + (pluginCount > 1 ? 's' : '') + ' <span class="dashicons dashicons-arrow-right-alt2"></span>');
+                nextButton.html('Install or Activate ' + pluginCount + ' Plugin' + (pluginCount > 1 ? 's' : '') + ' <span class="dashicons dashicons-arrow-right-alt2"></span>');
             } else {
                 nextButton.html('Next Step <span class="dashicons dashicons-arrow-right-alt2"></span>');
             }
@@ -633,11 +633,8 @@ jQuery(document).ready(function($) {
                 '</div>' +
                 '<div class="import-modal-footer">' +
                     '<div class="import-actions">' +
-                        '<button type="button" class="button button-secondary cancel-import">Cancel</button>' +
+                        '<button type="button" class="cancel-import">Cancel</button>' +
                         '<button type="button" class="button button-primary confirm-import">Import Selected Content</button>' +
-                    '</div>' +
-                    '<div class="import-note">' +
-                        '<p><strong>Note:</strong> This will add demo content to your site. You can always delete it later if needed.</p>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
@@ -685,11 +682,8 @@ jQuery(document).ready(function($) {
                 '</div>' +
                 '<div class="import-modal-footer">' +
                     '<div class="import-actions">' +
-                        '<button type="button" class="button button-secondary cancel-import">Cancel</button>' +
+                        '<button type="button" class="cancel-import">Cancel</button>' +
                         '<button type="button" class="button button-primary confirm-import">Import Selected Content</button>' +
-                    '</div>' +
-                    '<div class="import-note">' +
-                        '<p><strong>Note:</strong> This will add demo content to your site. You can always delete it later if needed.</p>' +
                     '</div>' +
                 '</div>' +
             '</div>' +
@@ -806,7 +800,7 @@ jQuery(document).ready(function($) {
         if (selectedCount === 0) {
             confirmButton.text('Skip Import').removeClass('button-primary').addClass('button-secondary');
         } else {
-            confirmButton.text('Import ' + selectedCount + ' Item' + (selectedCount > 1 ? 's' : ''))
+            confirmButton.text('Select ' + selectedCount + ' Item' + (selectedCount > 1 ? 's' : ''))
                          .removeClass('button-secondary').addClass('button-primary');
         }
     }
@@ -948,8 +942,21 @@ jQuery(document).ready(function($) {
         var progressStartTime = Date.now();
         var minImportTime = 2500; // Minimum 2.5 seconds for better UX
         
-        // Animate progress bar to 90% first, then complete after AJAX
-        progressBar.animate({width: '90%'}, 2000);
+        // Show more detailed progress information
+        var progressInfo = $('<div class="import-progress-info"></div>');
+        $('.import-progress').append(progressInfo);
+        
+        // Show initial status
+        progressInfo.append('<p>Starting import process...</p>');
+        if (importOptions.includes('media')) {
+            progressInfo.append('<p>Media import enabled - this may take a few minutes.</p>');
+        }
+        
+        // Animate progress bar
+        progressBar.animate({width: '90%'}, {
+            duration: 10000,
+            easing: 'linear'
+        });
         
         $.ajax({
             url: themeSetupWizard.ajax_url,
@@ -962,37 +969,33 @@ jQuery(document).ready(function($) {
             },
             success: function(response) {
                 if (response.success) {
-                    // Calculate remaining time to ensure smooth UX
-                    var elapsedTime = Date.now() - progressStartTime;
-                    var remainingTime = Math.max(0, minImportTime - elapsedTime);
+                    progressInfo.append('<p class="success">Demo import completed successfully!</p>');
                     
-                    // Complete progress bar animation
-                    progressBar.animate({width: '100%'}, 500);
+                    // Complete progress bar
+                    progressBar.stop().animate({width: '100%'}, 500);
                     
-                    // Wait for progress bar to complete before showing success
-                    setTimeout(function() {
+                    // Show completion message
                         $('.import-text').text(themeSetupWizard.strings.complete);
                         
-                        // Show completion for a moment, then proceed
+                    // Wait a moment before proceeding
                         setTimeout(function() {
                             goToStep(3);
-                        }, 1500);
-                    }, remainingTime + 500); // 500ms for the final progress animation
-                    
+                    }, 2000);
                 } else {
-                    $('.import-text').text('Import failed: ' + response.data);
-                    progressBar.stop().css('width', '0%'); // Reset progress on error
+                    var errorMsg = response.data || 'Unknown error occurred';
+                    progressInfo.append('<p class="error">Error: ' + errorMsg + '</p>');
+                    progressBar.stop().css('width', '0%');
+                    $('.import-text').text(themeSetupWizard.strings.error);
                 }
             },
-            error: function() {
-                $('.import-text').text('Import failed due to server error.');
-                progressBar.stop().css('width', '0%'); // Reset progress on error
+            error: function(xhr, status, error) {
+                var errorMsg = xhr.responseJSON && xhr.responseJSON.data ? xhr.responseJSON.data : error;
+                progressInfo.append('<p class="error">Server Error: ' + errorMsg + '</p>');
+                progressBar.stop().css('width', '0%');
+                $('.import-text').text(themeSetupWizard.strings.error);
             },
             complete: function() {
-                // Re-enable buttons after the full UX sequence
-                setTimeout(function() {
                     $('.wizard-navigation button').prop('disabled', false);
-                }, minImportTime + 1000);
             }
         });
     }

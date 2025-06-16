@@ -365,7 +365,7 @@ class Global_Colors_Fonts extends Control_Base {
             'label'     => __('Primary Font', $this->get_text_domain()),
             'tab'       => 'fonts',
             'default'     => [
-                'font-family'    => 'Inter',
+                'font-family'    => '"Sunsive", "Inter", "IBM Plex Sans", sans-serif',
                 'variant'        => '',
             ],
             'output'      => [
@@ -383,7 +383,7 @@ class Global_Colors_Fonts extends Control_Base {
             'label'     => __('Secondary Font', $this->get_text_domain()),
             'tab'       => 'fonts',
             'default'     => [
-                'font-family'    => 'Inter',
+                'font-family'    => '"Sunsive", "Inter", "IBM Plex Sans", sans-serif',
                 'variant'        => '',
             ],
             'output'     => [

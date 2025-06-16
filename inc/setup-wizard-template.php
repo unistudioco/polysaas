@@ -14,35 +14,58 @@ $theme_name = wp_get_theme()->get('Name');
                 <div class="wizard-logo">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="<?php echo esc_attr($theme_name); ?>">
                 </div>
-                <div>
+                <div class="wizard-header-content">
                     <h2 class="wizard-title"><?php printf(__('%s\'s Setup Wizard', 'textdomain'), $theme_name); ?></h2>
                     <p class="wizard-subtitle"><?php _e('Let\'s get your website ready in just a few steps!', 'textdomain'); ?></p>
                 </div>
             </div>
-            <!-- Progress Bar -->
-            <div class="wizard-progress">
-                <div class="progress-steps">
-                    <div class="step active" data-step="1">
-                        <span class="step-number">1</span>
-                        <span class="step-label"><?php _e('Plugins', 'textdomain'); ?></span>
-                    </div>
-                    <div class="step" data-step="2">
-                        <span class="step-number">2</span>
-                        <span class="step-label"><?php _e('Demo Content', 'textdomain'); ?></span>
-                    </div>
-                    <div class="step" data-step="3">
-                        <span class="step-number">3</span>
-                        <span class="step-label"><?php _e('Complete', 'textdomain'); ?></span>
-                    </div>
+            <!-- Navigation Actions -->
+            <div class="wizard-navigation">
+                <div class="wizard-nav-buttons">
+                    <button type="button" class="button secondary wizard-prev" style="display: none;">
+                        <span class="dashicons dashicons-arrow-left-alt2"></span>
+                        <?php _e('Previous', 'textdomain'); ?>
+                    </button>
+                    
+                    <button type="button" class="button primary wizard-next">
+                        <?php _e('Install Plugins', 'textdomain'); ?>
+                        <span class="dashicons dashicons-arrow-right-alt2"></span>
+                    </button>
+                    
+                    <button type="button" class="button primary wizard-finish" style="display: none;">
+                        <?php _e('Finish Setup', 'textdomain'); ?>
+                    </button>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 0%;"></div>
-                </div>
+                <button type="button" class="wizard-skip">
+                    <i class="dashicons dashicons-no-alt"></i>
+                    <span><?php _e('Skip Setup', 'textdomain'); ?></span>
+                </button>
             </div>
         </div>
 
         <!-- Wizard Content -->
         <div class="wizard-content">
+            
+            <!-- Progress Bar Steps -->
+            <div class="wizard-progress">
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-label"><?php _e('Install Plugins', 'textdomain'); ?></span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-label"><?php _e('Select Website Demo', 'textdomain'); ?></span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-label"><?php _e('Good to Go!', 'textdomain'); ?></span>
+                    </div>
+                </div>
+                <div class="progress-bar" style="display: none;">
+                    <div class="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
             
             <!-- Step 1: Plugin Installation -->
             <div class="wizard-step step-1 active">
@@ -176,7 +199,7 @@ $theme_name = wp_get_theme()->get('Name');
                         <h3><?php _e('What\'s Next?', 'textdomain'); ?></h3>
                         <div class="next-steps-grid">
                             <div class="next-step">
-                                <div class="step-icon" style="background:#ffe1e7; color: #e74161;">
+                                <div class="step-icon">
                                     <span class="dashicons dashicons-admin-customizer"></span>
                                 </div>
                                 <div class="step-info">
@@ -187,7 +210,7 @@ $theme_name = wp_get_theme()->get('Name');
                             </div>
                             
                             <div class="next-step">
-                                <div class="step-icon" style="background: #f6ddff; color: #d25bff;">
+                                <div class="step-icon">
                                     <span class="dashicons dashicons-edit"></span>
                                 </div>
                                 <div class="step-info">
@@ -198,7 +221,7 @@ $theme_name = wp_get_theme()->get('Name');
                             </div>
                             
                             <div class="next-step">
-                                <div class="step-icon" style="background:#e6ddff; color: #6b3ee4;">
+                                <div class="step-icon">
                                     <span class="dashicons dashicons-visibility"></span>
                                 </div>
                                 <div class="step-info">
@@ -215,28 +238,6 @@ $theme_name = wp_get_theme()->get('Name');
 
         <!-- Wizard Footer -->
         <div class="wizard-footer">
-            <div class="wizard-navigation">
-                <button type="button" class="button secondary wizard-skip">
-                    <?php _e('Skip Setup', 'textdomain'); ?>
-                </button>
-                
-                <div class="wizard-nav-buttons">
-                    <button type="button" class="button secondary wizard-prev" style="display: none;">
-                        <span class="dashicons dashicons-arrow-left-alt2"></span>
-                        <?php _e('Previous', 'textdomain'); ?>
-                    </button>
-                    
-                    <button type="button" class="button primary wizard-next">
-                        <?php _e('Install Plugins', 'textdomain'); ?>
-                        <span class="dashicons dashicons-arrow-right-alt2"></span>
-                    </button>
-                    
-                    <button type="button" class="button primary wizard-finish" style="display: none;">
-                        <?php _e('Finish Setup', 'textdomain'); ?>
-                    </button>
-                </div>
-            </div>
-            
             <div class="wizard-help">
                 <p>
                     <?php _e('Need help?', 'textdomain'); ?>

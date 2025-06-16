@@ -1,6 +1,11 @@
 /* Save as: assets/css/admin/theme-setup-wizard.css */
-#theme-setup-wizard {
+#theme-setup-wizard,
+#import-options-modal {
     -webkit-font-smoothing: antialiased;
+    --uc-wizard-primary: #2271b1;
+    --uc-wizard-primary-hover: #3582c4;
+    --uc-wizard-primary-light: #e0f1ff;
+    --uc-wizard-graylight: #f5f5f5;
 }
 
 /* Wizard Overlay */
@@ -28,20 +33,18 @@
 /* Wizard Container */
 .wizard-container {
     background: #fff;
-    border-radius: 20px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    width: 90%;
-    max-width: 900px;
-    max-height: 90vh;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
-    transform: scale(0.9);
+    opacity: 0;
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .wizard-overlay.show .wizard-container {
-    transform: scale(1);
+    opacity: 1;
 }
 
 .wizard-container .button,
@@ -55,8 +58,8 @@
     font-size: 12px;
     font-weight: 600;
     background: #ffffff;
-    color: #6b3ee3;
-    border-color: #6b3ee3 !important;
+    color: var(--uc-wizard-primary);
+    border-color: var(--uc-wizard-primary) !important;
     outline: 0;
     border-radius: 6px;
     text-decoration: none;
@@ -65,33 +68,33 @@
 
 .wizard-container .button:hover,
 .import-modal-container .button:hover {
-    background: #e4daff;
-    color: #6b3ee3;
+    background: var(--uc-wizard-primary-light);
+    color: var(--uc-wizard-primary);
 }
 
 .wizard-container .button:focus,
 .import-modal-container .button:focus {
     box-shadow: none !important;
-    background: #e4daff;
-    color: #6b3ee3;
+    background: var(--uc-wizard-primary-light);
+    color: var(--uc-wizard-primary);
 }
 
 .wizard-container .button.primary,
 .import-modal-container .button.primary {
-    background: #6b3ee3;
+    background: var(--uc-wizard-primary);
     color: #ffffff;
 }
 
 .wizard-container .button.primary:hover,
 .import-modal-container .button.primary:hover {
-    background: #4e2bad;
+    background: var(--uc-wizard-primary-hover);
     color: #ffffff;
 }
 
 .wizard-container .button.primary:focus,
 .import-modal-container .button.primary:focus {
     box-shadow: none !important;
-    background: #4e2bad;
+    background: var(--uc-wizard-primary-hover);
     color: #ffffff;
 }
 
@@ -104,15 +107,19 @@
 
 /* Wizard Header */
 .wizard-header {
-    background: linear-gradient(135deg, #f1e2ff 0%, #e5eaff 100%);
-    padding: 32px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 32px;
     position: relative;
-    border-radius: 12px;
-    margin: 8px;
+    border-bottom: 1px solid #ececec;
+}
+
+.wizard-header-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .wizard-header > div {
@@ -125,14 +132,14 @@
 }
 
 .wizard-logo img {
-    max-width: 48px;
+    max-width: 32px;
     height: auto;
 }
 
 .wizard-header .wizard-title {
-    font-size: 24px;
-    line-height: 1.25;
-    font-weight: 600;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 500;
     margin: 0;
     letter-spacing: -0.025rem;
 }
@@ -146,76 +153,89 @@
 /* Progress Steps */
 .wizard-progress {
     position: relative;
+    padding: 32px 0 24px;
 }
 
-.progress-steps {
+.wizard-progress .progress-steps {
     display: flex;
     justify-content: center;
+    gap: 24px;
     position: relative;
 }
 
-.step {
-    display: flex;
-    flex-direction: column;
+.wizard-progress .progress-steps > *+*::before {
+    content: "\f345";
+    font-family: dashicons;
+    font-size: 12px;
+    color: rgb(0 0 0 / 50%);
+    margin-right: 16px;
+}
+
+.wizard-progress .step {
+    display: inline-flex;
     align-items: center;
     position: relative;
     z-index: 2;
-    flex: 1;
-    max-width: 150px;
 }
 
-.step-number {
-    width: 40px;
-    height: 40px;
+.wizard-progress .step[data-step="1"] {
+    margin-left: -16px;
+}
+
+.wizard-progress .step[data-step="3"] {
+    margin-right: -16px;
+}
+
+.wizard-progress .step-number {
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: white;
+    background: var(--uc-wizard-graylight);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    margin-bottom: 8px;
+    font-weight: 500;
+    margin-right: 8px;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 3px -1px rgb(0 0 0 / 10%);
 }
 
-.step.active .step-number {
-    background: #6b3ee3;
+.wizard-progress .step.active .step-number {
+    background: var(--uc-wizard-primary);
     color: #fff;
 }
 
-.step.completed .step-number {
-    background: #6b3ee3;
+.wizard-progress .step.completed .step-number {
+    background: var(--uc-wizard-primary);
     color: white;
 }
 
-.step-label {
-    font-size: 14px;
-    opacity: 0.9;
+.wizard-progress .step-label {
+    font-size: 13px;
+    opacity: 0.5;
     font-weight: 500;
 }
 
-.step.active .step-label {
+.wizard-progress .step.active .step-label {
     opacity: 1;
-    font-weight: 600;
 }
 
 /* Progress Bar */
 .wizard-progress .progress-bar {
-    height: 4px;
-    width: 75%;
-    background: white;
-    border-radius: 2px;
+    height: 2px;
+    width: 100%;
+    background: rgb(0 0 0 / 5%);
     overflow: hidden;
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
     right: 0;
-    transform: translateY(calc(-50% - 12px));
     margin: 0 auto;
 }
 
 .wizard-progress .progress-fill {
     height: 100%;
-    background: #6b3ee3;
+    background: var(--uc-wizard-primary);
     border-radius: 2px;
     transition: width 0.3s ease;
 }
@@ -231,6 +251,8 @@
     display: none;
     padding: 32px;
     min-height: 400px;
+    width: 900px;
+    margin: 0 auto;
 }
 
 .wizard-step .button {
@@ -273,7 +295,7 @@
 
 .plugins-section h3 .dashicons {
     margin-right: 10px;
-    color: #6b3ee3;
+    color: var(--uc-wizard-primary);
 }
 
 .plugins-section h3 small {
@@ -281,8 +303,7 @@
     font-weight: normal;
     font-size: 14px;
     color: #666;
-    margin-top: 5px;
-    margin-left: 32px;
+    margin-left: 16px;
 }
 
 .plugins-grid {
@@ -293,9 +314,12 @@
 
 /* Plugin Items */
 .plugin-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
     border: 2px solid #e5e5e5;
     border-radius: 8px;
-    padding: 20px;
+    padding: 16px;
     background: #fff;
     transition: all 0.3s ease;
     position: relative;
@@ -303,14 +327,19 @@
 }
 
 .plugin-item:hover {
-    border-color: #6b3ee3;
+    border-color: var(--uc-wizard-primary);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
 }
 
+.plugin-item.required,
 .plugin-item.recommended.selected,
 .plugin-item.recommended:has(input:checked) {
-    border-color: #6b3ee3;
+    border-color: var(--uc-wizard-primary);
     background: #f8f9ff;
+}
+
+.plugin-item input[type=checkbox]:checked::before {
+    margin: -1px -2px;
 }
 
 /* Plugin Checkbox */
@@ -323,14 +352,13 @@
 .plugin-checkbox input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: #6b3ee3;
+    accent-color: var(--uc-wizard-primary);
 }
 
 /* Plugin Header */
 .plugin-header {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
 }
 
 .plugin-icon {
@@ -339,7 +367,7 @@
     left: 0;
     width: 48px;
     height: 48px;
-    margin-right: 15px;
+    margin-right: 16px;
     flex-shrink: 0;
 }
 
@@ -358,7 +386,7 @@
 .plugin-info p {
     margin: 0;
     color: #666;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
 }
 
@@ -366,6 +394,7 @@
 .plugin-status {
     display: flex;
     align-items: center;
+    align-self: flex-end;
 }
 
 .status-indicator {
@@ -395,8 +424,8 @@
 }
 
 .status-indicator.installed {
-    background: #e4d9ff;
-    color: #6b3ee3;
+    background: var(--uc-wizard-primary-light);
+    color: var(--uc-wizard-primary);
 }
 
 .status-indicator.active {
@@ -420,7 +449,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    color: #6b3ee3;
+    color: var(--uc-wizard-primary);
     margin-bottom: 16px;
 }
 
@@ -496,13 +525,13 @@
 }
 
 .demo-item:hover {
-    border-color: #6b3ee3;
+    border-color: var(--uc-wizard-primary);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
     transform: translateY(-2px);
 }
 
 .demo-item.selected {
-    border-color: #6b3ee3;
+    border-color: var(--uc-wizard-primary);
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
 }
 
@@ -548,8 +577,8 @@
 }
 
 .demo-actions .button:hover {
-    background: #ded1ff;
-    color: #4722ac;
+    background: var(--uc-wizard-primary-light);
+    color: var(--uc-wizard-primary-hover);
 }
 
 .demo-info {
@@ -625,7 +654,7 @@
 
 /* Modal Header */
 .import-modal-header {
-    background: linear-gradient(135deg, #f1e2ff 0%, #e5eaff 100%);
+    background: var(--uc-wizard-graylight);
     padding: 16px;
     display: flex;
     align-items: center;
@@ -677,7 +706,7 @@
 
 .preview-link:hover {
     opacity: 1;
-    color: #6b3ee3;
+    color: var(--uc-wizard-primary);
     text-decoration: none;
 }
 
@@ -752,7 +781,7 @@
 }
 
 .import-option-item:hover {
-    border-color: #6b3ee3;
+    border-color: var(--uc-wizard-primary);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
 }
 
@@ -836,7 +865,7 @@
 
 /* Modal Footer */
 .import-modal-footer {
-    background: #ece7f8;
+    background: var(--uc-wizard-graylight);
     padding: 16px;
     border-radius: 8px;
     margin: 8px;
@@ -844,9 +873,9 @@
 
 .import-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin-bottom: 12px;
+    gap: 16px;
 }
 
 .import-actions .button {
@@ -870,7 +899,7 @@
     border-top: 1px solid rgb(0 0 0 / 10%);
     padding: 16px;
     position: absolute;
-    bottom: 136px;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 1;
@@ -891,21 +920,21 @@
 }
 
 .import-item-tag {
-    background: #e9e0ff;
-    color: #6b3ee3;
-    font-size: 10px;
+    background: var(--uc-wizard-primary-light);
+    color: var(--uc-wizard-primary);
+    font-size: 12px;
     font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 16px;
+    padding: 6px 14px;
+    border-radius: 20px;
 }
 
 .change-options-btn {
     background: white;
-    border: 1px solid #6b3ee3;
-    color: #6b3ee3;
-    font-size: 11px;
+    border: 1px solid var(--uc-wizard-primary);
+    color: var(--uc-wizard-primary);
+    font-size: 13px;
     font-weight: 600;
-    padding: 6px;
+    padding: 8px;
     border-radius: 6px;
     cursor: pointer;
     display: flex;
@@ -917,7 +946,7 @@
 }
 
 .change-options-btn:hover {
-    background: #6b3ee3;
+    background: var(--uc-wizard-primary);
     color: white;
 }
 
@@ -1068,7 +1097,7 @@
 /* Next Steps */
 .next-steps h3 {
     margin: 0 0 24px;
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
     text-align: center;
 }
@@ -1081,14 +1110,14 @@
 
 .next-step {
     text-align: center;
-    padding: 24px;
+    padding: 40px 24px;
     border: 1px solid #e5e5e5;
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .next-step:hover {
-    border-color: #6b3ee3;
+    border-color: var(--uc-wizard-primary);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
 }
 
@@ -1096,11 +1125,12 @@
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #6b3ee3, #764ba2);
+    background: var(--uc-wizard-graylight);
+    color: var(--uc-wizard-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 16px;
+    margin: 0 auto 24px;
 }
 
 .step-icon .dashicons {
@@ -1116,7 +1146,7 @@
 }
 
 .step-info p {
-    margin: 0 0 16px;
+    margin: 0 0 32px;
     color: #666;
     font-size: 14px;
     line-height: 1.4;
@@ -1124,7 +1154,7 @@
 
 /* Wizard Footer */
 .wizard-footer {
-    background: #ece7f8;
+    background: var(--uc-wizard-graylight);
     padding: 24px;
     border-radius: 12px;
     margin: 8px;
@@ -1132,15 +1162,39 @@
 
 .wizard-navigation {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 8px;
 }
 
 .wizard-nav-buttons {
     display: flex;
-    gap: 12px;
+    gap: 8px;
+}
+
+.wizard-skip,
+.cancel-import {
+    background: none;
+    border: 0;
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(0 0 0 / 50%);
+    transition: .2s;
+}
+
+.wizard-skip:hover,
+.cancel-import:hover {
+    color: var(--uc-wizard-primary);
+}
+
+.wizard-skip .dashicons {
+    position: relative;
+    top: 1px;
 }
 
 .wizard-help {
@@ -1154,7 +1208,7 @@
 }
 
 .wizard-help a {
-    color: #6b3ee3;
+    color: var(--uc-wizard-primary);
     text-decoration: none;
 }
 
@@ -1164,13 +1218,8 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .wizard-container {
-        width: 95%;
-        max-height: 95vh;
-    }
-    
     .wizard-header {
-        padding: 30px 30px 20px;
+        padding: 24px;
     }
     
     .wizard-header h1 {
@@ -1263,12 +1312,14 @@
 
 /* Demo Selection Enhancements */
 .demo-selection .heading {
+    text-align: center;
     font-size: 18px;
     margin: 0 0 4px;
 }
 .demo-selection .desc {
+    text-align: center;
     font-size: 14px;
-    margin: 0 0 24px;
+    margin: 0 0 40px;
     color: #666;
 }
 
@@ -1328,4 +1379,65 @@
 .no-demos-icon {
     width: 80px;
     height: 80px;
+}
+
+.import-progress-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.import-progress-info p {
+    margin: 0 0 10px;
+    color: #444;
+}
+
+.import-progress-info ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.import-progress-info li {
+    margin: 5px 0;
+    color: #666;
+}
+
+.import-progress-info .warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.import-progress-info .error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Enhance existing progress bar styles */
+.import-progress {
+    margin-top: 30px;
+}
+
+.progress-bar {
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #007cba;
+    width: 0;
+    transition: width 0.3s ease;
+    border-radius: 10px;
 }

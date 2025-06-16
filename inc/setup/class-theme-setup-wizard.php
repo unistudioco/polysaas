@@ -15,11 +15,18 @@ class Theme_Setup_Wizard {
     private $theme_name;
     private $wizard_dismissed_option = 'theme_setup_wizard_dismissed';
     private $wizard_completed_option = 'theme_setup_wizard_completed';
+    private $debug_log_file;
     
     public function __construct() {
         $this->theme_name = get_template();
         $this->set_plugins();
         $this->set_demos();
+        
+        // Test logging immediately
+        $this->debug_log('Theme Setup Wizard initialized', array(
+            'theme_name' => $this->theme_name,
+            'time' => current_time('mysql')
+        ));
         
         // Hook into theme activation
         add_action('after_switch_theme', array($this, 'theme_activated'));
@@ -36,6 +43,61 @@ class Theme_Setup_Wizard {
         add_action('wp_ajax_import_demo_content', array($this, 'import_demo_content_ajax'));
         add_action('wp_ajax_dismiss_setup_wizard', array($this, 'dismiss_wizard_ajax'));
         add_action('wp_ajax_complete_setup_wizard', array($this, 'complete_wizard_ajax'));
+    }
+    
+    /**
+     * Debug logging function
+     */
+    private function debug_log($message, $data = null) {
+        try {
+            $timestamp = current_time('mysql');
+            $log_message = "[{$timestamp}] {$message}";
+            
+            if ($data !== null) {
+                if (is_array($data) || is_object($data)) {
+                    $log_message .= "\nData: " . print_r($data, true);
+                } else {
+                    $log_message .= "\nData: {$data}";
+                }
+            }
+            
+            $log_message .= "\n----------------------------------------\n";
+            
+            // Log to WordPress debug log
+            error_log($log_message);
+            
+            // Ensure uploads directory exists and is writable
+            $upload_dir = wp_upload_dir();
+            if (!empty($upload_dir['error'])) {
+                error_log('Upload directory error: ' . $upload_dir['error']);
+                return;
+            }
+            
+            // Create logs directory if it doesn't exist
+            $logs_dir = $upload_dir['basedir'] . '/logs';
+            if (!file_exists($logs_dir)) {
+                wp_mkdir_p($logs_dir);
+            }
+            
+            // Set debug log path
+            $this->debug_log_file = $logs_dir . '/theme_setup_debug.log';
+            
+            // Ensure the log file exists and is writable
+            if (!file_exists($this->debug_log_file)) {
+                touch($this->debug_log_file);
+                chmod($this->debug_log_file, 0644);
+            }
+            
+            // Write to our custom debug file
+            if (is_writable($this->debug_log_file)) {
+                file_put_contents($this->debug_log_file, $log_message, FILE_APPEND);
+            } else {
+                error_log('Debug log file is not writable: ' . $this->debug_log_file);
+            }
+            
+        } catch (\Exception $e) {
+            error_log('Error in debug_log: ' . $e->getMessage());
+        }
     }
     
     /**
@@ -81,7 +143,17 @@ class Theme_Setup_Wizard {
                     'file_path' => 'kirki/kirki.php',
                     'description' => 'Custom UI Fields for WordPress Customizer.',
                     'required' => true
-                )
+                ),
+                'elementor-animejs-addon' => array(
+                    'icon' => get_template_directory_uri() . '/inc/plugins/elementor-animejs-addon.gif',
+                    'name' => 'Elementor AnimeJS Addon',
+                    'slug' => 'elementor-animejs-addon',
+                    'source' => 'external',
+                    'file_path' => 'elementor-animejs-addon/index.php',
+                    'external_url' => get_template_directory_uri() . '/inc/plugins/elementor-animejs-addon.zip',
+                    'description' => 'Advanced Animations via AnimeJS Library for Elementor.',
+                    'required' => true
+                ),
             ),
             'recommended' => array(
                 'contact-form-7' => array(
@@ -102,25 +174,15 @@ class Theme_Setup_Wizard {
                     'description' => 'Complete eCommerce solution for WordPress.',
                     'required' => false
                 ),
-                'elementor-animejs-addon' => array(
-                    'icon' => get_template_directory_uri() . '/inc/plugins/elementor-animejs-addon.gif',
-                    'name' => 'Elementor AnimeJS Addon',
-                    'slug' => 'elementor-animejs-addon',
-                    'source' => 'external',
-                    'file_path' => 'elementor-animejs-addon/index.php',
-                    'external_url' => get_template_directory_uri() . '/inc/plugins/elementor-animejs-addon.zip',
-                    'description' => 'Advanced Animations via AnimeJS Library for Elementor.',
-                    'required' => false
-                ),
-                'wpml' => array(
-                    'icon' => get_template_directory_uri() . '/inc/plugins/wpml.png',
-                    'name' => 'WPML',
-                    'slug' => 'woocommerce-multilingual',
-                    'source' => 'repo',
-                    'file_path' => 'woocommerce-multilingual/wpml-woocommerce.php',
-                    'description' => 'WooCommerce Multilingual & Multicurrency with WPML.',
-                    'required' => false
-                )
+                // 'wpml' => array(
+                //     'icon' => get_template_directory_uri() . '/inc/plugins/wpml.png',
+                //     'name' => 'WPML',
+                //     'slug' => 'woocommerce-multilingual',
+                //     'source' => 'repo',
+                //     'file_path' => 'woocommerce-multilingual/wpml-woocommerce.php',
+                //     'description' => 'WooCommerce Multilingual & Multicurrency with WPML.',
+                //     'required' => false
+                // )
             )
         );
     }
@@ -549,12 +611,6 @@ class Theme_Setup_Wizard {
      * AJAX: Import demo content
      */
     public function import_demo_content_ajax() {
-        // Enable error reporting for debugging
-        if (defined('WP_DEBUG') && WP_DEBUG) {
-            error_reporting(E_ALL);
-            ini_set('display_errors', 1);
-        }
-        
         try {
             check_ajax_referer('theme_setup_wizard_nonce', 'nonce');
             
@@ -566,178 +622,79 @@ class Theme_Setup_Wizard {
             $demo_key = sanitize_text_field($_POST['demo']);
             $import_options = isset($_POST['import_options']) ? $_POST['import_options'] : array();
             
+            $this->debug_log("Starting demo content import", array(
+                'demo' => $demo_key,
+                'options' => $import_options
+            ));
+            
             if (!isset($this->demos[$demo_key])) {
+                $this->debug_log("Invalid demo key: {$demo_key}");
                 wp_send_json_error(__('Invalid demo.', 'textdomain'));
                 return;
             }
             
             $demo = $this->demos[$demo_key];
             
-            // Verify demo files exist before attempting import
+            // Verify demo files exist
             if (!file_exists($demo['content_file'])) {
+                $this->debug_log("Content file not found", array('file' => $demo['content_file']));
                 wp_send_json_error('Content file not found: ' . $demo['content_file']);
                 return;
             }
             
-            if (isset($demo['customizer_file']) && in_array('customizer', $import_options) && !file_exists($demo['customizer_file'])) {
-                wp_send_json_error('Customizer file not found: ' . $demo['customizer_file']);
+            // Import content using WordPress Importer
+            $result = Importer_Installer::manual_xml_import($demo['content_file'], $import_options);
+            
+            if (is_wp_error($result)) {
+                $this->debug_log("Import failed", array(
+                    'error' => $result->get_error_message()
+                ));
+                wp_send_json_error($result->get_error_message());
                 return;
-            }
-            
-            // Log the import attempt
-            error_log('Polysaas Setup Wizard: Starting import for demo: ' . $demo_key);
-            error_log('Import options: ' . print_r($import_options, true));
-            
-            // For now, let's use the manual import directly since we know it works
-            if (in_array('pages', $import_options) || in_array('posts', $import_options) || in_array('media', $import_options)) {
-                error_log('Polysaas Setup Wizard: Using direct manual import for content');
-                
-                // Include the importer installer for manual import
-                $installer_file = get_template_directory() . '/inc/setup/class-importer-installer.php';
-                if (!file_exists($installer_file)) {
-                    wp_send_json_error('Importer installer file not found');
-                    return;
-                }
-                require_once $installer_file;
-                
-                // Use manual import directly
-                $content_result = \Polysaas\Setup\Importer_Installer::manual_xml_import($demo['content_file'], $import_options);
-                
-                if (is_wp_error($content_result)) {
-                    error_log('Polysaas Setup Wizard: Manual import failed: ' . $content_result->get_error_message());
-                    wp_send_json_error('Content import failed: ' . $content_result->get_error_message());
-                    return;
-                }
-                
-                error_log('Polysaas Setup Wizard: Manual import successful: ' . print_r($content_result, true));
             }
             
             // Import customizer settings if selected
             if (in_array('customizer', $import_options) && isset($demo['customizer_file'])) {
-                error_log('Polysaas Setup Wizard: Importing customizer settings');
-                
-                // Include the demo content importer for customizer
-                $importer_file = get_template_directory() . '/inc/setup/class-demo-content-importer.php';
-                if (!file_exists($importer_file)) {
-                    wp_send_json_error('Demo content importer file not found');
-                    return;
-                }
-                require_once $importer_file;
-                
-                $importer = new Demo_Content_Importer();
-                $customizer_result = $importer->import_customizer_settings($demo['customizer_file']);
-                
-                if (is_wp_error($customizer_result)) {
-                    error_log('Polysaas Setup Wizard: Customizer import failed: ' . $customizer_result->get_error_message());
-                    wp_send_json_error('Customizer import failed: ' . $customizer_result->get_error_message());
-                    return;
-                }
-                
-                error_log('Polysaas Setup Wizard: Customizer import successful: ' . print_r($customizer_result, true));
-            }
-            
-            // Set up pages
-            if (isset($content_result) && $content_result['pages'] > 0) {
-                // Set front page if imported
-                $front_page = get_page_by_title('Home');
-                if ($front_page) {
-                    update_option('show_on_front', 'page');
-                    update_option('page_on_front', $front_page->ID);
-                    error_log('Polysaas Setup Wizard: Set Home page as front page');
-                }
-                
-                // Set blog page if imported
-                $blog_page = get_page_by_title('Blog');
-                if ($blog_page) {
-                    update_option('page_for_posts', $blog_page->ID);
-                    error_log('Polysaas Setup Wizard: Set Blog page for posts');
+                if (file_exists($demo['customizer_file'])) {
+                    $this->import_customizer_settings($demo['customizer_file']);
                 }
             }
             
-            // Flush rewrite rules
-            flush_rewrite_rules();
-            
-            // Clear any caches
-            if (function_exists('wp_cache_flush')) {
-                wp_cache_flush();
-            }
-            
-            // Build success response
-            $success_message = 'Demo content imported successfully!';
-            $results = array();
-            
-            if (isset($content_result)) {
-                $results['content'] = $content_result;
-                $success_message .= ' Imported ' . $content_result['pages'] . ' pages and ' . $content_result['posts'] . ' posts.';
-            }
-            
-            if (isset($customizer_result)) {
-                $results['customizer'] = $customizer_result;
-                $success_message .= ' Applied theme customizations.';
-            }
-            
-            error_log('Polysaas Setup Wizard: Import completed successfully');
-            
-            wp_send_json_success(array(
-                'message' => $success_message,
-                'results' => $results
-            ));
+            $this->debug_log("Import completed successfully");
+            wp_send_json_success('Import completed successfully');
             
         } catch (\Exception $e) {
-            error_log('Polysaas Setup Wizard: Exception in import_demo_content_ajax: ' . $e->getMessage());
-            error_log('Stack trace: ' . $e->getTraceAsString());
+            $this->debug_log("Exception during import", array(
+                'message' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
+            ));
             wp_send_json_error('Import failed: ' . $e->getMessage());
-        } catch (\Throwable $e) {
-            error_log('Polysaas Setup Wizard: Fatal error in import_demo_content_ajax: ' . $e->getMessage());
-            error_log('Stack trace: ' . $e->getTraceAsString());
-            wp_send_json_error('Fatal error during import: ' . $e->getMessage());
         }
     }
     
     /**
-     * Perform the actual demo import
+     * Import customizer settings
      */
-    private function perform_demo_import($demo, $import_options) {
-        try {
-            // Check if Demo_Content_Importer class exists
-            if (!class_exists('Polysaas\Setup\Demo_Content_Importer')) {
-                $importer_file = get_template_directory() . '/inc/setup/class-demo-content-importer.php';
-                if (!file_exists($importer_file)) {
-                    throw new \Exception('Demo Content Importer file not found: ' . $importer_file);
-                }
-                require_once $importer_file;
+    private function import_customizer_settings($file) {
+        if (!file_exists($file)) {
+            return false;
             }
             
-            // Check if Importer_Installer class exists
-            if (!class_exists('Polysaas\Setup\Importer_Installer')) {
-                $installer_file = get_template_directory() . '/inc/setup/class-importer-installer.php';
-                if (!file_exists($installer_file)) {
-                    throw new \Exception('Importer Installer file not found: ' . $installer_file);
-                }
-                require_once $installer_file;
+        $this->debug_log("Importing customizer settings", array('file' => $file));
+        
+        $raw = file_get_contents($file);
+        $data = @unserialize($raw);
+        
+        if ($data && is_array($data)) {
+            foreach ($data as $key => $value) {
+                set_theme_mod($key, $value);
             }
-            
-            // Create importer instance
-            $importer = new Demo_Content_Importer();
-            
-            // Log the import attempt
-            error_log('Polysaas Setup Wizard: Created Demo_Content_Importer instance');
-            error_log('Demo data: ' . print_r($demo, true));
-            
-            // Perform the complete import
-            $import_result = $importer->complete_demo_import($demo, $import_options);
-            
-            error_log('Polysaas Setup Wizard: Import result: ' . print_r($import_result, true));
-            
-            return $import_result;
-            
-        } catch (\Exception $e) {
-            error_log('Polysaas Setup Wizard: Exception in perform_demo_import: ' . $e->getMessage());
-            return new \WP_Error('import_exception', $e->getMessage());
-        } catch (\Throwable $e) {
-            error_log('Polysaas Setup Wizard: Fatal error in perform_demo_import: ' . $e->getMessage());
-            return new \WP_Error('import_fatal_error', $e->getMessage());
+            $this->debug_log("Customizer settings imported successfully");
+            return true;
         }
+        
+        $this->debug_log("Failed to import customizer settings");
+        return false;
     }
     
     /**
