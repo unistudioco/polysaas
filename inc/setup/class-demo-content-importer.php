@@ -527,16 +527,26 @@ class Demo_Content_Importer {
      */
     public function setup_wordpress_pages() {
         // Set front page if imported
-        $front_page = get_page_by_title('Home');
-        if ($front_page) {
+        $front_page = get_posts([
+            'post_type' => 'page',
+            'post_status' => 'publish',
+            'title' => 'Home',
+            'posts_per_page' => 1,
+        ]);
+        if (!empty($front_page[0])) {
             update_option('show_on_front', 'page');
-            update_option('page_on_front', $front_page->ID);
+            update_option('page_on_front', $front_page[0]->ID);
         }
         
         // Set blog page if imported
-        $blog_page = get_page_by_title('Blog');
-        if ($blog_page) {
-            update_option('page_for_posts', $blog_page->ID);
+        $blog_page = get_posts([
+            'post_type' => 'page',
+            'post_status' => 'publish',
+            'title' => 'Blog',
+            'posts_per_page' => 1,
+        ]);
+        if (!empty($blog_page[0])) {
+            update_option('page_for_posts', $blog_page[0]->ID);
         }
         
         // Set WooCommerce pages if WooCommerce is active
@@ -562,9 +572,14 @@ class Demo_Content_Importer {
         );
         
         foreach ($pages as $option => $page_title) {
-            $page = get_page_by_title($page_title);
-            if ($page) {
-                update_option('woocommerce_' . $option . '_page_id', $page->ID);
+            $page = get_posts([
+                'post_type' => 'page',
+                'post_status' => 'publish',
+                'title' => $page_title,
+                'posts_per_page' => 1,
+            ]);
+            if (!empty($page[0])) {
+                update_option('woocommerce_' . $option . '_page_id', $page[0]->ID);
             }
         }
     }
